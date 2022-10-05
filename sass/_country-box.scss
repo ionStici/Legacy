@@ -1,0 +1,74 @@
+// <div class="country margin-right-auto">
+//   <div class="country__name-box">
+//     <div class="country__flag"></div>
+//     <p class="country__name"></p>
+//   </div>
+//   <div class="country__info">
+//     <p class="country__capital"></p>
+//     <p class="country__region"></p>
+//     <p class="country__people"></p>
+//     <p class="country__language"></p>
+//     <p class="country__currency"></p>
+//   </div>
+// </div>
+
+.country {
+  width: 25rem;
+  overflow: hidden;
+  box-shadow: 0 0 3px 1px #999;
+  border-radius: 5px;
+  padding: 1.5rem;
+  color: #333;
+
+  &__name-box {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+    border-radius: 5px;
+    padding: 0.8rem 0.8rem;
+    background-color: #f8f9fa;
+    margin: 0 auto;
+  }
+
+  &__flag {
+    min-width: 5rem;
+    min-height: 3rem;
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__name {
+    white-space: nowrap;
+    overflow-x: scroll;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+  }
+
+  &__info {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #666;
+    padding: 2rem;
+
+    * {
+      text-shadow: 0 0 20px rgba(150, 150, 150, 0.5);
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      text-indent: 5px;
+      white-space: nowrap;
+      overflow-x: scroll;
+    }
+  }
+
+  &__capital {
+  }
+
+  &__region {
+  }
+
+  &__language {
+  }
+}
