@@ -12,6 +12,10 @@
     padding-bottom: 0.8rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     color: #666;
+
+    ::selection {
+      background-color: transparent;
+    }
   }
 
   &__lists {
@@ -31,6 +35,10 @@
     margin-bottom: 0.4rem;
     cursor: pointer;
     transition: all 0.3s;
+
+    ::selection {
+      background-color: transparent;
+    }
 
     &__icon {
       margin: 0 0.8rem;

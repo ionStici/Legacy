@@ -45,6 +45,70 @@ body {
   display: flex;
 }
 
+.content {
+  width: 100rem;
+  height: 50rem;
+  display: none;
+}
+
+#home {
+  display: block;
+}
+
+.nav {
+  width: 20rem;
+  height: 50rem;
+  background-color: #f9fbfd;
+  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2) inset;
+}
+.nav__title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: #666;
+}
+.nav__title ::selection {
+  background-color: transparent;
+}
+.nav__lists {
+  list-style: none;
+  padding: 2.4rem 1.6rem;
+  color: #888;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.nav__list ::selection {
+  background-color: transparent;
+}
+.nav__list__icon {
+  margin: 0 0.8rem;
+  color: #888;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.nav__list--active {
+  color: #555;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+}
+.nav__list:hover {
+  color: #555;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+}
+
 /*
 --- 01 TYPOGRAPHY SYSTEM
 
@@ -101,52 +165,5 @@ Medium: 11px
 
 
 */
-.nav {
-  width: 20rem;
-  height: 50rem;
-  background-color: #f9fbfd;
-  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2) inset;
-}
-.nav__title {
-  font-size: 2.4rem;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 1.2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  color: #666;
-}
-.nav__lists {
-  list-style: none;
-  padding: 2.4rem 1.6rem;
-  color: #888;
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-.nav__list {
-  display: flex;
-  align-items: center;
-  border-radius: 3px;
-  padding: 0.6rem 0.8rem;
-  margin-bottom: 0.4rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.nav__list__icon {
-  margin: 0 0.8rem;
-  color: #888;
-  width: 2.4rem;
-  height: 2.4rem;
-}
-.nav__list--active {
-  color: #555;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
-}
-.nav__list:hover {
-  color: #555;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
-}
 
 /*# sourceMappingURL=style.css.map */
