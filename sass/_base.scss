@@ -13,6 +13,7 @@ html {
 }
 
 body {
+  font-family: "Ubuntu", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #333;
@@ -40,6 +41,11 @@ body {
   background-color: #e8ebf0;
   height: 2rem;
   box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.25) inset;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
 }
 
 // Font sizes (px)
