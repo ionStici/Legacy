@@ -33,6 +33,10 @@ btnsBox.addEventListener("click", function (e) {
     // if ("home" === target.dataset.layout) {
     //   funcName();
     // }
+
+    if ("clicker" === target.dataset.layout) {
+      clickerSection();
+    }
   }
 });
 
@@ -40,29 +44,7 @@ btnsBox.addEventListener("click", function (e) {
 // HOME //
 // // // // // // // // // // // // // // // // // // // //
 
-const funcName = function () {
-  const country = "china";
-
-  /*
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function (location) {
-        const { latitude, longitude } = location.coords;
-        const coords = `${latitude},${longitude}`;
-
-        fetch(`https://geocode.xyz/${coords}?geoit=json`)
-          .then((response) => response.json())
-          .then((data) => {
-            return fetch(`https://restcountries.com/v2/name/${data.country}`);
-          })
-          .then((response) => response.json())
-          .then((data) => console.log(data));
-      },
-      function () {}
-    );
-  }
-  */
-
+const funcName = function (country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
     .then((response) => response.json())
     .then((data) => {
@@ -95,4 +77,42 @@ const funcName = function () {
       document.querySelector(".country__currency").textContent = currency;
     });
 };
-funcName();
+funcName("moldova");
+
+let coords;
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    function (location) {
+      const { latitude, longitude } = location.coords;
+      coords = `${latitude},${longitude}`;
+    },
+    function () {}
+  );
+}
+
+const geocode = function () {
+  //       fetch(`https://geocode.xyz/${coords}?geoit=json`)
+  //         .then((response) => response.json())
+  //         .then((data) => {
+  //           const country = data.country;
+  //           funcName(country);
+  //         });
+};
+
+// // // // // // // // // // // // // // // // // // // //
+// Clicker - Leaflet //
+// // // // // // // // // // // // // // // // // // // //
+
+const clickerSection = function () {
+  let map = L.map("map").setView([51.505, -0.09], 13);
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.marker([51.5, -0.09]).addTo(map);
+  //   .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+  //   .openPopup();
+};

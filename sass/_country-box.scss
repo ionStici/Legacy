@@ -17,10 +17,12 @@
   overflow: hidden;
   box-shadow: 0 0 3px 1px #999;
   border-radius: 5px;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
   color: #333;
+  background-color: rgba(0, 0, 0, 0.02);
 
   &__name-box {
+    cursor: pointer;
     display: flex;
     align-items: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
@@ -28,6 +30,10 @@
     padding: 0.8rem 0.8rem;
     background-color: #f8f9fa;
     margin: 0 auto;
+
+    ::selection {
+      background-color: transparent;
+    }
   }
 
   &__flag {
@@ -53,7 +59,7 @@
     padding: 2rem;
 
     * {
-      text-shadow: 0 0 20px rgba(150, 150, 150, 0.5);
+      //   text-shadow: 0 0 20px rgba(150, 150, 150, 0.5);
       margin-bottom: 0.6rem;
       padding-bottom: 0.2rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -61,14 +67,5 @@
       white-space: nowrap;
       overflow-x: scroll;
     }
-  }
-
-  &__capital {
-  }
-
-  &__region {
-  }
-
-  &__language {
   }
 }

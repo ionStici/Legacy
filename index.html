@@ -16,10 +16,25 @@
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
     ></script>
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+      defer
     ></script>
 
     <link rel="stylesheet" href="css/style.css" />
@@ -92,9 +107,41 @@
           <div class="content__home__info">
             <h1 class="heading-1">Learn about Countries</h1>
             <p class="sub-heading">with Discoverator</p>
+
+            <p class="content__home__text">README.md</p>
+
+            <p class="content__home__text">
+              📌 Welcome! Challenge your geography knowledge with Discoverator!
+              An interactive app with real world information.
+            </p>
+
+            <p class="content__home__text">
+              📌 The information about the country on the right is displayed
+              using the geolocation API + geocoding API + restcountries API.
+              Note that you have to allow the browser to read your location data
+              in order to render the box.
+            </p>
+
+            <p class="content__home__text">
+              📌 The initial purpose of the respective application was for
+              practicing web development competencies. The entire app is build
+              in HTML, CSS (+Sass), and JavaScript.
+            </p>
+
+            <p class="content__home__text">
+              📌 Some topics used for building the app:
+              <!-- <ul style="list-style: none;">
+                <li>Hello</li>
+                <li>How are you?</li>
+                <li>Good, you?</li>
+              </ul> -->
+            </p>
+
+            <!-- <p class="content__home__text">📌</p> -->
           </div>
 
-          <div class="country margin-right-auto">
+          <!-- <div class="country margin-right-auto"> -->
+          <div class="country">
             <div class="country__name-box">
               <div class="country__flag"></div>
               <p class="country__name"></p>
@@ -112,25 +159,12 @@
         </section>
 
         <section class="content content__clicker" id="clicker">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quae
-          obcaecati quos labore repudiandae delectus libero debitis consequatur,
-          nobis harum iste eligendi? Cumque odit maxime quos delectus facilis
-          eos facere?
+          <div class="content__clicker__about"></div>
+          <div id="map" class="content__clicker__map"></div>
         </section>
 
-        <section class="content content__locations" id="locations">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-          asperiores, illo laborum facere voluptatem ex. Eaque veritatis
-          exercitationem voluptatibus ipsa eius rerum perferendis, eos odit,
-          tenetur suscipit quibusdam in recusandae?
-        </section>
-
-        <section class="content content__game" id="game">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex iste
-          dicta veniam omnis pariatur esse deleniti excepturi reiciendis
-          delectus, asperiores unde tenetur incidunt cupiditate, quasi provident
-          illo quas atque aspernatur!
-        </section>
+        <section class="content content__locations" id="locations"></section>
+        <section class="content content__game" id="game"></section>
       </div>
 
       <!--  -->
