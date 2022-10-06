@@ -169,6 +169,11 @@ class App {
     if (!this.#coords) this.getCoords();
     if (this.#coords) this.geocoding(this.#coords);
   }
+
+  coordsAndCountry() {
+    return [this.#coords, this.#currentLocation];
+    // const data = app.coordsAndCountry();
+  }
 }
 const app = new App();
 
@@ -185,4 +190,6 @@ const errorBtn = function () {
   });
 };
 
+// // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // // // // // //
