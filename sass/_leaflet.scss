@@ -1,0 +1,25 @@
+.content__clicker {
+  // display: flex;
+  align-items: center;
+
+  &__about {
+    width: 35rem;
+    height: 50rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  &__map {
+    width: 60rem;
+    height: 45rem;
+
+    margin-right: 2.5rem;
+    border-radius: 7.5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+    margin-left: auto;
+  }
+}
+
+.leaflet-control-container {
+  display: none;
+}

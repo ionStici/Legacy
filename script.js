@@ -2,7 +2,6 @@
 
 // // // // // // // // // // // // // // // // // // // //
 // NAVIGATION FUNCTIONALITY //
-// // // // // // // // // // // // // // // // // // // //
 
 const btnsBox = document.querySelector(".nav__lists");
 const btns = document.querySelectorAll(".nav__list");
@@ -29,27 +28,53 @@ btnsBox.addEventListener("click", function (e) {
     const layout = document.querySelector(`#${id}`);
 
     layout.style.display = "flex";
-
-    // if ("home" === target.dataset.layout) {
-    //   funcName();
-    // }
-
-    if ("clicker" === target.dataset.layout) {
-      clickerSection();
-    }
   }
 });
 
 // // // // // // // // // // // // // // // // // // // //
-// HOME //
-// // // // // // // // // // // // // // // // // // // //
+// Render Country Box //
 
-const funcName = function (country) {
+const countryBox = document.querySelector(".country");
+
+countryBox.innerHTML = "";
+countryBox.insertAdjacentHTML(
+  "afterbegin",
+  `<ion-icon class="sync-icon" name="sync-outline"></ion-icon>`
+);
+
+let countryBoxContent = `
+    <div class="country__name-box">
+        <div class="country__flag"></div>
+        <p class="country__name"></p>
+    </div>
+    <div class="country__info">
+        <p class="country__capital"></p>
+        <p class="country__region"></p>
+        <p class="country__people"></p>
+        <p class="country__language"></p>
+        <p class="country__currency"></p>
+    </div>
+    `;
+
+const countryBoxError = function (errorMessage) {
+  countryBox.innerHTML = "";
+
+  countryBox.insertAdjacentHTML(
+    "afterbegin",
+    `
+        <p class="err-message">${errorMessage}</p>
+        <p class="try-again">Try again!</p>
+    `
+  );
+};
+
+const renderCountryBox = function (country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) throw new Error("Failed to fetch country data 🤕");
+      return response.json();
+    })
     .then((data) => {
-      //   console.log(data[0]);
-
       let numberLength = `${data[0].population}`;
       let number;
       if (numberLength.length >= 3) {
@@ -62,9 +87,12 @@ const funcName = function (country) {
       const countryFlag = data[0].flags.svg;
       const capital = `🌆 ${data[0].capital}`;
       const region = `🌍 ${data[0].region}`;
-      const peopleNumber = `👫 ${number}`;
+      const population = `👫 ${number}`;
       const language = `🗣 ${data[0].languages[0].name}`;
       const currency = `💰 ${data[0].currencies[0].name} ${data[0].currencies[0].symbol}`;
+
+      countryBox.innerHTML = "";
+      countryBox.insertAdjacentHTML("afterbegin", countryBoxContent);
 
       document.querySelector(
         ".country__flag"
@@ -72,47 +100,89 @@ const funcName = function (country) {
       document.querySelector(".country__name").textContent = countryName;
       document.querySelector(".country__capital").textContent = capital;
       document.querySelector(".country__region").textContent = region;
-      document.querySelector(".country__people").textContent = peopleNumber;
+      document.querySelector(".country__people").textContent = population;
       document.querySelector(".country__language").textContent = language;
       document.querySelector(".country__currency").textContent = currency;
+    })
+    .catch((err) => {
+      countryBoxError(err.message);
+      errorBtn();
+    })
+    .finally(() => {
+      // hm, ok nevermind
     });
 };
-funcName("moldova");
 
-let coords;
+// renderCountryBox("not-working");
+// renderCountryBox("italy");
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    function (location) {
-      const { latitude, longitude } = location.coords;
-      coords = `${latitude},${longitude}`;
-    },
-    function () {}
-  );
+// // // // // // // // // // // // // // // // // // // //
+
+class App {
+  #coords;
+  #currentLocation;
+
+  constructor() {
+    this.getCoords();
+  }
+
+  getCoords() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        this.#setCoords.bind(this),
+        function (err) {
+          const errorMessage = `${err.message} <hr><br> Allow the browser to read the device location in order to experience the app's features.`;
+          countryBoxError(errorMessage);
+          errorBtn();
+        }
+      );
+    }
+  }
+
+  #setCoords(location) {
+    const { latitude, longitude } = location.coords;
+    this.#coords = [latitude, longitude];
+
+    // Get current position
+    this.geocoding(this.#coords);
+  }
+
+  geocoding(coords) {
+    coords = `${coords[0]},${coords[1]}`;
+    fetch(`https://geocode.xyz/${coords}?geoit=json`)
+      .then((response) => {
+        if (!response.ok)
+          throw new Error("Geocoding failed because of restriction reasons 🤕");
+        return response.json();
+      })
+      .then((data) => {
+        this.#currentLocation = data.country;
+        renderCountryBox(this.#currentLocation);
+      })
+      .catch((err) => {
+        countryBoxError(err.message);
+        errorBtn();
+      });
+  }
+
+  tryAgain() {
+    if (!this.#coords) this.getCoords();
+    if (this.#coords) this.geocoding(this.#coords);
+  }
 }
+const app = new App();
 
-const geocode = function () {
-  //       fetch(`https://geocode.xyz/${coords}?geoit=json`)
-  //         .then((response) => response.json())
-  //         .then((data) => {
-  //           const country = data.country;
-  //           funcName(country);
-  //         });
+const errorBtn = function () {
+  const tryAgainBtn = document.querySelector(".try-again");
+  tryAgainBtn.addEventListener("click", function () {
+    countryBox.innerHTML = "";
+    countryBox.insertAdjacentHTML(
+      "afterbegin",
+      `<ion-icon class="sync-icon" name="sync-outline"></ion-icon>`
+    );
+
+    app.tryAgain();
+  });
 };
 
 // // // // // // // // // // // // // // // // // // // //
-// Clicker - Leaflet //
-// // // // // // // // // // // // // // // // // // // //
-
-const clickerSection = function () {
-  let map = L.map("map").setView([51.505, -0.09], 13);
-
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-
-  L.marker([51.5, -0.09]).addTo(map);
-  //   .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-  //   .openPopup();
-};
