@@ -176,6 +176,12 @@ body {
   animation-iteration-count: infinite;
   animation-duration: 2s;
 }
+.sync-icon--map {
+  width: 15rem;
+  height: 15rem;
+  margin: 14rem auto;
+  padding: 1.5rem;
+}
 
 @keyframes syncAnimation {
   0% {
@@ -266,7 +272,7 @@ body {
   transition: 0.1s outline;
 }
 .clicker__form-el input::placeholder {
-  color: #aaa;
+  color: #bbb;
 }
 .clicker__form-el input:focus {
   outline: 2.75px solid rgba(0, 0, 0, 0.2);
@@ -291,7 +297,7 @@ body {
   justify-content: center;
   font-weight: 700;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  transition: 0.2s box-shadow, transform 0.2s;
+  transition: 0.2s box-shadow, transform 0.2s, color 0.2s;
 }
 .clicker__btn:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -299,6 +305,70 @@ body {
 .clicker__btn:active {
   transform: scale(0.95);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.clicker__btn--mod {
+  width: 5.4rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.clicker__btn--mod:hover {
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.clicker__btn--mod:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.clicker__pins {
+  width: 31rem;
+  height: 23rem;
+  border-radius: 5px;
+  margin: 3rem auto;
+  overflow: scroll;
+  background-color: #adb5bd;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.clicker__pins::-webkit-scrollbar {
+  display: none;
+}
+.clicker__pin {
+  display: flex;
+  align-items: center;
+  width: 29rem;
+  height: 6rem;
+  margin: 1rem auto;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.clicker__pin__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(-0.3rem);
+  width: 14rem;
+  margin-right: auto;
+  margin-left: 1rem;
+}
+.clicker__pin__number {
+  font-size: 3rem;
+  padding: 1.5rem;
+  color: #333;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clicker__pin__popup, .clicker__pin__note {
+  overflow: scroll;
+  white-space: nowrap;
+}
+.clicker__pin__note {
+  font-size: 1.2rem;
 }
 
 .nav {

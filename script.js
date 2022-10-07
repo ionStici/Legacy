@@ -200,7 +200,14 @@ class Clicker {
   #coords;
   #map;
 
-  constructor() {}
+  constructor() {
+    const mapEl = document.querySelector(".clicker__map");
+    mapEl.innerHTML = "";
+    mapEl.insertAdjacentHTML(
+      "afterbegin",
+      `<ion-icon class="sync-icon sync-icon--map" name="sync-outline"></ion-icon>`
+    );
+  }
 
   getCoords(coords) {
     this.#coords = coords;

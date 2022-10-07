@@ -85,7 +85,7 @@
       padding-left: 1rem;
 
       &::placeholder {
-        color: #aaa;
+        color: #bbb;
       }
 
       transition: 0.1s outline;
@@ -117,7 +117,7 @@
     justify-content: center;
     font-weight: 700;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    transition: 0.2s box-shadow, transform 0.2s;
+    transition: 0.2s box-shadow, transform 0.2s, color 0.2s;
 
     &:hover {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -126,6 +126,93 @@
     &:active {
       transform: scale(0.95);
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    &--mod {
+      width: 5.4rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      background-color: rgba(0, 0, 0, 0.03);
+
+      &:hover {
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      }
+
+      &:active {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  &__pins {
+    width: 31rem;
+    height: 23rem;
+    border-radius: 5px;
+    margin: 3rem auto;
+    overflow: scroll;
+    // border-bottom: 0.75rem solid #adb5bd;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // background-color: #868e96;
+    background-color: #adb5bd;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  &__pin {
+    display: flex;
+    align-items: center;
+
+    width: 29rem;
+    height: 6rem;
+    margin: 1rem auto;
+    border-radius: 4px;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateY(-0.3rem);
+
+      width: 14rem;
+
+      margin-right: auto;
+      margin-left: 1rem;
+    }
+
+    &__number {
+      font-size: 3rem;
+      padding: 1.5rem;
+      color: #333;
+      border-radius: 50%;
+      width: 4rem;
+      height: 4rem;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
+
+      margin-left: 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__popup,
+    &__note {
+      overflow: scroll;
+      white-space: nowrap;
+    }
+
+    &__popup {
+    }
+
+    &__note {
+      font-size: 1.2rem;
     }
   }
 }

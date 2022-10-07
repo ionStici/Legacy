@@ -129,6 +129,13 @@
   animation-name: syncAnimation;
   animation-iteration-count: infinite;
   animation-duration: 2s;
+
+  &--map {
+    width: 15rem;
+    height: 15rem;
+    margin: 14rem auto;
+    padding: 1.5rem;
+  }
 }
 
 @keyframes syncAnimation {
