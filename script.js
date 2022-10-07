@@ -143,6 +143,9 @@ class App {
     const { latitude, longitude } = location.coords;
     this.#coords = [latitude, longitude];
 
+    // Send coords to Clicker class
+    clicker.getCoords(this.#coords);
+
     // Get current position
     this.geocoding(this.#coords);
   }
@@ -170,10 +173,9 @@ class App {
     if (this.#coords) this.geocoding(this.#coords);
   }
 
-  coordsAndCountry() {
-    return [this.#coords, this.#currentLocation];
-    // const data = app.coordsAndCountry();
-  }
+  //   sendCoords() {
+  //     return this.#coords;
+  //   }
 }
 const app = new App();
 
@@ -191,5 +193,74 @@ const errorBtn = function () {
 };
 
 // // // // // // // // // // // // // // // // // // // //
+// Clicker - Leaflet //
+// // // // // // // // // // // // // // // // // // // //
+
+class Clicker {
+  #coords;
+  #map;
+
+  constructor() {}
+
+  getCoords(coords) {
+    this.#coords = coords;
+    this.#displayMap();
+  }
+
+  #displayMap() {
+    this.#map = L.map("map").setView(this.#coords, 13);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
+    }).addTo(this.#map);
+
+    L.marker(this.#coords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: "leaflet-popup",
+        })
+      )
+      .setPopupContent("You are here 👻")
+      .openPopup();
+
+    this.#map.on("click", this.clickEvent.bind(this));
+  }
+
+  clickEvent(event) {
+    const { lat, lng } = event.latlng;
+    const clickedCoords = [lat, lng];
+
+    L.marker(clickedCoords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: "leaflet-popup",
+        })
+      )
+      .setPopupContent("New Popup")
+      .openPopup();
+  }
+}
+
+const clicker = new Clicker();
+
+// Move the map window to the marker
+// map.setView(clickedCoords, 13, {
+// animate: true,
+// pan: {
+//   duration: 1,
+// },
+//   });
+
 // // // // // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // // // // // //

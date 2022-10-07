@@ -4,7 +4,7 @@
   display: none;
 
   &__home {
-    display: flex;
+    // display: flex;
     align-items: center;
 
     &__info {
@@ -19,6 +19,7 @@
       color: #777;
       margin-top: 2rem;
       font-size: 1.6rem;
+      font-weight: 500;
 
       &:nth-child(3) {
         margin-top: 4rem;

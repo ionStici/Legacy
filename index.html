@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map</title>
 
+    <!-- Ubuntu -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
       rel="stylesheet"
     />
 
@@ -133,7 +142,7 @@
               <span>📌 Technologies used for building the app:</span>
 
               <span class="content__home__text--sub-text"
-                >[Leaflet Library] [APIs] [Sass]<br />And..</span
+                >[Leaflet Library] [APIs] [Sass] [localStorage] [And..]</span
               >
             </p>
           </div>
@@ -153,9 +162,28 @@
           </div>
         </section>
 
-        <section class="content content__clicker" id="clicker">
-          <div class="content__clicker__about"></div>
-          <div id="map" class="content__clicker__map"></div>
+        <section class="clicker content content__clicker" id="clicker">
+          <div class="clicker__about">
+            <!--  -->
+            <h2 class="heaidng-2">Interactive map</h2>
+            <p class="sub-heading sub-heading--smaller">Leaflet library</p>
+
+            <div class="clicker__form-box">
+              <!--  -->
+              <p class="clicker__note clicker__note--title">Fill the form 👻</p>
+              <form class="clicker__form-el">
+                <div>
+                  <input type="text" placeholder="Popup title" />
+                  <input type="text" placeholder="A short note" />
+                </div>
+                <button class="clicker__btn">Click!</button>
+              </form>
+
+              <!-- <p class="clicker__note">Click on the map to add a pin 😇</p> -->
+            </div>
+            <!--  -->
+          </div>
+          <div id="map" class="clicker__map"></div>
         </section>
 
         <section class="content content__locations" id="locations"></section>
