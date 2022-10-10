@@ -112,7 +112,7 @@ const renderCountryBox = function (country) {
       // hm, ok nevermind
     });
 };
-
+// renderCountryBox("italy");
 // renderCountryBox("not-working");
 // renderCountryBox("italy");
 
@@ -196,19 +196,53 @@ const errorBtn = function () {
 // Clicker - Leaflet //
 // // // // // // // // // // // // // // // // // // // //
 
+class PinsData {
+  constructor(popupTitle, shortNote, coords) {
+    this.popupTitle = popupTitle;
+    this.shortNote = shortNote;
+    this.coords = coords;
+  }
+}
+
 class Clicker {
   #coords;
   #map;
 
+  #pinsArr = [];
+
+  formContainer = document.querySelector(".clicker__form-box");
+  pinsContainer = document.querySelector(".clicker__pins");
+  pinsSubContainer;
+
   constructor() {
+    // SPINNER START
     const mapEl = document.querySelector(".clicker__map");
     mapEl.innerHTML = "";
     mapEl.insertAdjacentHTML(
       "afterbegin",
       `<ion-icon class="sync-icon sync-icon--map" name="sync-outline"></ion-icon>`
     );
-  }
+    setTimeout(() => {
+      document.querySelector(".sync-icon--map").style.display = "none";
+    }, 15000);
 
+    // DISPLAY FORM MESSAGE
+    this.formContainer.innerHTML = "";
+    this.formContainer.insertAdjacentHTML(
+      "afterbegin",
+      `
+        <p class="clicker__note">Click on the map to add a pin 😇</p>
+    `
+    );
+
+    // SHOW PINS CONTAINER
+    setTimeout(() => {
+      this.pinsContainer.style.opacity = "1";
+    }, 150);
+  }
+  // END CONSTRUCTOR
+
+  // GET COORDS FROM PREVIOUS CLASS
   getCoords(coords) {
     this.#coords = coords;
     this.#displayMap();
@@ -222,6 +256,14 @@ class Clicker {
         '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.#map);
 
+    // let pin = new PinsData(
+    //   "You are here 👻",
+    //   "Your current location",
+    //   this.#coords
+    // );
+
+    // this.#pinsArr.push(pin);
+
     L.marker(this.#coords)
       .addTo(this.#map)
       .bindPopup(
@@ -233,15 +275,129 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent("You are here 👻")
+      .setPopupContent(`You are here 👻`)
       .openPopup();
 
-    this.#map.on("click", this.clickEvent.bind(this));
+    this.pinsContainer.innerHTML = "";
+    this.pinsContainer.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <div class="clicker__pin clicker__pin--one">
+      <p class="clicker__pin__number clicker__pin__number--current">
+        <ion-icon class="clicker__pin__number__icon" name="infinite-outline"></ion-icon>
+      </p>
+      <div class="clicker__pin__box">
+        <p class="clicker__pin__popup">You are here 👻</p></p>
+        <p class="clicker__pin__note">Your current location</p>
+      </div>
+      <p class="clicker__btn clicker__btn--mod">Go!</p>
+    </div>
+    <div class="clicker__pins--2"></div>
+        `
+    );
+
+    this.pinsSubContainer = document.querySelector(".clicker__pins--2");
+
+    setTimeout(() => {
+      document.querySelector(".clicker__pin--one").style.height = "6rem";
+    }, 200);
+
+    this.#map.on("click", this.mapClickEvent.bind(this));
   }
 
-  clickEvent(event) {
+  mapClickEvent(event) {
+    this.formBig();
+
     const { lat, lng } = event.latlng;
     const clickedCoords = [lat, lng];
+
+    this.formContainer.innerHTML = "";
+
+    setTimeout(() => {
+      this.formContainer.insertAdjacentHTML(
+        "afterbegin",
+        `
+            <p class="clicker__note clicker__note--title">Fill the form 👻</p>
+            <div class="clicker__form-el">
+            <div>
+            <input class="input-popup" type="text" placeholder="Popup title" />
+            <input class="input-note" type="text" placeholder="A short note" />
+            </div>
+            <button class="clicker__btn">Click!</button>
+            </div>
+            `
+      );
+    }, 300);
+
+    setTimeout(() => {
+      document
+        .querySelector(".clicker__btn")
+        .addEventListener("click", this.formClick.bind(this, clickedCoords));
+    }, 350);
+  }
+
+  formClick(clickedCoords) {
+    this.formSmall();
+
+    const popupTitle = document.querySelector(".input-popup").value;
+    const shortNote = document.querySelector(".input-note").value;
+
+    let pin = new PinsData(popupTitle, shortNote, clickedCoords);
+    this.#pinsArr.push(pin);
+
+    this.pinsSubContainer.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <div class="clicker__pin clicker__pin--sub clicker__pin-${
+        this.#pinsArr.indexOf(pin) + 1
+      }">
+        <p class="clicker__pin__number">${this.#pinsArr.indexOf(pin) + 1}</p>
+        <div class="clicker__pin__box">
+            <p class="clicker__pin__popup">${pin.popupTitle}</p>
+            <p class="clicker__pin__note">${pin.shortNote}</p>
+        </div>
+        <p class="clicker__btn clicker__btn--mod">Go!</p>
+      </div>
+    `
+    );
+
+    document.querySelector(
+      `.clicker__pin-${this.#pinsArr.indexOf(pin) + 1}`
+    ).style.height = "6rem";
+
+    // DISPLAY FORM MESSAGE
+    this.formContainer.innerHTML = "";
+    this.formContainer.insertAdjacentHTML(
+      "afterbegin",
+      `<p class="clicker__note">Click on the map to add a pin 😇</p>`
+    );
+  }
+
+  formBig() {
+    this.formContainer.style.height = "12rem";
+    this.pinsContainer.style.height = "25rem";
+  }
+
+  formSmall() {
+    this.formContainer.style.height = "5.5rem";
+    this.pinsContainer.style.height = "31.3rem";
+  }
+}
+const clicker = new Clicker();
+
+// map.setView(clickedCoords, 13, {
+// animate: true,
+// pan: {
+//   duration: 1,
+// }, });
+
+/*
+
+
+
+
+    let popupTitle = document.querySelector(".input-popup").value;
+    let pinNote = document.querySelector(".input-note").value;
 
     L.marker(clickedCoords)
       .addTo(this.#map)
@@ -254,20 +410,24 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent("New Popup")
+      .setPopupContent(`${popupTitle}`)
       .openPopup();
-  }
-}
 
-const clicker = new Clicker();
 
-// Move the map window to the marker
-// map.setView(clickedCoords, 13, {
-// animate: true,
-// pan: {
-//   duration: 1,
-// },
-//   });
+        this.formContainer.innerHTML = "";
+
+    setTimeout(() => {
+      this.formContainer.insertAdjacentHTML(
+        "afterbegin",
+        `
+            <p class="clicker__note">Click on the map to add a pin 😇</p>
+            `
+      );
+    }, 150);
+
+
+*/
 
 // // // // // // // // // // // // // // // // // // // //
+// Find Locations //
 // // // // // // // // // // // // // // // // // // // //

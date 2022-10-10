@@ -241,15 +241,18 @@ body {
   letter-spacing: 0.75px;
   font-weight: 600;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
+  margin-top: 0;
+  padding-top: 0;
 }
 .clicker__form-box {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: fit-content;
+  height: 5.5rem;
   background-color: #868e96;
   color: #fff;
   padding: 0.8rem 0;
+  transition: 0.5s height;
 }
 .clicker__form-el {
   display: flex;
@@ -321,25 +324,41 @@ body {
 }
 .clicker__pins {
   width: 31rem;
-  height: 23rem;
+  height: 31.3rem;
   border-radius: 5px;
   margin: 3rem auto;
   overflow: scroll;
+  border-bottom: 1rem solid #adb5bd;
+  border-top: 1rem solid #adb5bd;
   background-color: #adb5bd;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.75s, height 0.5s;
 }
 .clicker__pins::-webkit-scrollbar {
   display: none;
+}
+.clicker__pin--sub {
+  height: 0rem;
+  transition: 0.4s height;
 }
 .clicker__pin {
   display: flex;
   align-items: center;
   width: 29rem;
-  height: 6rem;
+  height: 0rem;
   margin: 1rem auto;
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: 0.4s height;
+}
+.clicker__pin:nth-child(1) {
+  margin-top: 0;
+}
+.clicker__pin:last-child {
+  margin-top: 0;
 }
 .clicker__pin__box {
   display: flex;
@@ -353,7 +372,7 @@ body {
 .clicker__pin__number {
   font-size: 3rem;
   padding: 1.5rem;
-  color: #333;
+  color: #555;
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
@@ -362,6 +381,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.01);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.clicker__pin__number:hover {
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.33);
+  color: #555;
+}
+.clicker__pin__number--current::selection {
+  background-color: transparent;
+}
+.clicker__pin__number__icon {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
 }
 .clicker__pin__popup, .clicker__pin__note {
   overflow: scroll;
