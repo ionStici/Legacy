@@ -223,6 +223,8 @@ class Clicker {
   pinsSubContainer;
 
   constructor() {
+    this.getLocalStorage();
+
     // GETTING COORDS
     // this.#coords = app.sendCoords();
     // this.#displayMap();
@@ -319,6 +321,9 @@ class Clicker {
       document.querySelector(".clicker__pin--initial").style.height = "6rem";
     }, 200);
 
+    // RENDER LOCAL STORAGE
+    this.renderPinsAndMarkers();
+
     this.#map.on("click", this.mapClickEvent.bind(this));
   }
 
@@ -348,6 +353,10 @@ class Clicker {
     }, 300);
 
     setTimeout(() => {
+      document.querySelector(".input-popup").focus();
+    }, 350);
+
+    setTimeout(() => {
       document
         .querySelector(".clicker__btn")
         .addEventListener("click", this.formClick.bind(this, clickedCoords));
@@ -368,6 +377,8 @@ class Clicker {
 
     let pin = new PinsData(popupTitle, shortNote, clickedCoords);
     this.#pinsArr.push(pin);
+
+    this.setLocalStorage();
 
     // INSERT NEW PIN BOXES
     this.pinsSubContainer.insertAdjacentHTML(
@@ -391,7 +402,7 @@ class Clicker {
       });
     }, 100);
 
-    // DISPLAY THE PIN
+    // DISPLAY THE PINS
     L.marker(clickedCoords)
       .addTo(this.#map)
       .bindPopup(
@@ -437,11 +448,65 @@ class Clicker {
     const coords = event.target.dataset.coords.split(",");
 
     // this.#map.setView([+coords[0], +coords[1]], 13, {
-    this.#map.setView(coords, 13, {
+    this.#map.setView(coords, 15, {
       animate: true,
       pan: {
         duration: 1,
       },
+    });
+  }
+
+  setLocalStorage() {
+    localStorage.setItem("pins", JSON.stringify(this.#pinsArr));
+  }
+
+  getLocalStorage() {
+    const data = JSON.parse(localStorage.getItem("pins"));
+    if (!data) return;
+
+    this.#pinsArr = data;
+  }
+
+  renderPinsAndMarkers() {
+    this.#pinsArr.forEach((pin, i) => {
+      // DISPLAY THE PINS
+      L.marker(pin.coords)
+        .addTo(this.#map)
+        .bindPopup(
+          L.popup({
+            maxWidth: 250,
+            minWidth: 100,
+            autoClose: false,
+            closeOnClick: false,
+            className: "leaflet-popup",
+          })
+        )
+        .setPopupContent(`${pin.popupTitle}`)
+        .openPopup();
+
+      // INSERT NEW PIN BOXES
+      this.pinsSubContainer.insertAdjacentHTML(
+        "beforeend",
+        `
+                <div class="clicker__pin">
+                    <p class="clicker__pin__number">${i + 1}</p>
+                    <div class="clicker__pin__box">
+                        <p class="clicker__pin__popup">${pin.popupTitle}</p>
+                        <p class="clicker__pin__note">${pin.shortNote}</p>
+                    </div>
+                    <p data-coords="${
+                      pin.coords
+                    }" class="clicker__btn clicker__btn--mod">Go!</p>
+                </div>
+            `
+      );
+
+      // SET PINS HEIGHT
+      setTimeout(() => {
+        document.querySelectorAll(".clicker__pin").forEach((pin) => {
+          pin.style.height = "6rem";
+        });
+      }, 100);
     });
   }
 }
