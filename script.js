@@ -28,6 +28,10 @@ btnsBox.addEventListener("click", function (e) {
     const layout = document.querySelector(`#${id}`);
 
     layout.style.display = "flex";
+
+    // if (e.target.dataset.layout === "clicker") {
+    //   const clicker = new Clicker();
+    // }
   }
 });
 
@@ -150,6 +154,10 @@ class App {
     this.geocoding(this.#coords);
   }
 
+  //   sendCoords() {
+  //     return this.#coords;
+  //   }
+
   geocoding(coords) {
     coords = `${coords[0]},${coords[1]}`;
     fetch(`https://geocode.xyz/${coords}?geoit=json`)
@@ -215,6 +223,10 @@ class Clicker {
   pinsSubContainer;
 
   constructor() {
+    // GETTING COORDS
+    // this.#coords = app.sendCoords();
+    // this.#displayMap();
+
     // SPINNER START
     const mapEl = document.querySelector(".clicker__map");
     mapEl.innerHTML = "";
@@ -322,6 +334,7 @@ class Clicker {
       this.formContainer.insertAdjacentHTML(
         "afterbegin",
         `
+            <ion-icon class="clicker__form-box__close-form" name="close-circle-outline"></ion-icon>
             <p class="clicker__note clicker__note--title">Fill the form 👻</p>
             <div class="clicker__form-el">
             <div>
@@ -339,13 +352,19 @@ class Clicker {
         .querySelector(".clicker__btn")
         .addEventListener("click", this.formClick.bind(this, clickedCoords));
     }, 350);
+
+    setTimeout(() => {
+      document
+        .querySelector(".clicker__form-box__close-form")
+        .addEventListener("click", this.formSmall.bind(this));
+    }, 350);
   }
 
   formClick(clickedCoords) {
-    this.formSmall();
-
     const popupTitle = document.querySelector(".input-popup").value;
     const shortNote = document.querySelector(".input-note").value;
+
+    this.formSmall();
 
     let pin = new PinsData(popupTitle, shortNote, clickedCoords);
     this.#pinsArr.push(pin);
@@ -366,10 +385,11 @@ class Clicker {
         </div>
     `
     );
-
-    document.querySelectorAll(".clicker__pin").forEach((pin) => {
-      pin.style.height = "6rem";
-    });
+    setTimeout(() => {
+      document.querySelectorAll(".clicker__pin").forEach((pin) => {
+        pin.style.height = "6rem";
+      });
+    }, 100);
 
     // DISPLAY THE PIN
     L.marker(clickedCoords)
@@ -387,11 +407,11 @@ class Clicker {
       .openPopup();
 
     // DISPLAY AGAIN FORM MESSAGE
-    this.formContainer.innerHTML = "";
-    this.formContainer.insertAdjacentHTML(
-      "afterbegin",
-      `<p class="clicker__note">Click on the map to add a pin 😇</p>`
-    );
+    // this.formContainer.innerHTML = "";
+    // this.formContainer.insertAdjacentHTML(
+    //   "afterbegin",
+    //   `<p class="clicker__note">Click on the map to add a pin 😇</p>`
+    // );
   }
 
   formBig() {
@@ -402,6 +422,13 @@ class Clicker {
   formSmall() {
     this.formContainer.style.height = "5.5rem";
     this.pinsContainer.style.height = "31.3rem";
+
+    // DISPLAY AGAIN FORM MESSAGE
+    this.formContainer.innerHTML = "";
+    this.formContainer.insertAdjacentHTML(
+      "afterbegin",
+      `<p class="clicker__note">Click on the map to add a pin 😇</p>`
+    );
   }
 
   goToLocation(event) {

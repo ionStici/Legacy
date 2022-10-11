@@ -50,6 +50,9 @@ body {
   height: 50rem;
   display: none;
 }
+.content__clicker {
+  display: flex;
+}
 .content__home {
   align-items: center;
 }
@@ -206,7 +209,6 @@ body {
 }
 
 .clicker {
-  display: flex;
   align-items: center;
 }
 .clicker__map {
@@ -253,6 +255,16 @@ body {
   color: #fff;
   padding: 0.8rem 0;
   transition: 0.5s height;
+  position: relative;
+}
+.clicker__form-box__close-form {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 .clicker__form-el {
   display: flex;
