@@ -509,8 +509,22 @@ class Clicker {
       }, 100);
     });
   }
+
+  resetLocalStorage() {
+    localStorage.removeItem("pins");
+    location.reload();
+
+    // document.querySelector(".content__home").style.display = "none";
+    // document.querySelector(".content__clicker").style.display = "flex";
+  }
 }
 const clicker = new Clicker();
+
+document
+  .querySelector(".clicker__map__panel__reset-btn")
+  .addEventListener("click", function () {
+    clicker.resetLocalStorage();
+  });
 
 // // // // // // // // // // // // // // // // // // // //
 // Find Locations //
