@@ -338,10 +338,6 @@ body {
 .clicker__pins::-webkit-scrollbar {
   display: none;
 }
-.clicker__pin--sub {
-  height: 0rem;
-  transition: 0.4s height;
-}
 .clicker__pin {
   display: flex;
   align-items: center;
@@ -359,6 +355,9 @@ body {
 }
 .clicker__pin:last-child {
   margin-top: 0;
+}
+.clicker__pin--initial {
+  box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 .clicker__pin__box {
   display: flex;
@@ -388,20 +387,25 @@ body {
 .clicker__pin__number:hover {
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.33);
-  color: #555;
+  color: #333;
 }
-.clicker__pin__number--current::selection {
+.clicker__pin__number--initial {
+  padding: 0;
+}
+.clicker__pin__number--initial::selection {
   background-color: transparent;
 }
 .clicker__pin__number__icon {
-  display: block;
-  width: 5rem;
-  height: 5rem;
-  font-size: 3rem;
+  color: #f03e3e;
+  width: 3rem;
+  height: 3rem;
 }
 .clicker__pin__popup, .clicker__pin__note {
   overflow: scroll;
   white-space: nowrap;
+}
+.clicker__pin__popup::selection, .clicker__pin__note::selection {
+  background-color: transparent;
 }
 .clicker__pin__note {
   font-size: 1.2rem;

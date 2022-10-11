@@ -173,11 +173,6 @@
     transition: opacity 0.75s, height 0.5s;
   }
 
-  &__pin--sub {
-    height: 0rem;
-    transition: 0.4s height;
-  }
-
   &__pin {
     display: flex;
     align-items: center;
@@ -204,6 +199,10 @@
 
     transition: 0.4s height;
 
+    &--initial {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    }
+
     &__box {
       display: flex;
       flex-direction: column;
@@ -226,6 +225,7 @@
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
 
       margin-left: 1rem;
+      //   margin-right: 1rem;
 
       display: flex;
       align-items: center;
@@ -239,21 +239,21 @@
       &:hover {
         background-color: #fff;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.33);
-        color: #555;
+        color: #333;
       }
 
-      &--current {
+      &--initial {
+        padding: 0;
+
         &::selection {
           background-color: transparent;
         }
       }
 
       &__icon {
-        display: block;
-        width: 5rem;
-        height: 5rem;
-
-        font-size: 3rem;
+        color: #f03e3e;
+        width: 3rem;
+        height: 3rem;
       }
     }
 
@@ -261,6 +261,10 @@
     &__note {
       overflow: scroll;
       white-space: nowrap;
+
+      &::selection {
+        background-color: transparent;
+      }
     }
 
     &__popup {
@@ -278,3 +282,9 @@
 
 // Spacing system (px)
 // 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+// .clicker__pin__number--initial ion-icon {
+//   color: #888;
+//   width: 2.4rem;
+//   height: 2.4rem;
+// }

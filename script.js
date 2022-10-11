@@ -239,6 +239,9 @@ class Clicker {
     setTimeout(() => {
       this.pinsContainer.style.opacity = "1";
     }, 150);
+
+    // GO TO LOCATION
+    this.pinsContainer.addEventListener("click", this.goToLocation.bind(this));
   }
   // END CONSTRUCTOR
 
@@ -282,24 +285,26 @@ class Clicker {
     this.pinsContainer.insertAdjacentHTML(
       "afterbegin",
       `
-      <div class="clicker__pin clicker__pin--one">
-      <p class="clicker__pin__number clicker__pin__number--current">
+      <div class="clicker__pin clicker__pin--initial">
+      <p class="clicker__pin__number clicker__pin__number--initial">
         <ion-icon class="clicker__pin__number__icon" name="infinite-outline"></ion-icon>
       </p>
       <div class="clicker__pin__box">
         <p class="clicker__pin__popup">You are here 👻</p></p>
         <p class="clicker__pin__note">Your current location</p>
       </div>
-      <p class="clicker__btn clicker__btn--mod">Go!</p>
-    </div>
-    <div class="clicker__pins--2"></div>
-        `
+      <p data-coords="${
+        this.#coords
+      }" class="clicker__btn clicker__btn--mod">Go!</p>
+      </div>
+      <div class="clicker__pins--2"></div>
+    `
     );
 
     this.pinsSubContainer = document.querySelector(".clicker__pins--2");
 
     setTimeout(() => {
-      document.querySelector(".clicker__pin--one").style.height = "6rem";
+      document.querySelector(".clicker__pin--initial").style.height = "6rem";
     }, 200);
 
     this.#map.on("click", this.mapClickEvent.bind(this));
@@ -345,27 +350,43 @@ class Clicker {
     let pin = new PinsData(popupTitle, shortNote, clickedCoords);
     this.#pinsArr.push(pin);
 
+    // INSERT NEW PIN BOXES
     this.pinsSubContainer.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `
-      <div class="clicker__pin clicker__pin--sub clicker__pin-${
-        this.#pinsArr.indexOf(pin) + 1
-      }">
-        <p class="clicker__pin__number">${this.#pinsArr.indexOf(pin) + 1}</p>
-        <div class="clicker__pin__box">
-            <p class="clicker__pin__popup">${pin.popupTitle}</p>
-            <p class="clicker__pin__note">${pin.shortNote}</p>
+        <div class="clicker__pin">
+            <p class="clicker__pin__number">${
+              this.#pinsArr.indexOf(pin) + 1
+            }</p>
+            <div class="clicker__pin__box">
+                <p class="clicker__pin__popup">${popupTitle}</p>
+                <p class="clicker__pin__note">${shortNote}</p>
+            </div>
+            <p data-coords="${clickedCoords}" class="clicker__btn clicker__btn--mod">Go!</p>
         </div>
-        <p class="clicker__btn clicker__btn--mod">Go!</p>
-      </div>
     `
     );
 
-    document.querySelector(
-      `.clicker__pin-${this.#pinsArr.indexOf(pin) + 1}`
-    ).style.height = "6rem";
+    document.querySelectorAll(".clicker__pin").forEach((pin) => {
+      pin.style.height = "6rem";
+    });
 
-    // DISPLAY FORM MESSAGE
+    // DISPLAY THE PIN
+    L.marker(clickedCoords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: "leaflet-popup",
+        })
+      )
+      .setPopupContent(`${popupTitle}`)
+      .openPopup();
+
+    // DISPLAY AGAIN FORM MESSAGE
     this.formContainer.innerHTML = "";
     this.formContainer.insertAdjacentHTML(
       "afterbegin",
@@ -382,51 +403,22 @@ class Clicker {
     this.formContainer.style.height = "5.5rem";
     this.pinsContainer.style.height = "31.3rem";
   }
+
+  goToLocation(event) {
+    if (!event.target.classList.contains("clicker__btn")) return;
+
+    const coords = event.target.dataset.coords.split(",");
+
+    // this.#map.setView([+coords[0], +coords[1]], 13, {
+    this.#map.setView(coords, 13, {
+      animate: true,
+      pan: {
+        duration: 1,
+      },
+    });
+  }
 }
 const clicker = new Clicker();
-
-// map.setView(clickedCoords, 13, {
-// animate: true,
-// pan: {
-//   duration: 1,
-// }, });
-
-/*
-
-
-
-
-    let popupTitle = document.querySelector(".input-popup").value;
-    let pinNote = document.querySelector(".input-note").value;
-
-    L.marker(clickedCoords)
-      .addTo(this.#map)
-      .bindPopup(
-        L.popup({
-          maxWidth: 250,
-          minWidth: 100,
-          autoClose: false,
-          closeOnClick: false,
-          className: "leaflet-popup",
-        })
-      )
-      .setPopupContent(`${popupTitle}`)
-      .openPopup();
-
-
-        this.formContainer.innerHTML = "";
-
-    setTimeout(() => {
-      this.formContainer.insertAdjacentHTML(
-        "afterbegin",
-        `
-            <p class="clicker__note">Click on the map to add a pin 😇</p>
-            `
-      );
-    }, 150);
-
-
-*/
 
 // // // // // // // // // // // // // // // // // // // //
 // Find Locations //
