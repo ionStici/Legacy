@@ -48,6 +48,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <script src="script.js" defer></script>
+    <script src="script-loc.js" defer></script>
   </head>
   <body>
     <main class="main">
@@ -206,10 +207,50 @@
           </div>
         </section>
 
-        <section
-          class="locations content content__locations"
-          id="locations"
-        ></section>
+        <section class="locations content content__locations" id="locations">
+          <!--  -->
+
+          <form class="loc__form" action="">
+            <label class="loc__search-bar__label" for="">
+              <input
+                class="loc__search-bar"
+                type="search"
+                placeholder="Search for countries"
+                spellcheck="false"
+              />
+              <span class="loc__search-bar__search">Search</span>
+              <ion-icon
+                class="loc__search-bar__magnifying"
+                name="search-outline"
+              ></ion-icon>
+            </label>
+          </form>
+
+          <div class="loc__container">
+            <div class="loc__box-left"></div>
+            <!--  -->
+            <div class="loc__box-right">
+              <!--  -->
+              <div class="country loc__country-box">
+                <div class="country__name-box">
+                  <div class="country__flag"></div>
+                  <p class="country__name"></p>
+                </div>
+                <div class="country__info">
+                  <p class="country__capital"></p>
+                  <p class="country__region"></p>
+                  <p class="country__people"></p>
+                  <p class="country__language"></p>
+                  <p class="country__currency"></p>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+
+          <!--  -->
+        </section>
+
         <section class="game content__game" id="game"></section>
       </div>
     </main>

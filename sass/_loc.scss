@@ -1,0 +1,122 @@
+.locations {
+  width: 100rem;
+  height: 50rem;
+}
+
+.loc {
+  &__form {
+    width: 100rem;
+    height: 5.3rem;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #f9fbfd;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &__search-bar {
+    display: block;
+    width: 50rem;
+    height: 3rem;
+    padding: 0.5rem 0 0.5rem 3.7rem;
+
+    padding-right: 8rem;
+
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+
+    font-family: "Lato", sans-serif;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    // transition: box-shadow 0.2s;
+
+    &::placeholder {
+      color: #888;
+      font-weight: 500;
+
+      &::selection {
+        background-color: transparent;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid #aaa;
+    }
+
+    &__label {
+      margin: 0 auto;
+      position: relative;
+    }
+
+    &__search {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0.3rem;
+
+      background-color: #eee;
+      color: #333;
+      padding: 0.2rem 1rem 0.4rem 1rem;
+      border-radius: 50px;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &::selection {
+        background-color: transparent;
+      }
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      &:active {
+        background-color: #eee;
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+      }
+    }
+
+    &__magnifying {
+      width: 2rem;
+      height: 2rem;
+      color: #777;
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  // // // // // // // // // // // //
+
+  &__container {
+    display: flex;
+
+    width: 100rem;
+    height: 44.7rem;
+  }
+
+  &__box-right {
+    width: 38rem;
+    height: 44.7rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__country-box {
+  }
+
+  &__box-left {
+    width: 62rem;
+    height: 44.7rem;
+    // border-right: 1.5px solid rgba(0, 0, 0, 0.12);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
