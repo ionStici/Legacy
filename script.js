@@ -273,6 +273,9 @@ class Clicker {
         '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.#map);
 
+    document.querySelector(".clicker__map").style.boxShadow =
+      "0 0 15px rgba(0, 0, 0, 0.1)";
+
     // let pin = new PinsData(
     //   "You are here 👻",
     //   "Your current location",
@@ -511,11 +514,22 @@ class Clicker {
   }
 
   resetLocalStorage() {
-    localStorage.removeItem("pins");
-    location.reload();
+    // Remove Markers
 
-    // document.querySelector(".content__home").style.display = "none";
-    // document.querySelector(".content__clicker").style.display = "flex";
+    this.#pinsArr.forEach((pin, i) => {
+      //   this.#map.removeLayer();
+    });
+
+    localStorage.removeItem("pins");
+    this.#pinsArr = [];
+    this.pinsSubContainer.innerHTML = "";
+
+    location.reload();
+  }
+
+  pageResetSettings() {
+    document.querySelector(".content__home").style.display = "none";
+    document.querySelector(".content__clicker").style.display = "flex";
   }
 }
 const clicker = new Clicker();

@@ -4,7 +4,7 @@
   display: none;
 
   &__clicker {
-    display: flex;
+    // display: flex;
   }
   &__locations {
     // display: flex;
@@ -14,7 +14,7 @@
   }
 
   &__home {
-    // display: flex;
+    display: flex;
     align-items: center;
 
     &__info {
