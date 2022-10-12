@@ -50,10 +50,8 @@ body {
   height: 50rem;
   display: none;
 }
-.content__locations {
-  display: block;
-}
 .content__home {
+  display: flex;
   align-items: center;
 }
 .content__home__info {
@@ -257,6 +255,9 @@ body {
   padding: 0.3rem 0.8rem 0.4rem 0.8rem;
   cursor: pointer;
   transition: all 0.33s;
+}
+.clicker__map__panel__reset-btn:nth-child(1) {
+  margin-right: 1rem;
 }
 .clicker__map__panel__reset-btn:hover {
   box-shadow: 0 0 10px rgb(255, 255, 255);

@@ -27,6 +27,11 @@ btnsBox.addEventListener("click", function (e) {
     const id = target.dataset.layout;
     const layout = document.querySelector(`#${id}`);
 
+    if (layout.classList.contains("locations")) {
+      layout.style.display = "block";
+      return;
+    }
+
     layout.style.display = "flex";
 
     // if (e.target.dataset.layout === "clicker") {
@@ -256,8 +261,57 @@ class Clicker {
 
     // GO TO LOCATION
     this.pinsContainer.addEventListener("click", this.goToLocation.bind(this));
+
+    // RESET MAP BUTTON
+    document
+      .querySelector(".clicker__map__panel__reset-map-btn")
+      .addEventListener("click", this.resetMap.bind(this));
   }
   // END CONSTRUCTOR
+
+  resetMap() {
+    this.#map.off();
+    this.#map.remove();
+
+    this.#map = L.map("map").setView(this.#coords, 13);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
+    }).addTo(this.#map);
+
+    L.marker(this.#coords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: "leaflet-popup",
+        })
+      )
+      .setPopupContent(`You are here 👻`)
+      .openPopup();
+
+    this.#pinsArr.forEach((pin) => {
+      L.marker(pin.coords)
+        .addTo(this.#map)
+        .bindPopup(
+          L.popup({
+            maxWidth: 250,
+            minWidth: 100,
+            autoClose: false,
+            closeOnClick: false,
+            className: "leaflet-popup",
+          })
+        )
+        .setPopupContent(`${pin.popupTitle}`)
+        .openPopup();
+    });
+
+    this.#map.on("click", this.mapClickEvent.bind(this));
+  }
 
   // GET COORDS FROM PREVIOUS CLASS
   getCoords(coords) {
