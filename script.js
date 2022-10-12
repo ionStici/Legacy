@@ -236,9 +236,9 @@ class Clicker {
       "afterbegin",
       `<ion-icon class="sync-icon sync-icon--map" name="sync-outline"></ion-icon>`
     );
-    setTimeout(() => {
-      document.querySelector(".sync-icon--map").style.display = "none";
-    }, 15000);
+    // setTimeout(() => {
+    //   document.querySelector(".sync-icon--map").style.display = "none";
+    // }, 15000);
 
     // DISPLAY FORM MESSAGE
     this.formContainer.innerHTML = "";
@@ -273,6 +273,10 @@ class Clicker {
         '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.#map);
 
+    // HIDE SPINNER
+    document.querySelector(".sync-icon--map").style.display = "none";
+
+    // MAP BOX SHADOW
     document.querySelector(".clicker__map").style.boxShadow =
       "0 0 15px rgba(0, 0, 0, 0.1)";
 

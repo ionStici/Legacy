@@ -133,9 +133,9 @@
   &--map {
     width: 15rem;
     height: 15rem;
-    margin: 14rem auto;
+    // margin: 14rem auto;   // strange
+    margin: 28rem auto;
     padding: 1.5rem;
-    // transform: translateY(10rem);
   }
 }
 
