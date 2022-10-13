@@ -71,9 +71,20 @@ const renderCountryLoc = function (country) {
     })
     .catch((err) => {
       countryLocError(err.message);
-      errorBtnLoc();
+
+      if (!document.querySelector(".loc__search-bar").value) {
+        countryNamesBox.innerHTML = "";
+        countryNamesBox.insertAdjacentHTML(
+          "afterbegin",
+          `
+              <p class="loc__ex__country-name">Switzerland</p>
+              <p class="loc__ex__country-name">Germany</p>
+              <p class="loc__ex__country-name">Canada</p>
+        `
+        );
+      }
     })
-    .finally();
+    .finally(() => {});
 };
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -102,6 +113,63 @@ const search = function () {
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-// searchInput.addEventListener("input", function (e) {
-//   console.log(e);
-// });
+const countryNamesBox = document.querySelector(".loc__ex__box");
+let data = [];
+
+let allCountries = new XMLHttpRequest();
+allCountries.open("GET", `https://restcountries.com/v3.1/all`);
+allCountries.send();
+
+allCountries.addEventListener("load", function () {
+  let countriesList = JSON.parse(this.responseText);
+
+  countriesList.forEach((country) => {
+    data.push(country.name.common.toLowerCase());
+  });
+});
+
+searchInput.addEventListener("input", function (e) {
+  let input = searchInput.value;
+
+  let examples = [];
+
+  data.forEach((cn) => {
+    if (cn.includes(input)) {
+      let cnArr = cn.split(" ").map((n) => {
+        return n[0].toUpperCase() + n.slice(1);
+      });
+
+      examples.push(cnArr.join(" "));
+    }
+  });
+
+  countryNamesBox.innerHTML = "";
+
+  examples.forEach((ex, i) => {
+    countryNamesBox.insertAdjacentHTML(
+      "beforeend",
+      `<p class="loc__ex__country-name">${ex}</p>`
+    );
+  });
+
+  if (!input) {
+    countryNamesBox.innerHTML = "";
+    countryNamesBox.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <p class="loc__ex__country-name">Switzerland</p>
+      <p class="loc__ex__country-name">Germany</p>
+      <p class="loc__ex__country-name">Canada</p>
+      `
+    );
+  }
+});
+
+countryNamesBox.addEventListener("click", function (e) {
+  if (!e.target.classList.contains("loc__ex__country-name")) return;
+
+  let countryName = e.target.textContent;
+  renderCountryLoc(countryName);
+});
+
+renderCountryLoc("italy");
