@@ -241,9 +241,9 @@ class Clicker {
       "afterbegin",
       `<ion-icon class="sync-icon sync-icon--map" name="sync-outline"></ion-icon>`
     );
-    // setTimeout(() => {
-    //   document.querySelector(".sync-icon--map").style.display = "none";
-    // }, 15000);
+    setTimeout(() => {
+      document.querySelector(".sync-icon--map").style.display = "none";
+    }, 15000);
 
     // DISPLAY FORM MESSAGE
     this.formContainer.innerHTML = "";

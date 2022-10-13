@@ -143,6 +143,18 @@ searchInput.addEventListener("input", function (e) {
     }
   });
 
+  if (input === ".") {
+    countryNamesBox.innerHTML = "";
+
+    data.forEach((cn) => {
+      let cnArr = cn.split(" ").map((n) => {
+        return n[0].toUpperCase() + n.slice(1);
+      });
+
+      examples.push(cnArr.join(" "));
+    });
+  }
+
   countryNamesBox.innerHTML = "";
 
   examples.forEach((ex, i) => {

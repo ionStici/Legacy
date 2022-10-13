@@ -50,10 +50,8 @@ body {
   height: 50rem;
   display: none;
 }
-.content__locations {
-  display: block;
-}
 .content__home {
+  display: flex;
   align-items: center;
 }
 .content__home__info {
