@@ -1,0 +1,11 @@
+@mixin test {
+  @media (max-width: 75em) {
+    @content;
+  }
+}
+
+@mixin a100 {
+  @media (max-width: 62.5em) {
+    @content;
+  }
+}
