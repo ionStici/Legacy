@@ -753,26 +753,31 @@ body {
 }
 .nav__note__responsive {
   display: none;
-  color: #555;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.nav__note__responsive span {
+  display: block;
   background-color: rgb(255, 255, 255);
+  width: fit-content;
+  color: #555;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
   border-radius: 3px;
   padding: 0.4rem 1rem;
   margin: 1rem auto;
-  margin-top: auto;
   text-align: center;
   font-size: 2.2rem;
   cursor: pointer;
   transition: all 0.2s;
 }
-p .nav__note__responsive::selection {
-  background-color: transparent;
-}
-.nav__note__responsive:hover {
+.nav__note__responsive span:hover {
   background-color: #eee;
 }
-.nav__note__responsive:active {
+.nav__note__responsive span:active {
   background-color: #fff;
+}
+.nav__note__responsive span::selection {
+  background-color: transparent;
 }
 @media (max-width: 75em) {
   .nav__note__responsive {
@@ -787,13 +792,14 @@ p .nav__note__responsive::selection {
   font-size: 1.4rem;
   font-weight: 400;
   text-align: center;
+  transition: opacity 0.2s;
 }
 @media (max-width: 75em) {
   .nav__note {
     position: absolute;
     background-color: #fff;
     left: 0.5rem;
-    bottom: 6rem;
+    bottom: 6.5rem;
     width: 20rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);

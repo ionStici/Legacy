@@ -104,33 +104,38 @@
 
   &__note__responsive {
     display: none;
-
-    color: #555;
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
-    border-radius: 3px;
-    padding: 0.4rem 1rem;
-    margin: 1rem auto;
     margin-top: auto;
 
-    text-align: center;
-    font-size: 2.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 
-    // border-top: 1px solid rgba(0, 0, 0, 0.2);
+    span {
+      display: block;
+      background-color: rgba(255, 255, 255, 1);
+      width: fit-content;
 
-    cursor: pointer;
-    transition: all 0.2s;
+      color: #555;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+      border-radius: 3px;
+      padding: 0.4rem 1rem;
+      margin: 1rem auto;
 
-    p &::selection {
-      background-color: transparent;
-    }
+      text-align: center;
+      font-size: 2.2rem;
 
-    &:hover {
-      background-color: #eee;
-    }
+      cursor: pointer;
+      transition: all 0.2s;
 
-    &:active {
-      background-color: #fff;
+      &:hover {
+        background-color: #eee;
+      }
+
+      &:active {
+        background-color: #fff;
+      }
+
+      &::selection {
+        background-color: transparent;
+      }
     }
 
     @include s1200 {
@@ -143,7 +148,8 @@
       position: absolute;
       background-color: #fff;
       left: 0.5rem;
-      bottom: 6rem;
+
+      bottom: 6.5rem;
       width: 20rem;
       border: 1px solid rgba(0, 0, 0, 0.2);
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
@@ -161,6 +167,8 @@
     font-size: 1.4rem;
     font-weight: 400;
     text-align: center;
+
+    transition: opacity 0.2s;
 
     &__current {
       margin-bottom: 0.4rem;
