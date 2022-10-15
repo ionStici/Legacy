@@ -40,6 +40,10 @@ body {
   @include s1200 {
     width: 106rem;
   }
+
+  @include s1065 {
+    border-radius: 0;
+  }
 }
 
 .container {

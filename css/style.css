@@ -38,6 +38,11 @@ body {
     width: 106rem;
   }
 }
+@media (max-width: 66.25em) {
+  .main {
+    border-radius: 0;
+  }
+}
 
 .container {
   display: flex;
@@ -657,6 +662,7 @@ body {
   box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2) inset;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 @media (max-width: 75em) {
   .nav {
@@ -745,6 +751,34 @@ body {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
 }
+.nav__note__responsive {
+  display: none;
+  color: #555;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+  border-radius: 3px;
+  padding: 0.4rem 1rem;
+  margin: 1rem auto;
+  margin-top: auto;
+  text-align: center;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+p .nav__note__responsive::selection {
+  background-color: transparent;
+}
+.nav__note__responsive:hover {
+  background-color: #eee;
+}
+.nav__note__responsive:active {
+  background-color: #fff;
+}
+@media (max-width: 75em) {
+  .nav__note__responsive {
+    display: block;
+  }
+}
 .nav__note {
   margin-top: auto;
   padding: 1rem;
@@ -756,7 +790,15 @@ body {
 }
 @media (max-width: 75em) {
   .nav__note {
+    position: absolute;
+    background-color: #fff;
+    left: 0.5rem;
+    bottom: 6rem;
+    width: 20rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     display: none;
+    opacity: 0;
   }
 }
 .nav__note__current {

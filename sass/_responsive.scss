@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin s1065 {
+  @media (max-width: 66.25em) {
+    @content;
+  }
+}

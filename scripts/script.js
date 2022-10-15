@@ -10,6 +10,8 @@ const btns = document.querySelectorAll(".nav__list");
 const layouts = document.querySelectorAll(".content");
 
 btnsBox.addEventListener("click", function (e) {
+  e.preventDefault();
+
   if (
     e.target.classList.contains("nav__list") ||
     e.target.classList.contains("nav__list__icon") ||
