@@ -35,8 +35,7 @@ body {
 }
 @media (max-width: 75em) {
   .main {
-    width: 100%;
-    border-radius: 0;
+    width: 106rem;
   }
 }
 
@@ -96,10 +95,8 @@ body {
   height: 50rem;
   display: none;
 }
-.content__game {
-  display: block;
-}
 .content__home {
+  display: flex;
   align-items: center;
 }
 .content__home__info {
@@ -661,6 +658,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 75em) {
+  .nav {
+    width: 6.5rem;
+  }
+}
 .nav__title {
   font-size: 2.4rem;
   font-weight: 600;
@@ -670,8 +672,21 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: #666;
 }
+@media (max-width: 75em) {
+  .nav__title {
+    display: none;
+  }
+}
 .nav__title::selection {
   background-color: transparent;
+}
+.nav__title--small {
+  display: none;
+}
+@media (max-width: 75em) {
+  .nav__title--small {
+    display: block;
+  }
 }
 .nav__lists {
   list-style: none;
@@ -679,6 +694,12 @@ body {
   color: #888;
   font-size: 1.6rem;
   font-weight: 600;
+}
+@media (max-width: 75em) {
+  .nav__lists {
+    padding: 2.4rem 1.25rem 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
 }
 .nav__list {
   display: flex;
@@ -692,11 +713,27 @@ body {
 .nav__list ::selection {
   background-color: transparent;
 }
+@media (max-width: 75em) {
+  .nav__list {
+    width: fit-content;
+    padding: 0.6rem 0.8rem;
+  }
+}
 .nav__list__icon {
   margin: 0 0.8rem;
   color: #888;
   width: 2.4rem;
   height: 2.4rem;
+}
+@media (max-width: 75em) {
+  .nav__list__icon {
+    margin: 0;
+  }
+}
+@media (max-width: 75em) {
+  .nav__list__text {
+    display: none;
+  }
 }
 .nav__list--active {
   color: #555;
@@ -716,6 +753,11 @@ body {
   font-size: 1.4rem;
   font-weight: 400;
   text-align: center;
+}
+@media (max-width: 75em) {
+  .nav__note {
+    display: none;
+  }
 }
 .nav__note__current {
   margin-bottom: 0.4rem;

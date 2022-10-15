@@ -7,6 +7,10 @@
   display: flex;
   flex-direction: column;
 
+  @include s1200 {
+    width: 6.5rem;
+  }
+
   &__title {
     font-size: 2.4rem;
     font-weight: 600;
@@ -16,8 +20,20 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     color: #666;
 
+    @include s1200 {
+      display: none;
+    }
+
     &::selection {
       background-color: transparent;
+    }
+
+    &--small {
+      display: none;
+
+      @include s1200 {
+        display: block;
+      }
     }
   }
 
@@ -28,6 +44,11 @@
     color: #888;
     font-size: 1.6rem;
     font-weight: 600;
+
+    @include s1200 {
+      padding: 2.4rem 1.25rem 1rem 1.25rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
   }
 
   &__list {
@@ -44,11 +65,26 @@
       background-color: transparent;
     }
 
+    @include s1200 {
+      width: fit-content;
+      padding: 0.6rem 0.8rem;
+    }
+
     &__icon {
       margin: 0 0.8rem;
       color: #888;
       width: 2.4rem;
       height: 2.4rem;
+
+      @include s1200 {
+        margin: 0;
+      }
+    }
+
+    &__text {
+      @include s1200 {
+        display: none;
+      }
     }
 
     &--active {
@@ -65,6 +101,10 @@
   }
 
   &__note {
+    @include s1200 {
+      display: none;
+    }
+
     margin-top: auto;
     padding: 1rem;
 

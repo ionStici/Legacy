@@ -1,11 +1,5 @@
-@mixin test {
+@mixin s1200 {
   @media (max-width: 75em) {
-    @content;
-  }
-}
-
-@mixin a100 {
-  @media (max-width: 62.5em) {
     @content;
   }
 }

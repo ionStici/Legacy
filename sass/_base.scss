@@ -37,9 +37,8 @@ body {
   border-radius: 7.5px;
   overflow: hidden;
 
-  @include test {
-    width: 100%;
-    border-radius: 0;
+  @include s1200 {
+    width: 106rem;
   }
 }
 
