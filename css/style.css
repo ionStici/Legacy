@@ -711,8 +711,22 @@ body {
 .nav__note {
   margin-top: auto;
   padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  color: #333;
   font-size: 1.4rem;
   font-weight: 400;
+  text-align: center;
+}
+.nav__note__current {
+  margin-bottom: 0.4rem;
+}
+.nav__note__previous-version {
+  margin-bottom: 0.4rem;
+}
+.nav__note__previous-version--link, .nav__note__previous-version--link:link, .nav__note__previous-version--link:visited {
+  color: #1864ab;
+  text-decoration: none;
+  border-bottom: 1px solid #1864ab;
 }
 
 .heading-1 {
