@@ -10,6 +10,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   overflow: hidden;
+
+  @include s1060 {
+  }
 }
 
 body {
@@ -41,8 +44,9 @@ body {
     width: 106rem;
   }
 
-  @include s1065 {
+  @include s1060 {
     border-radius: 0;
+    width: 100%;
   }
 }
 
