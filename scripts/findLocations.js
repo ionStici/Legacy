@@ -1,7 +1,5 @@
-"use strict";
-
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
-// // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Find Locations Section
 
 const countryBoxLoc = document.querySelector(".loc__country-box");
 
@@ -88,7 +86,6 @@ const renderCountryLoc = function (country) {
 };
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
-// // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 const searchForm = document.querySelector(".loc__form");
 const searchInput = document.querySelector(".loc__search-bar");
@@ -110,7 +107,6 @@ const search = function () {
   searchInput.value = "";
 };
 
-// // // // // // // // // // // // // // // // // // // // // // // // // // //
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 const countryNamesBox = document.querySelector(".loc__ex__box");
@@ -185,3 +181,5 @@ countryNamesBox.addEventListener("click", function (e) {
 });
 
 renderCountryLoc("italy");
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //

@@ -18,10 +18,8 @@ body {
   color: #333;
   background-color: #d0d4de;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .main {
@@ -31,6 +29,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 7.5px;
   overflow: hidden;
+  margin-top: 10rem;
 }
 @media (max-width: 75em) {
   .main {
@@ -41,6 +40,12 @@ body {
   .main {
     border-radius: 0;
     width: 100%;
+  }
+}
+@media (max-width: 45em) {
+  .main {
+    width: 42rem;
+    height: auto;
   }
 }
 
@@ -235,17 +240,37 @@ body {
 }
 
 .clicker {
+  display: flex;
   align-items: center;
 }
-.clicker__map {
-  width: 60rem;
-  height: 45rem;
-  margin-right: 2.5rem;
-  border-radius: 7.5px;
+@media (max-width: 45em) {
+  .clicker {
+    flex-direction: column;
+    height: 70rem;
+  }
 }
 .clicker__map__box {
   margin-left: auto;
   position: relative;
+}
+@media (max-width: 66.25em) {
+  .clicker__map__box {
+    width: 100%;
+    margin-left: 0;
+    margin: 0 1rem;
+  }
+}
+.clicker__map {
+  width: 60rem;
+  height: 45rem;
+  border-radius: 7.5px;
+  margin-right: 2.5rem;
+}
+@media (max-width: 66.25em) {
+  .clicker__map {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 .clicker__map__panel {
   position: absolute;
@@ -282,6 +307,12 @@ body {
   height: 50rem;
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   padding: 1rem;
+}
+@media (max-width: 45em) {
+  .clicker__about {
+    border: none;
+    height: auto;
+  }
 }
 .clicker__note {
   width: 80%;

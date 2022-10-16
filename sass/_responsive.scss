@@ -9,3 +9,9 @@
     @content;
   }
 }
+
+@mixin s720 {
+  @media (max-width: 45em) {
+    @content;
+  }
+}

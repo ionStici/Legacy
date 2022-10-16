@@ -25,11 +25,10 @@ body {
   background-color: #d0d4de;
 
   width: 100%;
-  height: 100vh;
+  //   height: 100vh;
 
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .main {
@@ -40,6 +39,8 @@ body {
   border-radius: 7.5px;
   overflow: hidden;
 
+  margin-top: 10rem;
+
   @include s1200 {
     width: 106rem;
   }
@@ -47,6 +48,11 @@ body {
   @include s1060 {
     border-radius: 0;
     width: 100%;
+  }
+
+  @include s720 {
+    width: 42rem;
+    height: auto;
   }
 }
 
