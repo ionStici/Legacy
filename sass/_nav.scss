@@ -171,6 +171,9 @@
     font-weight: 400;
     text-align: center;
 
+    opacity: 1;
+    display: block;
+
     transition: opacity 0.2s;
 
     &__current {
