@@ -1,0 +1,18 @@
+User-Agent: *
+Disallow: /page18056155.html
+Disallow: /footer
+Disallow: /page18103402.html
+Disallow: /header
+Disallow: /tilda/form*
+Disallow: /tilda/rec*
+Disallow: /tilda/click*
+Disallow: /tilda/scroll*
+Disallow: /tilda/popup*
+Disallow: /tilda/cart*
+Disallow: /tilda/product*
+Disallow: /tilda/event*
+Disallow: /*_escaped_fragment_*
+Disallow:
+Sitemap: https://synergy.md/sitemap.xml
+Sitemap: https://synergy.md/sitemap-store.xml
+Host: https://synergy.md
