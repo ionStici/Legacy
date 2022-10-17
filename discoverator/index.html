@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discoverator</title>
+
+    <!-- Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+      defer
+    ></script>
+
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="scripts/index.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <!--  -->
+
+      <div class="container">
+        <nav class="nav">
+          <p class="nav__title">🗺 Discoverator</p>
+          <p class="nav__title nav__title--small">🗺</p>
+
+          <ul class="nav__lists">
+            <li class="nav__list" data-layout="home">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="nav__list__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+
+              <span class="nav__list__text">Home</span>
+            </li>
+
+            <li class="nav__list nav__list--active" data-layout="clicker">
+              <ion-icon
+                class="nav__list__icon"
+                name="location-outline"
+              ></ion-icon>
+              <span class="nav__list__text">Map Clicker</span>
+            </li>
+            <li class="nav__list" data-layout="locations">
+              <ion-icon class="nav__list__icon" name="earth-outline"></ion-icon>
+
+              <span class="nav__list__text">Find locations</span>
+            </li>
+            <li class="nav__list" data-layout="game">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="nav__list__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z"
+                />
+              </svg>
+
+              <span class="nav__list__text">Guess Game</span>
+            </li>
+          </ul>
+
+          <div class="nav__note__responsive">
+            <span class="copyright-btn">&#169;</span>
+          </div>
+
+          <div class="nav__note">
+            <p class="nav__note__current">
+              <span>&#169; </span>
+              <span class="current-year"></span> <span>Discoverator 2.0</span>
+            </p>
+            <p class="nav__note__previous-version">
+              Check previous
+              <a
+                class="nav__note__previous-version--link"
+                href="discoverator-v1/index.html"
+              >
+                version 1.0
+              </a>
+            </p>
+          </div>
+        </nav>
+        <!--  -->
+
+        <section class="content content__home" id="home">
+          <!--  -->
+
+          <div class="content__home__info">
+            <h1 class="heading-1">Learn about Countries</h1>
+            <p class="sub-heading">with Discoverator</p>
+
+            <p class="content__home__text">README.md</p>
+
+            <p class="content__home__text">
+              📌 Welcome! Challenge your geography knowledge with Discoverator!
+              An interactive app with real world information.
+            </p>
+
+            <p class="content__home__text">
+              📌 The data about the country on the right is displayed using the
+              geolocation API + geocoding API + restcountries API. Note that you
+              have to allow the browser to read your location data in order to
+              render the box.
+            </p>
+
+            <p class="content__home__text">
+              📌 The initial purpose of the respective application was:
+              practicing web development skills. The app is build entirely in
+              HTML, CSS (+Sass) and JavaScript, no backend or frontend libraries
+              involved.
+            </p>
+
+            <p class="content__home__text">
+              <span>📌 Technologies used for building the app:</span>
+
+              <span class="content__home__text--sub-text"
+                >[Leaflet Library] [APIs] [Sass] [localStorage] [And..]</span
+              >
+            </p>
+          </div>
+
+          <div class="country">
+            <!-- <div class="country__name-box">
+              <div class="country__flag"></div>
+              <p class="country__name"></p>
+            </div>
+            <div class="country__info">
+              <p class="country__capital"></p>
+              <p class="country__region"></p>
+              <p class="country__people"></p>
+              <p class="country__language"></p>
+              <p class="country__currency"></p>
+            </div> -->
+          </div>
+        </section>
+
+        <section class="clicker content content__clicker" id="clicker">
+          <div class="clicker__about">
+            <!--  -->
+            <h2 class="heaidng-2">Interactive map</h2>
+            <p class="sub-heading sub-heading--smaller">Leaflet library</p>
+
+            <div class="clicker__form-box">
+              <!--               
+              <p class="clicker__note clicker__note--title">Fill the form 👻</p>
+              <div class="clicker__form-el">
+                <div>
+                  <input class="input-popup" type="text" placeholder="Popup title" />
+                  <input class="input-note" type="text" placeholder="A short note" />
+                </div>
+                <button class="clicker__btn">Click!</button>
+              </div> 
+                -->
+
+              <!-- <p class="clicker__note">Click on the map to add a pin 😇</p> -->
+            </div>
+            <!--  -->
+            <div class="clicker__pins">
+              <!-- <div class="clicker__pin">
+                <p class="clicker__pin__number">1</p>
+                <div class="clicker__pin__box">
+                  <p class="clicker__pin__popup">You are here 👻</p>
+                  <p class="clicker__pin__note">Your current location</p>
+                </div>
+                <p class="clicker__btn clicker__btn--mod">Go!</p>
+              </div> -->
+            </div>
+            <!--  -->
+          </div>
+
+          <div class="clicker__map__box">
+            <div id="map" class="clicker__map"></div>
+            <div class="clicker__map__panel">
+              <button class="clicker__map__panel__reset-btn">
+                🔄 Reset Pins
+              </button>
+              <button
+                class="clicker__map__panel__reset-btn clicker__map__panel__reset-map-btn"
+              >
+                🌍 Reset Map
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="locations content content__locations" id="locations">
+          <!--  -->
+
+          <form class="loc__form" action="">
+            <label class="loc__search-bar__label" for="">
+              <input
+                class="loc__search-bar"
+                type="search"
+                placeholder="Search for countries"
+                spellcheck="false"
+              />
+              <span class="loc__search-bar__search">Search</span>
+              <ion-icon
+                class="loc__search-bar__magnifying"
+                name="search-outline"
+              ></ion-icon>
+            </label>
+          </form>
+
+          <div class="loc__container">
+            <!--  -->
+            <div class="loc__box-left">
+              <div class="loc__ex">
+                <p class="loc__ex__country-name__title">
+                  Search or Choose from below examples:
+                </p>
+                <div class="loc__ex__box">
+                  <p class="loc__ex__country-name">Switzerland</p>
+                  <p class="loc__ex__country-name">Germany</p>
+                  <p class="loc__ex__country-name">Canada</p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="loc__box-right">
+              <!--  -->
+              <div class="country loc__country-box">
+                <div class="country__name-box">
+                  <div class="country__flag"></div>
+                  <p class="country__name"></p>
+                </div>
+                <div class="country__info">
+                  <p class="country__capital"></p>
+                  <p class="country__region"></p>
+                  <p class="country__people"></p>
+                  <p class="country__language"></p>
+                  <p class="country__currency"></p>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+
+          <!--  -->
+        </section>
+
+        <section class="game content content__game" id="game"></section>
+      </div>
+      <!--  -->
+    </main>
+  </body>
+</html>
