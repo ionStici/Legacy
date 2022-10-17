@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>App</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="script.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"
+        />
+
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </head>
+    <body>
+        <main class="main">
+            <div class="app">
+                <div class="app__header">
+                    <p class="app__header--label">Your To Do App</p>
+                    <p class="app__header--img"></p>
+                </div>
+
+                <div class="app__header--bottom"></div>
+
+                <div class="overflow">
+                    <div class="app__unchecked">
+                        <!--  -->
+                    </div>
+
+                    <div class="app__checked">
+                        <!--  -->
+                    </div>
+                </div>
+
+                <div class="app__input">
+                    <form class="app__input__form">
+                        <input
+                            placeholder="Type.."
+                            type="text"
+                            class="app__input__text-box"
+                        />
+                        <button class="app__input__button">
+                            <ion-icon
+                                name="arrow-redo-circle-outline"
+                                class="app__input__button-svg"
+                            ></ion-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
