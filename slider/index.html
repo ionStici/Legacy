@@ -6,10 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
 
+    <!-- prettier-ignore -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- prettier-ignore -->
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <main class="main"></main>
+    <main class="main">
+      <div class="slider">
+        <div class="slider__slide">
+          <!-- prettier-ignore -->
+          <div class="slider__img-box img-1" role="img" aria-label="Happy Woman"></div>
+          <div class="slider__content-box">
+            <p class="slider__content-box__text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt
+              odio beatae ad sed iusto itaque, fugiat nostrum dolorem facere
+              ullam recusandae. Iure eligendi temporibus labore ad omnis
+              expedita inventore! Deleniti.
+            </p>
+            <p class="slider__content-box__name">Maria de Almeida</p>
+            <p class="slider__content-box__details">
+              Senior Product Manager at EDP Comercial
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="slider__slide">
+          prettier-ignore
+          <div class="slider__img-box img-2" role="img" aria-label=""></div>
+          <div class="slider__content-box"></div>
+        </div>
+
+        <div class="slider__slide">
+          prettier-ignore
+          <div class="slider__img-box img-3" role="img" aria-label=""></div>
+          <div class="slider__content-box"></div>
+        </div> -->
+
+        <!-- prettier-ignore -->
+        <button class="slider__btn slider__btn--left"><ion-icon class="slider__btn__icon" name="arrow-back-outline" ></ion-icon></button>
+        <!-- prettier-ignore -->
+        <button class="slider__btn slider__btn--right"><ion-icon class="slider__btn__icon" name="arrow-forward-outline"></ion-icon></button>
+
+        <div class="slider__dots"></div>
+      </div>
+    </main>
   </body>
 </html>
