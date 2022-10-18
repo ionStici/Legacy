@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "live": "live-server",
-    "sass": "sass sass/main.scss css/style.css -w",
-    "start": "npm-run-all --parallel live sass",
     "sass:discov": "sass discoverator/sass/main.scss discoverator/css/style.css -w",
     "start:discov": "npm-run-all --parallel live sass:discov"
   },
