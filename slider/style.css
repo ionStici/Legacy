@@ -20,6 +20,7 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   color: #333;
+  color: #c92a2a;
 
   background-color: rgba(0, 0, 0, 0.025);
 }
@@ -27,6 +28,9 @@ body {
 :root {
   --color-1: #4dabf7;
   --color-2: #a5d8ff;
+
+  --color-red-1: #ffa8a8;
+  --color-red-2: #e03131;
 }
 
 /* background-color: var(--color-primary); */
@@ -51,7 +55,7 @@ body {
   height: 26rem;
   margin: 0 auto;
   border-radius: 10px;
-  background-color: #a5d8ff;
+  background-color: var(--color-red-1);
 
   display: flex;
 
@@ -64,11 +68,11 @@ body {
 }
 
 .slider__slide:nth-child(2) {
-  transform: translateX(40rem);
+  /* transform: translateX(100rem); */
 }
 
 .slider__slide:nth-child(3) {
-  transform: translateX(40rem);
+  /* transform: translateX(100rem); */
 }
 
 .slider__img-box {
@@ -143,7 +147,7 @@ body {
 .slider__btn__icon {
   width: 100%;
   height: 100%;
-  color: #4dabf7;
+  color: var(--color-red-2);
 }
 
 /******************/
@@ -165,13 +169,13 @@ body {
 
   width: 1rem;
   height: 1rem;
-  background-color: var(--color-2);
+  background-color: var(--color-red-1);
 
   cursor: pointer;
 }
 
 .slider__dot--active {
-  outline: 2px solid var(--color-1);
+  outline: 2px solid var(--color-red-2);
 }
 
 .slider__dot:not(:last-child) {
