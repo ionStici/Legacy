@@ -324,11 +324,33 @@ body {
   }
 }
 
-/* 320px */
-/* @media (max-width: 320px) {
+/* 448px */
+@media (max-width: 28em) {
   html {
+    font-size: 33%;
   }
-} */
+}
+
+/* 400px */
+@media (max-width: 25em) {
+  html {
+    font-size: 30%;
+  }
+}
+
+/* 352 */
+@media (max-width: 22em) {
+  html {
+    font-size: 27%;
+  }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  html {
+    font-size: 25%;
+  }
+}
 
 /******************/
 /* END */
