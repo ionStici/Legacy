@@ -21,26 +21,43 @@
       }
 
       body {
-        font-family: sans-serif;
+        font-family: monospace;
         font-size: 1.6rem;
         font-weight: 400;
+        background-color: rgba(0, 0, 0, 0.05);
       }
 
       .links {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin: 5rem;
+
+        width: 20rem;
+        margin: 5rem auto;
+        padding: 2rem 2rem 3rem 2rem;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
       }
 
       a,
       a:link,
       a:visited {
-        display: block;
+        display: inline-block;
         text-decoration: none;
+        width: 100%;
 
         color: #333;
+        /* font-weight: 600; */
         font-size: 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        transition: border 0.2s;
+      }
+
+      a:hover,
+      a:active {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.8);
       }
     </style>
 
