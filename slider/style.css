@@ -263,6 +263,7 @@ body {
 @media (max-width: 62.5em) {
   html {
     font-size: 57.5%;
+    font-size: 9.2px;
   }
 }
 
@@ -270,6 +271,7 @@ body {
 @media (max-width: 56.25em) {
   html {
     font-size: 52.5%;
+    font-size: 8.4px;
   }
 }
 
@@ -277,6 +279,13 @@ body {
 @media (max-width: 50em) {
   html {
     font-size: 45%;
+    font-size: 7.2px;
+  }
+
+  .slider__dot {
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 2px solid var(--color-2);
   }
 }
 
@@ -284,6 +293,13 @@ body {
 @media (max-width: 43.75em) {
   html {
     font-size: 40%;
+    font-size: 6.4px;
+  }
+
+  .slider__dot {
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 1.8px solid var(--color-2);
   }
 }
 
@@ -291,10 +307,11 @@ body {
 @media (max-width: 37.5em) {
   html {
     font-size: 37.5%;
+    font-size: 6px;
   }
 
   .slider__hide {
-    width: 65rem;
+    width: 58rem;
     height: 61rem;
   }
 
@@ -322,12 +339,19 @@ body {
     bottom: -2.5rem;
     transform: translateX(-50%);
   }
+
+  .slider__dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1.5px solid var(--color-2);
+  }
 }
 
 /* 448px */
 @media (max-width: 28em) {
   html {
     font-size: 33%;
+    font-size: 5.28px;
   }
 }
 
@@ -335,6 +359,13 @@ body {
 @media (max-width: 25em) {
   html {
     font-size: 30%;
+    font-size: 4.8px;
+  }
+
+  .slider__dot {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1.4px solid var(--color-2);
   }
 }
 
@@ -342,6 +373,7 @@ body {
 @media (max-width: 22em) {
   html {
     font-size: 27%;
+    font-size: 4.32px;
   }
 }
 
@@ -349,6 +381,13 @@ body {
 @media (max-width: 320px) {
   html {
     font-size: 25%;
+    font-size: 4px;
+  }
+
+  .slider__dot {
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 1.3px solid var(--color-2);
   }
 }
 
