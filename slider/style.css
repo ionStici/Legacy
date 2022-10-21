@@ -75,7 +75,7 @@ body {
 
   position: relative;
 
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .slider__slide {
@@ -84,7 +84,7 @@ body {
 
   position: absolute;
 
-  transition: transform 0.2s;
+  transition: transform 0.5s;
 }
 
 .slider__slide:nth-child(1) {
@@ -204,7 +204,7 @@ body {
   height: 100%;
   color: var(--color-2);
 
-  transition: transform 0.3s, color 0.2s;
+  transition: transform 0.3s, color 0.5s;
 }
 
 .slider__btn:hover .slider__btn__icon {
