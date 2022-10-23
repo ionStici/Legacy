@@ -27,47 +27,56 @@
         background-color: rgba(0, 0, 0, 0.05);
       }
 
-      .links {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+      .main {
+        width: 100%;
+      }
 
-        width: 20rem;
-        margin: 5rem auto;
-        padding: 2rem 2rem 3rem 2rem;
-        border-radius: 5px;
-        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+      .links {
+        width: 28rem;
+        margin: 3rem auto;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+        border-radius: 0.5rem;
+        padding: 2rem 2rem 2.5rem 2rem;
         background-color: #fff;
       }
 
-      a,
-      a:link,
-      a:visited {
-        display: inline-block;
+      .link,
+      .link:link,
+      .link:visited {
         text-decoration: none;
-        width: 100%;
-
-        color: #333;
-        /* font-weight: 600; */
+        color: #555;
         font-size: 2rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0.25rem 0;
 
-        transition: border 0.2s;
+        display: block;
+        text-align: center;
+
+        /* transition: box-shadow 0.2s; */
+        transition: all 0.2s;
+        border-bottom: 0.15rem solid #ddd;
       }
 
-      a:hover,
-      a:active {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+      .link:hover,
+      .link:active {
+        color: #111;
+        /* border-bottom: 0.15rem solid #999; */
+
+        /* box-shadow: 0 0 5px #aaa; */
+        /* border-bottom: 0.15rem solid transparent; */
+        /* border-radius: 0.3rem; */
+      }
+
+      .link:not(:last-child) {
+        margin-bottom: 1.5rem;
       }
     </style>
-
-    <script></script>
   </head>
   <body>
-    <div class="links">
-      <a href="/discoverator">Discoverator</a>
-      <a href="/to-do">To Do</a>
-      <a href="/slider">Slider</a>
-    </div>
+    <main class="main">
+      <div class="links">
+        <a class="link" href="discoverator/">Discoverator</a>
+        <a class="link" href="slider/">Slider</a>
+      </div>
+    </main>
   </body>
 </html>
