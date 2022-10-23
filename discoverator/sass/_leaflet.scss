@@ -18,24 +18,9 @@
   display: flex;
   align-items: center;
 
-  @include s720 {
-    flex-direction: column;
-    height: 70rem;
-  }
-
   &__map__box {
     margin-left: auto;
     position: relative;
-
-    @include s1060 {
-      width: 100%;
-      margin-left: 0;
-      //   margin: 0 auto;
-      margin: 0 1rem;
-    }
-
-    @include s720 {
-    }
   }
 
   &__map {
@@ -44,11 +29,6 @@
     border-radius: 7.5px;
     margin-right: 2.5rem;
     // box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-
-    @include s1060 {
-      width: 100%;
-      margin-right: 0;
-    }
   }
 
   &__map__panel {
@@ -98,11 +78,6 @@
     height: 50rem;
     border-right: 1px solid rgba(0, 0, 0, 0.15);
     padding: 1rem;
-
-    @include s720 {
-      border: none;
-      height: auto;
-    }
   }
 
   &__note {
@@ -332,7 +307,7 @@
 
       &:hover {
         background-color: #fff;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.33);
+        // box-shadow: 0 0 15px rgba(0, 0, 0, 0.33);
         color: #333;
       }
 

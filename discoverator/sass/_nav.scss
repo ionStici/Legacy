@@ -1,3 +1,9 @@
+@mixin s1200 {
+  @media (max-width: 75em) {
+    @content;
+  }
+}
+
 .nav {
   width: 20rem;
   height: 50rem;
@@ -11,9 +17,6 @@
 
   @include s1200 {
     width: 6.5rem;
-  }
-
-  @include s720 {
   }
 
   &__title {

@@ -26,7 +26,7 @@ class Clicker {
     // Get COords
     setTimeout(() => {
       this.getCoords();
-    }, 2000);
+    }, 1);
 
     // GETTING COORDS
     // this.#coords = app.sendCoords();
@@ -113,7 +113,7 @@ class Clicker {
 
   // GET COORDS FROM PREVIOUS CLASS
   getCoords() {
-    this.#coords = [47.0105, 28.8638];
+    this.#coords = [51.505, -0.09];
     this.#displayMap();
   }
 

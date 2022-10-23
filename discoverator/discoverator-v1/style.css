@@ -27,24 +27,33 @@ body {
   background: linear-gradient(to right, #c6edff 0%, #a3c6ff 100%);
 }
 
-.back-btn {
-  display: inline-block;
+.discov-box {
   width: 70rem;
-
   margin-bottom: 2rem;
-  text-decoration: none;
+}
 
+.discov-btn,
+.discov-btn:link,
+.discov-btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
   font-size: 1.7rem;
   font-weight: 600;
   color: #555;
   letter-spacing: 1px;
 
+  width: 8rem;
+  padding-bottom: 0.2rem;
+  text-align: center;
+
   border-bottom: 1px solid transparent;
   transition: all 0.2s;
 }
 
-.back-btn:hover {
-  /* border-bottom: 1px solid #777; */
+.discov-btn:hover,
+.discov-btn:active {
+  border-bottom: 1px solid #999;
   color: #111;
 }
 

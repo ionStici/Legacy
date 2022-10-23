@@ -11,39 +11,39 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-width: 75em) {
+  html {
+    font-size: 9.6px;
+  }
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #333;
 
-  display: flex;
-  justify-content: center;
-
   background-color: #d0d4de;
+}
+
+@mixin s1200 {
+  @media (max-width: 75em) {
+    @content;
+  }
 }
 
 .main {
   width: 120rem;
   height: 50rem;
+  margin: 7.5rem auto;
+
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 7.5px;
   overflow: hidden;
-  margin-top: 10rem;
 
   @include s1200 {
     width: 106rem;
-  }
-
-  @include s1060 {
-    border-radius: 0;
-    width: 100%;
-  }
-
-  @include s720 {
-    width: 42rem;
-    height: auto;
   }
 }
 

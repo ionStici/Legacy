@@ -1,0 +1,13 @@
+{
+  "name": "discoverator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "live": "live-server",
+    "sass": "sass sass/main.scss css/style.css -w",
+    "start": "npm-run-all --parallel live sass"
+  },
+  "author": "",
+  "license": "ISC"
+}
