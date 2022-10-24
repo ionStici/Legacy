@@ -85,7 +85,7 @@
 @media (max-width: 42.5em) {
   .main {
     border-radius: 7.5px;
-    width: 80%;
+    width: 55rem;
     border-right: 1rem solid #ffc9c9;
   }
 
@@ -126,7 +126,7 @@
 
     &__map__box {
       padding: 0 1rem 1rem 1rem;
-      width: 95%;
+      width: 100%;
       margin: 0;
       margin-bottom: 2rem;
     }
@@ -134,13 +134,13 @@
 }
 
 // 576px
-@media (max-width: 36em) {
-  .clicker {
-    &__map__box {
-      width: 100%;
-    }
-  }
-}
+// @media (max-width: 36em) {
+//   .clicker {
+//     &__map__box {
+//       width: 100%;
+//     }
+//   }
+// }
 
 // 464px
 @media (max-width: 29em) {
@@ -165,5 +165,12 @@
 
   .main {
     border-right: 0.5rem solid #ffc9c9;
+  }
+}
+
+// 320px
+@media (max-width: 20em) {
+  html {
+    font-size: 6.4px; // 40%
   }
 }

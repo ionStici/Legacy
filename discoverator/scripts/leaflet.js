@@ -89,7 +89,7 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent(`You are here 👻`)
+      .setPopupContent(`You are here`)
       .openPopup();
 
     this.#pinsArr.forEach((pin) => {
@@ -115,7 +115,7 @@ class Clicker {
 
   // GET COORDS FROM PREVIOUS CLASS
   getCoords() {
-    this.#coords = [51.505, -0.09];
+    this.#coords = [47.02556070981118, 28.830394148826603];
     this.#displayMap();
   }
 
@@ -153,7 +153,7 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent(`You are here 👻`)
+      .setPopupContent(`You are here`)
       .openPopup();
 
     this.pinsContainer.innerHTML = "";
@@ -165,7 +165,7 @@ class Clicker {
           <ion-icon class="clicker__pin__number__icon" name="infinite-outline"></ion-icon>
         </p>
         <div class="clicker__pin__box">
-          <p class="clicker__pin__popup">You are here 👻</p></p>
+          <p class="clicker__pin__popup">You are here</p></p>
           <p class="clicker__pin__note">Your current location</p>
         </div>
         <p data-coords="${
@@ -199,6 +199,8 @@ class Clicker {
     const { lat, lng } = event.latlng;
     const clickedCoords = [lat, lng];
 
+    console.log(clickedCoords);
+
     this.formContainer.innerHTML = "";
 
     setTimeout(() => {
@@ -206,7 +208,7 @@ class Clicker {
         "afterbegin",
         `
               <ion-icon class="clicker__form-box__close-form" name="close-circle-outline"></ion-icon>
-              <p class="clicker__note clicker__note--title">Fill the form 👻</p>
+              <p class="clicker__note clicker__note--title">Fill the form</p>
               <div class="clicker__form-el">
               <div>
               <input class="input-popup" type="text" placeholder="Popup title" />
@@ -304,7 +306,7 @@ class Clicker {
     this.formContainer.innerHTML = "";
     this.formContainer.insertAdjacentHTML(
       "afterbegin",
-      `<p class="clicker__note">Click on the map to add a pin 😇</p>`
+      `<p class="clicker__note">Click on the map to add a pin</p>`
     );
   }
 
