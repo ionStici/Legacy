@@ -48,7 +48,7 @@ class Clicker {
     this.formContainer.insertAdjacentHTML(
       "afterbegin",
       `
-          <p class="clicker__note">Click on the map to add a pin 😇</p>
+          <p class="clicker__note">Click on the map to add a pin</p>
       `
     );
 
@@ -73,9 +73,9 @@ class Clicker {
 
     this.#map = L.map("map").setView(this.#coords, 13);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
+    L.tileLayer("http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}", {
+      maxZoom: 20,
+      subdomains: ["mt0", "mt1", "mt2", "mt3"],
     }).addTo(this.#map);
 
     L.marker(this.#coords)
@@ -120,9 +120,9 @@ class Clicker {
   #displayMap() {
     this.#map = L.map("map").setView(this.#coords, 13);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors',
+    L.tileLayer("http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}", {
+      maxZoom: 20,
+      subdomains: ["mt0", "mt1", "mt2", "mt3"],
     }).addTo(this.#map);
 
     // HIDE SPINNER
@@ -182,6 +182,9 @@ class Clicker {
 
     // RENDER LOCAL STORAGE
     this.renderPinsAndMarkers();
+
+    document.querySelector(".clicker__map").style.boxShadow =
+      "0 0 5px 1px rgba(0, 0, 0, 0.33)";
 
     this.#map.on("click", this.mapClickEvent.bind(this));
   }

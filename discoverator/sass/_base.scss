@@ -11,12 +11,6 @@ html {
   font-size: 62.5%;
 }
 
-@media (max-width: 75em) {
-  html {
-    font-size: 9.6px;
-  }
-}
-
 body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
@@ -26,16 +20,10 @@ body {
   background-color: #d0d4de;
 }
 
-@mixin s1200 {
-  @media (max-width: 75em) {
-    @content;
-  }
-}
-
 .main {
   width: 120rem;
   height: 50rem;
-  margin: 7.5rem auto;
+  margin: 5rem auto;
 
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

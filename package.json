@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "live": "live-server",
-    "sass:discov": "sass discoverator/sass/main.scss discoverator/css/style.css -w",
-    "start:discov": "npm-run-all --parallel live sass:discov"
+    "live": "live-server"
   },
   "author": "",
   "license": "ISC",

@@ -11,11 +11,6 @@ html {
   font-size: 62.5%;
 }
 
-@media (max-width: 75em) {
-  html {
-    font-size: 9.6px;
-  }
-}
 body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
@@ -27,13 +22,13 @@ body {
 .main {
   width: 120rem;
   height: 50rem;
-  margin: 7.5rem auto;
+  margin: 5rem auto;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 7.5px;
   overflow: hidden;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .main {
     width: 106rem;
   }
@@ -242,6 +237,7 @@ body {
   height: 45rem;
   border-radius: 7.5px;
   margin-right: 2.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 .clicker__map__panel {
   position: absolute;
@@ -612,14 +608,13 @@ body {
 
 .nav {
   width: 20rem;
-  height: 50rem;
   background-color: #f9fbfd;
   box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2) inset;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav {
     width: 6.5rem;
   }
@@ -633,7 +628,7 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: #666;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__title {
     display: none;
   }
@@ -644,7 +639,7 @@ body {
 .nav__title--small {
   display: none;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__title--small {
     display: block;
   }
@@ -656,7 +651,7 @@ body {
   font-size: 1.6rem;
   font-weight: 600;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__lists {
     padding: 2.4rem 1.25rem 1rem 1.25rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -674,7 +669,7 @@ body {
 .nav__list ::selection {
   background-color: transparent;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__list {
     width: fit-content;
     padding: 0.6rem 0.8rem;
@@ -686,12 +681,12 @@ body {
   width: 2.4rem;
   height: 2.4rem;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__list__icon {
     margin: 0;
   }
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__list__text {
     display: none;
   }
@@ -734,12 +729,13 @@ body {
 .nav__note__responsive span::selection {
   background-color: transparent;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__note__responsive {
     display: block;
   }
 }
 .nav__note {
+  z-index: 100000000000000000000000000000000000000000000000000000000000000000000000000000;
   margin-top: auto;
   padding: 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -751,7 +747,7 @@ body {
   display: block;
   transition: opacity 0.2s;
 }
-@media (max-width: 75em) {
+@media (max-width: 76em) {
   .nav__note {
     position: absolute;
     background-color: #fff;
@@ -807,6 +803,121 @@ body {
 
 .margin-bottom {
   margin-bottom: 2.4rem;
+}
+
+@media (max-width: 76em) {
+  html {
+    font-size: 9.6px;
+  }
+}
+@media (max-width: 64em) {
+  .main {
+    width: 95%;
+  }
+  .clicker__map__box {
+    width: 100%;
+  }
+  .clicker__map {
+    margin: 0 auto;
+    width: 92.5%;
+  }
+  .clicker__map__panel {
+    left: 2.5rem;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 53em) {
+  html {
+    font-size: 8.48px;
+  }
+  .clicker__map {
+    margin: 0 auto;
+    width: 92%;
+  }
+  .clicker__map__panel {
+    left: 3.2rem;
+  }
+}
+@media (max-width: 46em) {
+  html {
+    font-size: 8.2px;
+  }
+  .main {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    height: auto;
+  }
+  .locations {
+    height: auto;
+  }
+}
+@media (max-width: 42.5em) {
+  .main {
+    border-radius: 7.5px;
+    width: 80%;
+    border-right: 1rem solid #ffc9c9;
+  }
+  .clicker {
+    align-items: inherit;
+    flex-direction: column;
+    align-items: center;
+  }
+  .clicker__about {
+    width: 38rem;
+    border: none;
+  }
+  .clicker__pins {
+    width: 32rem;
+  }
+  .clicker__pin {
+    width: 30rem;
+  }
+  .clicker__map {
+    margin: 0 auto;
+    width: 92%;
+    height: 25rem;
+  }
+  .clicker__map__panel {
+    left: 4.2rem;
+    bottom: 1.8rem;
+  }
+  .clicker__map__box {
+    padding: 0 1rem 1rem 1rem;
+    width: 95%;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 36em) {
+  .clicker__map__box {
+    width: 100%;
+  }
+}
+@media (max-width: 29em) {
+  .main {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 25em) {
+  html {
+    font-size: 7.52px;
+  }
+}
+@media (max-width: 22em) {
+  html {
+    font-size: 7.2px;
+  }
+  .main {
+    border-right: 0.5rem solid #ffc9c9;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

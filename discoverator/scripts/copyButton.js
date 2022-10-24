@@ -52,7 +52,7 @@ copyrightBtn.addEventListener("click", function (e) {
 // // // // // // // // // // // // // // // // // // // //
 
 // Create a condition that targets viewports at least 768px wide
-const mediaQuery = window.matchMedia("(min-width: 75em)");
+const mediaQuery = window.matchMedia("(min-width: 76em)");
 
 function handleTabletChange(e) {
   // Check if the media query is true

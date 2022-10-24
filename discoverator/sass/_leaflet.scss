@@ -28,15 +28,10 @@
     height: 45rem;
     border-radius: 7.5px;
     margin-right: 2.5rem;
-    // box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 
   &__map__panel {
-    // width: 45rem;
-    // height: 4rem;
-    // background-color: transparent;
-    // border-radius: 5px;
-
     position: absolute;
     left: 1rem;
     bottom: 1rem;
@@ -336,9 +331,6 @@
       }
     }
 
-    &__popup {
-    }
-
     &__note {
       font-size: 1.2rem;
     }
@@ -346,14 +338,3 @@
 }
 
 // // // // // // // // // // // // // // // // // // // //
-// Font sizes (px)
-// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-// Spacing system (px)
-// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-// .clicker__pin__number--initial ion-icon {
-//   color: #888;
-//   width: 2.4rem;
-//   height: 2.4rem;
-// }

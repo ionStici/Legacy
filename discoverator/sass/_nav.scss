@@ -1,12 +1,6 @@
-@mixin s1200 {
-  @media (max-width: 75em) {
-    @content;
-  }
-}
-
 .nav {
   width: 20rem;
-  height: 50rem;
+  //   height: ;
   background-color: #f9fbfd;
   box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2) inset;
 
@@ -150,6 +144,8 @@
   }
 
   &__note {
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999;
+
     @include s1200 {
       position: absolute;
       background-color: #fff;
