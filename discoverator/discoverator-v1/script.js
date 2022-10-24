@@ -8,53 +8,53 @@ const message = document.querySelector(".panel-message");
 let capitalOut;
 
 const convertMil = function (num) {
-    return `${(num / 1000000).toFixed(1)} mil.`;
+  return `${(num / 1000000).toFixed(1)} mil.`;
 };
 
 const convertK = function (num) {
-    return `${(num / 1000).toFixed(1)} k m2`;
+  return `${(num / 1000).toFixed(1)} k m2`;
 };
 
 const random = function () {
-    return Math.trunc(Math.random() * 53);
+  return Math.trunc(Math.random() * 53);
 };
 
 startButton.addEventListener("click", function () {
-    let capital1;
-    let capital2;
-    let capital3;
+  let capital1;
+  let capital2;
+  let capital3;
 
-    let btn1 = document.querySelector(".btn-1");
-    let btn2 = document.querySelector(".btn-2");
-    let btn3 = document.querySelector(".btn-3");
+  let btn1 = document.querySelector(".btn-1");
+  let btn2 = document.querySelector(".btn-2");
+  let btn3 = document.querySelector(".btn-3");
 
-    fetch("https://restcountries.com/v3.1/region/europe")
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            const country = data[random()];
-            capital3 = country.capital[0];
-            capitalOut = country.capital[0];
+  fetch("https://restcountries.com/v3.1/region/europe")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const country = data[random()];
+      capital3 = country.capital[0];
+      capitalOut = country.capital[0];
 
-            const values = Object.values(country.languages);
-            let language = [];
-            for (const item of values) {
-                language.push(item);
-            }
+      const values = Object.values(country.languages);
+      let language = [];
+      for (const item of values) {
+        language.push(item);
+      }
 
-            let html = `
+      let html = `
             <!-- <div class="country"> -->
                 <div class="country-header">
                     <img class="country-header-flag" src="${
-                        country.flags.svg
+                      country.flags.svg
                     }" />
                     <p class="country-header-name">${country.name.common}</p>
                 </div>
 
                 <p class="country-language">🗣 ${language[0]}</p>
                 <p class="country-population">👫 ${convertMil(
-                    country.population
+                  country.population
                 )}</p>
                 <p class="country-area">${convertK(country.area)}</p>
 
@@ -63,52 +63,52 @@ startButton.addEventListener("click", function () {
             <!-- </div> -->
             `;
 
-            // guessed attribute
+      //   document.querySelector(".main").style.height = "auto";
 
-            document
-                .querySelector(".country")
-                .insertAdjacentHTML("beforeend", html);
+      // guessed attribute
 
-            document.querySelector(".country").style.opacity = "1";
+      document.querySelector(".opacity").insertAdjacentHTML("beforeend", html);
 
-            return fetch("https://restcountries.com/v3.1/region/europe");
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            capital1 = data[random()].capital[0];
+      document.querySelector(".opacity").style.opacity = "1";
 
-            return fetch("https://restcountries.com/v3.1/region/europe");
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            capital2 = data[random()].capital[0];
+      return fetch("https://restcountries.com/v3.1/region/europe");
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      capital1 = data[random()].capital[0];
 
-            let capitalsArray = [capital1, capital2, capital3];
+      return fetch("https://restcountries.com/v3.1/region/europe");
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      capital2 = data[random()].capital[0];
 
-            let init = 0;
-            let c1, c2, c3;
-            capitalsArray.forEach((cap, i, arr) => {
-                if (init === 0) {
-                    c1 = arr[Math.trunc(Math.random() * 3)];
-                    arr.splice(arr.indexOf(c1), 1);
+      let capitalsArray = [capital1, capital2, capital3];
 
-                    init++;
-                } else if (init === 1) {
-                    c2 = arr[Math.trunc(Math.random() * 2)];
-                    arr.splice(arr.indexOf(c2), 1);
-                    c3 = arr[0];
-                    init++;
-                }
-            });
+      let init = 0;
+      let c1, c2, c3;
+      capitalsArray.forEach((cap, i, arr) => {
+        if (init === 0) {
+          c1 = arr[Math.trunc(Math.random() * 3)];
+          arr.splice(arr.indexOf(c1), 1);
 
-            btn1.textContent = c1;
-            btn2.textContent = c2;
-            btn3.textContent = c3;
-        });
+          init++;
+        } else if (init === 1) {
+          c2 = arr[Math.trunc(Math.random() * 2)];
+          arr.splice(arr.indexOf(c2), 1);
+          c3 = arr[0];
+          init++;
+        }
+      });
 
-    startButton.style.display = "none";
+      btn1.textContent = c1;
+      btn2.textContent = c2;
+      btn3.textContent = c3;
+    });
 
-    document.querySelector(".control-panel").style.cssText = `
+  startButton.style.display = "none";
+
+  document.querySelector(".control-panel").style.cssText = `
         width: 100%;
         height: 100%;
         margin-right: 2rem;
@@ -123,45 +123,39 @@ startButton.addEventListener("click", function () {
 
     `;
 
-    document.querySelector(".panel").style.display = "flex";
+  document.querySelector(".panel").style.display = "flex";
 
-    setTimeout(() => {
-        document.querySelector(".panel").style.opacity = "1";
-    }, 500);
+  setTimeout(() => {
+    document.querySelector(".panel").style.opacity = "1";
+  }, 500);
 });
 
 let correctAnswers = 0;
 let wrongAnswers = 0;
 
 btns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-        if (btn.textContent === capitalOut) {
-            btn.style.backgroundColor = "#51cf66";
-            btn.style.transform = "scale(1.1)";
-            message.style.opacity = "1";
-            message.style.color = "green";
-            message.textContent = `Correct answer: ${capitalOut} 🎉`;
-            correctAnswers++;
-        } else {
-            btn.style.backgroundColor = "#ffa8a8";
-            btn.style.transform = "translateX(0.3rem)";
-            setTimeout(
-                () => (btn.style.transform = "translateX(-0.3rem)"),
-                150
-            );
+  btn.addEventListener("click", function () {
+    if (btn.textContent === capitalOut) {
+      btn.style.backgroundColor = "#51cf66";
+      btn.style.transform = "scale(1.1)";
+      message.style.opacity = "1";
+      message.style.color = "green";
+      message.textContent = `Correct answer: ${capitalOut} 🎉`;
+      correctAnswers++;
+    } else {
+      btn.style.backgroundColor = "#ffa8a8";
+      btn.style.transform = "translateX(0.3rem)";
+      setTimeout(() => (btn.style.transform = "translateX(-0.3rem)"), 150);
 
-            setTimeout(() => (btn.style.transform = "translateX(0.3rem)"), 250);
-            setTimeout(
-                () => (btn.style.transform = "translateX(-0.3rem)"),
-                350
-            );
+      setTimeout(() => (btn.style.transform = "translateX(0.3rem)"), 250);
+      setTimeout(() => (btn.style.transform = "translateX(-0.3rem)"), 350);
 
-            setTimeout(() => (btn.style.transform = "translateX(0)"), 450);
+      setTimeout(() => (btn.style.transform = "translateX(0)"), 450);
 
-            message.style.opacity = "1";
-            message.style.color = "#f03e3e";
-            message.textContent = `Incorrect answer`;
-            wrongAnswers++;
-        }
-    });
+      message.style.opacity = "1";
+      message.style.color = "#f03e3e";
+      message.textContent = `Incorrect answer`;
+      wrongAnswers++;
+    }
+  });
 });
