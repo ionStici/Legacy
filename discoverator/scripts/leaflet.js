@@ -89,8 +89,8 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent(`You are here`)
-      .openPopup();
+      .setPopupContent(`You are here`);
+    //   .openPopup();
 
     this.#pinsArr.forEach((pin) => {
       L.marker(pin.coords)
@@ -104,8 +104,8 @@ class Clicker {
             className: "leaflet-popup",
           })
         )
-        .setPopupContent(`${pin.popupTitle}`)
-        .openPopup();
+        .setPopupContent(`${pin.popupTitle}`);
+      // .openPopup();
     });
 
     this.#map.setView(this.#coords, 13);
@@ -153,8 +153,8 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent(`You are here`)
-      .openPopup();
+      .setPopupContent(`You are here`);
+    //   .openPopup();
 
     this.pinsContainer.innerHTML = "";
     this.pinsContainer.insertAdjacentHTML(
@@ -282,8 +282,8 @@ class Clicker {
           className: "leaflet-popup",
         })
       )
-      .setPopupContent(`${popupTitle}`)
-      .openPopup();
+      .setPopupContent(`${popupTitle}`);
+    //   .openPopup();
 
     // DISPLAY AGAIN FORM MESSAGE
     // this.formContainer.innerHTML = "";
@@ -349,8 +349,8 @@ class Clicker {
             className: "leaflet-popup",
           })
         )
-        .setPopupContent(`${pin.popupTitle}`)
-        .openPopup();
+        .setPopupContent(`${pin.popupTitle}`);
+      // .openPopup();
 
       // INSERT NEW PIN BOXES
       this.pinsSubContainer.insertAdjacentHTML(
