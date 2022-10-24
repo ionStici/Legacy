@@ -108,6 +108,8 @@ class Clicker {
         .openPopup();
     });
 
+    this.#map.setView(this.#coords, 13);
+
     this.#map.on("click", this.mapClickEvent.bind(this));
   }
 
@@ -185,6 +187,8 @@ class Clicker {
 
     document.querySelector(".clicker__map").style.boxShadow =
       "0 0 5px 1px rgba(0, 0, 0, 0.33)";
+
+    this.#map.setView(this.#coords, 13);
 
     this.#map.on("click", this.mapClickEvent.bind(this));
   }
