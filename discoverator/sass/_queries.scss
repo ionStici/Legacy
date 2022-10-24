@@ -15,8 +15,13 @@
   }
 
   .clicker {
+    &__form-box {
+      width: 32.9rem;
+    }
+
     &__map__box {
       width: 100%;
+      margin: 0 auto;
     }
 
     &__map {
@@ -93,6 +98,10 @@
       width: 38rem;
       border: none;
       //   height: 46rem;
+    }
+
+    &__form-box {
+      margin: 0 auto;
     }
 
     &__pins {

@@ -73,9 +73,9 @@ class Clicker {
 
     this.#map = L.map("map").setView(this.#coords, 13);
 
-    L.tileLayer("http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}", {
-      maxZoom: 20,
-      subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.#map);
 
     L.marker(this.#coords)
@@ -122,9 +122,9 @@ class Clicker {
   #displayMap() {
     this.#map = L.map("map").setView(this.#coords, 13);
 
-    L.tileLayer("http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}", {
-      maxZoom: 20,
-      subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.#map);
 
     // HIDE SPINNER

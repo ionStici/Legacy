@@ -814,8 +814,12 @@ body {
   .main {
     width: 95%;
   }
+  .clicker__form-box {
+    width: 32.9rem;
+  }
   .clicker__map__box {
     width: 100%;
+    margin: 0 auto;
   }
   .clicker__map {
     margin: 0 auto;
@@ -872,6 +876,9 @@ body {
   .clicker__about {
     width: 38rem;
     border: none;
+  }
+  .clicker__form-box {
+    margin: 0 auto;
   }
   .clicker__pins {
     width: 32rem;
