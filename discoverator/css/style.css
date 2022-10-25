@@ -904,7 +904,7 @@ body {
 @media (max-width: 42.5em) {
   .main {
     border-radius: 7.5px;
-    width: 55rem;
+    width: 50rem;
     border-right: 1rem solid rgba(0, 0, 0, 0.1);
   }
   .content__home {
@@ -936,10 +936,10 @@ body {
     align-items: center;
   }
   .clicker .heaidng-2 {
-    font-size: 3.8rem;
+    font-size: 4rem;
   }
   .clicker .sub-heading--smaller {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
   .clicker__about {
     width: 38rem;
@@ -954,13 +954,14 @@ body {
   }
   .clicker__pins {
     width: 32rem;
+    margin-top: 2rem;
   }
   .clicker__pin {
     width: 30rem;
   }
   .clicker__map {
     margin: 0 auto;
-    width: 92%;
+    width: 100%;
     height: 25rem;
   }
   .clicker__map__panel {
@@ -969,9 +970,10 @@ body {
   }
   .clicker__map__box {
     padding: 0 1rem 1rem 1rem;
-    width: 100%;
+    width: 34rem;
     margin: 0;
     margin-bottom: 2rem;
+    margin-top: 0.5rem;
   }
 }
 @media (max-width: 29em) {
