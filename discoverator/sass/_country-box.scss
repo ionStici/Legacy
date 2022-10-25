@@ -14,6 +14,7 @@
 
 .country {
   width: 25rem;
+  margin: 0 auto;
   overflow: hidden;
   box-shadow: 0 0 3px 1px #999;
   border-radius: 5px;
@@ -168,5 +169,30 @@
 
   100% {
     transform: rotate(0) scale(1);
+  }
+}
+
+.start-country {
+  border: none;
+  background-color: transparent;
+
+  display: block;
+  margin: 0 auto;
+  transform: translateY(-0.3rem);
+
+  font-size: 2rem;
+  font-weight: 550;
+  color: #ff6b6b;
+
+  padding: 1rem 2rem 0.5rem 2rem;
+  border-bottom: 1px solid #ffc9c9;
+
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover,
+  &:active {
+    border-bottom: 1px solid #fa5252;
+    color: #f03e3e;
   }
 }

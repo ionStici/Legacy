@@ -3,12 +3,6 @@
 
 const countryBox = document.querySelector(".country");
 
-countryBox.innerHTML = "";
-countryBox.insertAdjacentHTML(
-  "afterbegin",
-  `<ion-icon class="sync-icon" name="sync-outline"></ion-icon>`
-);
-
 let countryBoxContent = `
     <div class="country__name-box">
         <div class="country__flag"></div>
@@ -22,6 +16,14 @@ let countryBoxContent = `
         <p class="country__currency"></p>
     </div>
     `;
+
+let startButton = `
+<button class="start-country">See Your Country</button>`;
+countryBox.insertAdjacentHTML("afterbegin", startButton);
+
+document.querySelector(".start-country").addEventListener("click", function () {
+  startCountry();
+});
 
 const countryBoxError = function (errorMessage) {
   countryBox.innerHTML = "";
@@ -131,7 +133,18 @@ class App {
     if (this.#coords) this.geocoding(this.#coords);
   }
 }
-const app = new App();
+
+let app;
+
+const startCountry = function () {
+  countryBox.innerHTML = "";
+  countryBox.insertAdjacentHTML(
+    "afterbegin",
+    `<ion-icon class="sync-icon" name="sync-outline"></ion-icon>`
+  );
+
+  app = new App();
+};
 
 const errorBtn = function () {
   const tryAgainBtn = document.querySelector(".try-again");

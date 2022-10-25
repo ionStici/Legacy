@@ -48,10 +48,8 @@ body {
   height: 50rem;
   display: none;
 }
-.content__clicker {
-  display: flex;
-}
 .content__home {
+  display: flex;
   align-items: center;
 }
 .content__home__info {
@@ -59,7 +57,6 @@ body {
   height: 50rem;
   padding: 2.4rem 3.2rem;
   border-right: 1.5px solid rgba(0, 0, 0, 0.12);
-  margin-right: 4.5rem;
 }
 .content__home__text {
   color: #777;
@@ -78,6 +75,7 @@ body {
 }
 .country {
   width: 25rem;
+  margin: 0 auto;
   overflow: hidden;
   box-shadow: 0 0 3px 1px #999;
   border-radius: 5px;
@@ -208,6 +206,25 @@ body {
     transform: rotate(0) scale(1);
   }
 }
+.start-country {
+  border: none;
+  background-color: transparent;
+  display: block;
+  margin: 0 auto;
+  transform: translateY(-0.3rem);
+  font-size: 2rem;
+  font-weight: 550;
+  color: #ff6b6b;
+  padding: 1rem 2rem 0.5rem 2rem;
+  border-bottom: 1px solid #ffc9c9;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.start-country:hover, .start-country:active {
+  border-bottom: 1px solid #fa5252;
+  color: #f03e3e;
+}
+
 .leaflet-control-container {
   display: none;
 }
@@ -225,7 +242,6 @@ body {
 }
 
 .clicker {
-  display: flex;
   align-items: center;
 }
 .clicker__map__box {
@@ -822,6 +838,9 @@ body {
   .main {
     width: 95%;
   }
+  .content__home__info {
+    width: 60rem;
+  }
   .clicker__form-box {
     width: 32.9rem;
   }
@@ -858,12 +877,12 @@ body {
   html {
     font-size: 8.2px;
   }
+  .content {
+    height: auto;
+  }
   .main {
     border-radius: 0;
     width: 100%;
-    height: auto;
-  }
-  .content {
     height: auto;
   }
   .locations {
@@ -874,7 +893,7 @@ body {
   .main {
     border-radius: 7.5px;
     width: 55rem;
-    border-right: 1rem solid #ffc9c9;
+    border-right: 1rem solid rgba(0, 0, 0, 0.1);
   }
   .clicker {
     align-items: inherit;
@@ -884,6 +903,10 @@ body {
   .clicker__about {
     width: 38rem;
     border: none;
+  }
+  .clicker__about .heaidng-2,
+.clicker__about .sub-heading {
+    text-align: center;
   }
   .clicker__form-box {
     margin: 0 auto;
@@ -926,7 +949,7 @@ body {
     font-size: 7.2px;
   }
   .main {
-    border-right: 0.5rem solid #ffc9c9;
+    border-right: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 }
 @media (max-width: 20em) {
