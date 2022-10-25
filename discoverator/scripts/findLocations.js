@@ -70,17 +70,17 @@ const renderCountryLoc = function (country) {
     .catch((err) => {
       countryLocError(err.message);
 
-      if (!document.querySelector(".loc__search-bar").value) {
-        countryNamesBox.innerHTML = "";
-        countryNamesBox.insertAdjacentHTML(
-          "afterbegin",
-          `
-              <p class="loc__ex__country-name">Switzerland</p>
-              <p class="loc__ex__country-name">Germany</p>
-              <p class="loc__ex__country-name">Canada</p>
-        `
-        );
-      }
+      //   if (!document.querySelector(".loc__search-bar").value) {
+      //     countryNamesBox.innerHTML = "";
+      //     countryNamesBox.insertAdjacentHTML(
+      //       "afterbegin",
+      //       `
+      //           <p class="loc__ex__country-name">Switzerland</p>
+      //           <p class="loc__ex__country-name">Germany</p>
+      //           <p class="loc__ex__country-name">Canada</p>
+      //     `
+      //     );
+      //   }
     })
     .finally(() => {});
 };
@@ -168,7 +168,7 @@ const renderAllCountries = function () {
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 searchInput.addEventListener("input", function (e) {
-  let input = searchInput.value;
+  let input = searchInput.value.toLowerCase();
 
   let examples = [];
 

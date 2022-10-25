@@ -1,11 +1,11 @@
 // TEMPORARY
-.clicker {
-  display: none;
-}
+// .clicker {
+//   display: none;
+// }
 
-.locations {
-  display: block;
-}
+// .locations {
+//   display: block;
+// }
 
 // TEMPORARY
 
@@ -134,9 +134,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  &__country-box {
+    flex-direction: column;
   }
 
   &__box-left {
@@ -146,7 +144,7 @@
 
     width: 62rem;
     height: 44.7rem;
-    // border-right: 1.5px solid rgba(0, 0, 0, 0.12);
+
     border-right: 1px solid rgba(0, 0, 0, 0.2);
   }
 
