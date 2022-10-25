@@ -49,11 +49,10 @@ body {
   display: none;
 }
 .content__home {
-  display: flex;
   align-items: center;
 }
 .content__home__info {
-  width: 65rem;
+  width: 65%;
   height: 50rem;
   padding: 2.4rem 3.2rem;
   border-right: 1.5px solid rgba(0, 0, 0, 0.12);
@@ -73,6 +72,12 @@ body {
 .content__home__text:nth-child(4) {
   margin-top: 1rem;
 }
+
+.country-wrapper {
+  width: 35%;
+  margin: 0 auto;
+}
+
 .country {
   width: 25rem;
   margin: 0 auto;
@@ -242,6 +247,7 @@ body {
 }
 
 .clicker {
+  display: flex;
   align-items: center;
 }
 .clicker__map__box {
@@ -838,9 +844,6 @@ body {
   .main {
     width: 95%;
   }
-  .content__home__info {
-    width: 60rem;
-  }
   .clicker__form-box {
     width: 32.9rem;
   }
@@ -864,6 +867,15 @@ body {
 @media (max-width: 53em) {
   html {
     font-size: 8.48px;
+  }
+  .content__home__info {
+    width: 61%;
+  }
+  .content__home .country-wrapper {
+    width: 39%;
+  }
+  .content__home__text:nth-child(3) {
+    margin-top: 3rem;
   }
   .clicker__map {
     margin: 0 auto;
@@ -895,10 +907,39 @@ body {
     width: 55rem;
     border-right: 1rem solid rgba(0, 0, 0, 0.1);
   }
+  .content__home {
+    flex-direction: column;
+  }
+  .content__home .sub-heading {
+    text-align: center;
+    line-height: 1;
+  }
+  .content__home__text {
+    display: none;
+  }
+  .content__home__info {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+  .content__home .country-wrapper {
+    width: auto;
+    margin-top: 2rem;
+    margin-bottom: 7.5rem;
+  }
+  .content__home .heading-1 {
+    text-align: center;
+  }
   .clicker {
     align-items: inherit;
     flex-direction: column;
     align-items: center;
+  }
+  .clicker .heaidng-2 {
+    font-size: 3.8rem;
+  }
+  .clicker .sub-heading--smaller {
+    font-size: 1.7rem;
   }
   .clicker__about {
     width: 38rem;
@@ -938,10 +979,16 @@ body {
     border-radius: 0;
     width: 100%;
   }
+  .heading-1 {
+    font-size: 3.4rem;
+  }
 }
 @media (max-width: 25em) {
   html {
     font-size: 7.52px;
+  }
+  .heading-1 {
+    font-size: 3.2rem;
   }
 }
 @media (max-width: 22em) {
@@ -950,6 +997,9 @@ body {
   }
   .main {
     border-right: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+  .heading-1 {
+    font-size: 3rem;
   }
 }
 @media (max-width: 20em) {

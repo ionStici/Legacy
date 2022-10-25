@@ -14,12 +14,6 @@
     // border-radius: 0;
   }
 
-  .content__home {
-    &__info {
-      width: 60rem;
-    }
-  }
-
   .clicker {
     &__form-box {
       width: 32.9rem;
@@ -52,6 +46,22 @@
 @media (max-width: 53em) {
   html {
     font-size: 8.48px; // 53%
+  }
+
+  .content__home {
+    &__info {
+      width: 61%;
+    }
+
+    .country-wrapper {
+      width: 39%;
+    }
+
+    &__text {
+      &:nth-child(3) {
+        margin-top: 3rem;
+      }
+    }
   }
 
   .clicker {
@@ -92,14 +102,52 @@
   .main {
     border-radius: 7.5px;
     width: 55rem;
-    // border-right: 1rem solid #ffc9c9;
     border-right: 1rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .content__home {
+    flex-direction: column;
+    // height: 50rem;
+
+    .sub-heading {
+      text-align: center;
+      line-height: 1;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__info {
+      width: 100%;
+      height: auto;
+      border: none;
+      //   margin-bottom: auto;
+    }
+
+    .country-wrapper {
+      width: auto;
+      margin-top: 2rem;
+      margin-bottom: 7.5rem;
+    }
+
+    .heading-1 {
+      text-align: center;
+    }
   }
 
   .clicker {
     align-items: inherit;
     flex-direction: column;
     align-items: center;
+
+    .heaidng-2 {
+      font-size: 3.8rem;
+    }
+
+    .sub-heading--smaller {
+      font-size: 1.7rem;
+    }
 
     &__about {
       width: 38rem;
@@ -160,12 +208,20 @@
     border-radius: 0;
     width: 100%;
   }
+
+  .heading-1 {
+    font-size: 3.4rem;
+  }
 }
 
 // 400px
 @media (max-width: 25em) {
   html {
     font-size: 7.52px; // 0,47*16=7,52px
+  }
+
+  .heading-1 {
+    font-size: 3.2rem;
   }
 }
 
@@ -176,8 +232,11 @@
   }
 
   .main {
-    // border-right: 0.5rem solid #ffc9c9;
     border-right: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .heading-1 {
+    font-size: 3rem;
   }
 }
 

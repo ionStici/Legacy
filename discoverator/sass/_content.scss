@@ -3,26 +3,25 @@
   height: 50rem;
   display: none;
 
-  &__clicker {
-    // display: flex;
-  }
-  &__locations {
-    // display: flex;
-  }
-  &__game {
-    // display: block;
-  }
+  //   &__clicker {
+  //     display: flex;
+  //   }
+  //   &__locations {
+  //     display: flex;
+  //   }
+  //   &__game {
+  //     display: block;
+  //   }
 
   &__home {
-    display: flex;
+    // display: flex;
     align-items: center;
 
     &__info {
-      width: 65rem;
+      width: 65%;
       height: 50rem;
       padding: 2.4rem 3.2rem;
       border-right: 1.5px solid rgba(0, 0, 0, 0.12);
-      //   margin-right: 4.5rem;
     }
 
     &__text {
@@ -42,8 +41,8 @@
         margin-top: 1rem;
       }
 
-      &--sub-text {
-      }
+      //  &--sub-text {
+      //  }
     }
   }
 }
