@@ -157,6 +157,12 @@
     margin: 28rem auto;
     padding: 1.5rem;
   }
+
+  &--loc {
+    width: 15rem;
+    height: 15rem;
+    margin-top: 4rem;
+  }
 }
 
 @keyframes syncAnimation {
@@ -199,5 +205,6 @@
   &:active {
     border-bottom: 1px solid #fa5252;
     color: #f03e3e;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 }

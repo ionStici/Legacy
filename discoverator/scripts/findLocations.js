@@ -112,6 +112,12 @@ const search = function () {
 const countryNamesBox = document.querySelector(".loc__ex__box");
 let data = [];
 
+countryNamesBox.innerHTML = "";
+countryNamesBox.insertAdjacentHTML(
+  "beforeend",
+  `<ion-icon class="sync-icon sync-icon--loc" name="sync-outline"></ion-icon>`
+);
+
 let allCountries = new XMLHttpRequest();
 allCountries.open("GET", `https://restcountries.com/v3.1/all`);
 allCountries.send();
@@ -122,7 +128,44 @@ allCountries.addEventListener("load", function () {
   countriesList.forEach((country) => {
     data.push(country.name.common.toLowerCase());
   });
+
+  renderAllCountries();
 });
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+let allC = [];
+
+countryBoxLoc.innerHTML = "";
+countryBoxLoc.insertAdjacentHTML(
+  "afterbegin",
+  `<ion-icon class="sync-icon" name="sync-outline"></ion-icon>`
+);
+
+const renderAllCountries = function () {
+  data.forEach((cn, i) => {
+    let cnArr = cn.split(" ").map((n) => {
+      return n[0].toUpperCase() + n.slice(1);
+    });
+
+    allC.push(cnArr.join(" "));
+  });
+
+  document.querySelector(".loc__ex__country-name__title").style.opacity = "1";
+
+  countryNamesBox.innerHTML = "";
+
+  allC.forEach((ex, i) => {
+    countryNamesBox.insertAdjacentHTML(
+      "beforeend",
+      `<p class="loc__ex__country-name">${ex}</p>`
+    );
+  });
+
+  renderCountryLoc(allC[Math.trunc(Math.random() * 250) + 1]);
+};
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 searchInput.addEventListener("input", function (e) {
   let input = searchInput.value;
@@ -139,7 +182,24 @@ searchInput.addEventListener("input", function (e) {
     }
   });
 
+  if (examples.length === 0) {
+    document.querySelector(".loc__ex__country-name__title").style.opacity = "0";
+
+    countryNamesBox.innerHTML = "";
+    countryNamesBox.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="no-result">
+      <p class="no-result__text">No Result</p>
+      </div>
+      `
+      //   <ion-icon class="no-result__icon" name="help-outline"></ion-icon>
+    );
+  }
+
   if (input === ".") {
+    document.querySelector(".loc__ex__country-name__title").style.opacity = "1";
+
     countryNamesBox.innerHTML = "";
 
     data.forEach((cn) => {
@@ -151,25 +211,38 @@ searchInput.addEventListener("input", function (e) {
     });
   }
 
-  countryNamesBox.innerHTML = "";
+  if (examples.length >= 1) {
+    document.querySelector(".loc__ex__country-name__title").style.opacity = "1";
 
-  examples.forEach((ex, i) => {
-    countryNamesBox.insertAdjacentHTML(
-      "beforeend",
-      `<p class="loc__ex__country-name">${ex}</p>`
-    );
-  });
+    countryNamesBox.innerHTML = "";
+
+    examples.forEach((ex, i) => {
+      countryNamesBox.insertAdjacentHTML(
+        "beforeend",
+        `<p class="loc__ex__country-name">${ex}</p>`
+      );
+    });
+  }
 
   if (!input) {
+    document.querySelector(".loc__ex__country-name__title").style.opacity = "1";
+
     countryNamesBox.innerHTML = "";
-    countryNamesBox.insertAdjacentHTML(
-      "afterbegin",
-      `
-      <p class="loc__ex__country-name">Switzerland</p>
-      <p class="loc__ex__country-name">Germany</p>
-      <p class="loc__ex__country-name">Canada</p>
-      `
-    );
+    // countryNamesBox.insertAdjacentHTML(
+    //   "afterbegin",
+    //   `
+    //   <p class="loc__ex__country-name">Switzerland</p>
+    //   <p class="loc__ex__country-name">Germany</p>
+    //   <p class="loc__ex__country-name">Canada</p>
+    //   `
+    // );
+
+    examples.forEach((ex, i) => {
+      countryNamesBox.insertAdjacentHTML(
+        "beforeend",
+        `<p class="loc__ex__country-name">${ex}</p>`
+      );
+    });
   }
 });
 
@@ -179,7 +252,5 @@ countryNamesBox.addEventListener("click", function (e) {
   let countryName = e.target.textContent;
   renderCountryLoc(countryName);
 });
-
-renderCountryLoc("italy");
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //

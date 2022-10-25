@@ -196,6 +196,11 @@ body {
   margin: 28rem auto;
   padding: 1.5rem;
 }
+.sync-icon--loc {
+  width: 15rem;
+  height: 15rem;
+  margin-top: 4rem;
+}
 
 @keyframes syncAnimation {
   0% {
@@ -228,6 +233,7 @@ body {
 .start-country:hover, .start-country:active {
   border-bottom: 1px solid #fa5252;
   color: #f03e3e;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .leaflet-control-container {
@@ -503,6 +509,14 @@ body {
   font-size: 1.2rem;
 }
 
+.clicker {
+  display: none;
+}
+
+.locations {
+  display: block;
+}
+
 .locations {
   width: 100rem;
   height: 50rem;
@@ -539,7 +553,8 @@ body {
   background-color: transparent;
 }
 .loc__search-bar:focus {
-  outline: 2px solid #aaa;
+  outline: none;
+  box-shadow: 0 0 2px 2px #aaa;
 }
 .loc__search-bar__label {
   margin: 0 auto;
@@ -634,6 +649,26 @@ body {
 }
 .loc__ex__country-name__title {
   padding: 0 1rem 2rem 0;
+}
+
+.no-result {
+  font-size: 5rem;
+  font-weight: 600;
+  color: #777;
+  color: #ff6b6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.no-result__text {
+  padding: 0 2rem;
+  border-bottom: 2px solid #ff6b6b;
+  box-shadow: 0 4px 3px -3px gray;
+  cursor: default;
+}
+.no-result__text::selection {
+  background-color: transparent;
 }
 
 .nav {
