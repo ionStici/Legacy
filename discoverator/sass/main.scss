@@ -2,7 +2,6 @@
 @import "abstracts/variables";
 
 @import "base";
-@import "game";
 @import "content";
 @import "country-box";
 @import "leaflet";
@@ -10,6 +9,7 @@
 @import "nav";
 @import "typography";
 @import "utilities";
+@import "game";
 
 @import "queries";
 @import "queries-loc"; // Font sizes (px)
