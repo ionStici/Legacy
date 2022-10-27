@@ -7,6 +7,14 @@
 
 // all();
 
+// <p class="game__text">
+//   <ion-icon name="checkmark-outline"></ion-icon>
+//   By the way, you need a 850px+ wide screen to play the game.
+//   <br />
+//   The dev got lazy and didn't want to implement responsive
+//   design.
+// </p>
+
 const introMarkup = `
             <div class="game__intro-layout">
               <div class="game__intro-layout__box">
@@ -38,17 +46,8 @@ const introMarkup = `
 
                 <p class="game__text">
                   <ion-icon name="checkmark-outline"></ion-icon>
-                  By the way, you need a 850px+ wide screen to play the game.
-                  <br />
-                  The dev got lazy and didn't want to implement responsive
-                  design.
-                </p>
-
-                <p class="game__text">
-                  <ion-icon name="checkmark-outline"></ion-icon>
                   Press Begin to proceed and select game settings.
                 </p>
-
 
                 <div class="game__intro-btns-box">
                   <button class="game__intro-btn game__intro-btn--begin">Begin</button>
@@ -77,7 +76,7 @@ const beginBtn = document.querySelector(".game__intro-btn--begin");
 const historyBtn = document.querySelector(".game__intro-btn--2");
 
 beginBtn.addEventListener("click", function () {
-  introLayout.innerHTML = "";
+  //   introLayout.innerHTML = "";
   console.log("Begin Button");
 });
 

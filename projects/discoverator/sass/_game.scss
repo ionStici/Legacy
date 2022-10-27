@@ -8,6 +8,9 @@
 
 // TEMPORARY
 
+// MATTE COLOR
+// rgb(40, 40, 43)
+
 .game {
   &__container {
     width: 100%;
@@ -54,6 +57,7 @@
 
   &__heading-3 {
     margin-top: 2.5rem;
+    // margin-top: 3rem;
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
     color: #555;
@@ -86,7 +90,7 @@
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: 1rem;
-    // margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   &__intro-btn {
@@ -100,6 +104,7 @@
     font-size: 2.5rem;
     letter-spacing: 0.5px;
     font-weight: 600;
+    color: #222;
 
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
