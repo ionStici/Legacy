@@ -12,7 +12,7 @@ html {
 }
 @media only screen and (min-width: 112.5em) {
   html {
-    font-size: 75%;
+    font-size: 12px;
   }
 }
 @media only screen and (max-width: 75em) {
@@ -20,17 +20,6 @@ html {
     font-size: 9px;
   }
 }
-@media only screen and (max-width: 37.5em) {
-  html {
-    font-size: 62.5%;
-  }
-}
-@media only screen and (max-width: 20em) {
-  html {
-    font-size: 62.5%;
-  }
-}
-
 body {
   padding: 3rem;
 }
@@ -43,8 +32,7 @@ body {
 .main {
   background-color: #f7f7f7;
   padding-top: 25rem;
-  margin-top: -23rem;
-  padding-bottom: 50rem;
+  margin-top: -24rem;
 }
 
 body {
@@ -62,20 +50,58 @@ body {
   font-weight: 500;
   letter-spacing: 1rem;
   line-height: 1.2;
+  backface-visibility: hidden;
+}
+.heading-1--animated {
+  animation: moveInLeft 1s ease-in-out;
 }
 
 .header__text {
   color: #fff;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.3rem;
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
   line-height: 1.2;
+  backface-visibility: hidden;
+}
+.header__text--animated {
+  animation: moveInRight 1s ease-in-out;
 }
 
 .u-center-text {
   text-align: center !important;
 }
 
+.u-margin-top-6rem {
+  margin-top: 6rem !important;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0.5;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -101,7 +127,6 @@ body {
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
-  margin-top: 6rem;
 }
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -142,13 +167,13 @@ body {
   background-color: #55c57a;
 }
 .btn--animated {
-  animation: moveInBottom 0.5s 0.75s;
+  animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
 
 .header {
   width: 100%;
-  height: 80vh;
+  height: 64rem;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.6), rgba(40, 180, 133, 0.6)), url(../img/header-background.jpg);
   background-size: cover;

@@ -11,7 +11,8 @@ html {
     box-sizing: border-box;
 
     @include width(1800) {
-        font-size: 75%; // 1rem = 12px;  12/16 = 75%
+        // font-size: 75%; // 1rem = 12px;  12/16 = 75%
+        font-size: 12px;
     }
 
     @include width(1200) {
@@ -19,15 +20,12 @@ html {
     }
 
     @include width(900) {
-        // font-size: 5px;
     }
 
     @include width(600) {
-        font-size: 62.5%;
     }
 
     @include width(320) {
-        font-size: 62.5%;
     }
 }
 
@@ -42,10 +40,7 @@ body {
 .main {
     background-color: #f7f7f7;
     padding-top: 25rem;
-    margin-top: -23rem;
-
-    // TEMPORARY
-    padding-bottom: 50rem;
+    margin-top: -24rem;
 }
 
 // ::selection {}

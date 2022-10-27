@@ -19,9 +19,6 @@
 
         cursor: pointer;
         transition: all 0.2s;
-
-        // TEMP
-        margin-top: 6rem;
     }
 
     &:hover {
@@ -73,7 +70,7 @@
     }
 
     &--animated {
-        animation: moveInBottom 0.5s 0.75s;
+        animation: moveInBottom 0.5s ease-out 0.75s;
         animation-fill-mode: backwards;
     }
 }
