@@ -1,0 +1,24 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.5;
+}
+
+.heading-1 {
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 6rem;
+    font-weight: 500;
+    letter-spacing: 1rem;
+    line-height: 1.2;
+}
+
+.header__text {
+    color: $color-white;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    line-height: 1.2;
+}

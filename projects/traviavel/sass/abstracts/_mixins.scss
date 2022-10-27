@@ -1,0 +1,34 @@
+// MEDIA QUERY MANAGER
+// ORDER: Base + typography > general layout + grid > page layout > components
+
+@mixin width($breakpoint) {
+    @if $breakpoint == 1200 {
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 900 {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 600 {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 320 {
+        @media only screen and (max-width: 20em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 1800 {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+}
