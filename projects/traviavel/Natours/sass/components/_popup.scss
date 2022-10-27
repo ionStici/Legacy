@@ -1,0 +1,128 @@
+.popup {    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+
+    background-color: rgba($color-black, .8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;     // like display none, this needs because the text remains there without it
+    transition: all .3s;
+
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
+
+
+    &__close {
+        &:link, 
+        &:visited {
+            color: $color-grey-dark;
+            text-decoration: none;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            display: inline-block;
+
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__content {
+        @include absCenter;
+
+        width: 75%;
+        // height: 50rem;
+        background-color: $color-white;
+        border-radius: 3px;
+        box-shadow: 0 2rem 4rem rgba($color-black,.2);
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%);
+        z-index: 150;
+
+        display: table;
+        // With this {dispaly: table;} - this one functions as a table, the content, and then the left and the right are both table cells. And the browser will automatically give them the same height. So this is like faking that this is a table. 
+
+        overflow: hidden;   // to fix the padding with images
+
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+
+        transition: all .4s .1s;
+    }
+
+// Open states
+    &:target {
+        opacity: 1;
+        visibility: visible;
+
+    }   // So we have the pseudo-class called target, which applies to the element which is the target when we click on a button, or basically when the URL changes to having target in it. 
+    // Since out popup element has the ID of popup, the target is basically the entire element, and so as soon as this element becomes the target, the pseudo class called target is available on it, and so we can then select that element using that pseudo class and then specifying our styles on it. And after we remove the id, the target pseudo class remove the styles. 
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+
+    &__left {
+        width: 33.3333333333%;
+        display: table-cell;
+        // border-top-left-radius: 3px;
+        // border-bottom-left-radius: 3px;
+    }
+
+    &__right {
+        width: 66.6666666667%;
+        display: table-cell;
+        vertical-align: middle;     // this is for table-cell to work
+        padding: 3rem 5rem;
+    }
+
+    &__img {
+        display: block;
+        height: 50%;
+        width: 100%;
+
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+        -moz-column-count: 2;       
+        -moz-column-gap: 4rem;     
+        -moz-column-rule: 1px solid $color-grey-light-2;     
+
+        column-count: 2;        // we can use how many columns as we want
+        column-gap: 4rem;      // the default here is 1em, which is the font-size
+        column-rule: 1px solid $color-grey-light-2;     // like a border
+
+        -moz-hyphens: auto;         // for mozilla
+        -ms-hyphens: auto;          // for microsoft edge
+        -webkit-hyphens: auto;      // for chrome and safari
+        hyphens: auto;
+        // hyphens property have 3 possibilities. First one is none which is the initial value, so the default. Then we have manual; - with this we go to our text and automatically specify where we want hyphens to occur - so specifying places where we want to occur. 
+        // Then we have auto; - it will automatically figure out where to place hyphens. But, in order to make this work correctly, you have to actually define the document language, up in the html element, where we have the lang attribute. 
+        // Also, this actually needs a lot of prefixes in order to work in all the modern browsers. So we should give it a moz prefix for mozilla. Because in some older versions it will not work without this. And actually the same thing applies to the columns. So we should at least mozilla. So in mozilla this is not gonna work without this prefix. But, in real life, you should not do it by hand, but instead there are nice tools that you can use in order to do that, and one of them is called Autoprefixer.
+    }
+}
+
