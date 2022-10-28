@@ -116,6 +116,10 @@ body {
   margin-bottom: 1.5rem !important;
 }
 
+.u-skew-y-7deg {
+  transform: skewY(7deg) !important;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -297,6 +301,10 @@ body {
   transform: scale(0.9);
 }
 
+.feature-box {
+  color: #fff;
+}
+
 .header {
   width: 100%;
   height: 70rem;
@@ -343,6 +351,23 @@ body {
 }
 .about__box-right {
   width: 47.5%;
+}
+
+.section-features {
+  margin: 10rem 0;
+  padding: 15rem 0;
+  transform: skewY(-7deg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/com-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.section-features__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 6rem;
+  width: 114rem;
+  margin: 0 auto;
+  transform: skewY(7deg);
 }
 
 /*# sourceMappingURL=style.css.map */
