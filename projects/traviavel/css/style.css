@@ -40,10 +40,6 @@ body {
   margin-top: -24rem;
 }
 
-.main {
-  padding-bottom: 50rem;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
@@ -93,7 +89,7 @@ body {
 }
 .heading-2:hover {
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.05);
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 .heading-3 {
@@ -117,8 +113,16 @@ body {
   margin-top: 6rem !important;
 }
 
+.u-margin-top-10rem {
+  margin-top: 10rem !important;
+}
+
 .u-margin-bottom-1-5rem {
   margin-bottom: 1.5rem !important;
+}
+
+.u-margin-bottom-8rem {
+  margin-bottom: 8rem !important;
 }
 
 .u-skew-y-7deg {
@@ -178,7 +182,6 @@ body {
   border-radius: 10rem;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   padding: 1.5rem 4rem;
-  background-color: #fff;
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
@@ -188,7 +191,7 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .btn:hover::after {
-  transform: scaleX(1.7) scaleY(1.4);
+  transform: scale(1.6);
   opacity: 0;
 }
 .btn:active, .btn:focus {
@@ -376,6 +379,10 @@ body {
   content: "W";
 }
 
+.card {
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
 .header {
   width: 100%;
   height: 70rem;
@@ -439,6 +446,25 @@ body {
   width: 114rem;
   margin: 0 auto;
   transform: skewY(6deg);
+}
+
+.section-tours {
+  padding: 2rem 0 15rem 0;
+}
+.section-tours__heading-box {
+  text-align: center;
+}
+.section-tours__container {
+  width: 114rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 6rem;
+}
+
+.section-stories {
+  background-color: #ddd;
+  height: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

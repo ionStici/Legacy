@@ -50,3 +50,27 @@
         transform: skewY(6deg);
     }
 }
+
+//
+
+.section-tours {
+    padding: 2rem 0 15rem 0;
+
+    &__heading-box {
+        text-align: center;
+    }
+
+    &__container {
+        width: $grid-width;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 6rem;
+    }
+}
+
+.section-stories {
+    background-color: #ddd;
+    height: 2rem;
+}
