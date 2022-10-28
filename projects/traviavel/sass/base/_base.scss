@@ -16,16 +16,19 @@ html {
     }
 
     @include width(1200) {
-        font-size: 9px;
+        font-size: 9px; // 56.25%
     }
 
     @include width(900) {
+        font-size: 8px; // 50%
     }
 
     @include width(600) {
+        //
     }
 
     @include width(320) {
+        //
     }
 }
 

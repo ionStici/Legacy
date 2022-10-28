@@ -28,14 +28,14 @@
 .section-features {
     margin: 10rem 0;
     padding: 15rem 0;
-    transform: skewY(-7deg);
+    transform: skewY(-6deg);
 
     background-image: linear-gradient(
             to right bottom,
             rgba($color-1-light, 0.7),
             rgba($color-1-dark, 0.7)
         ),
-        url(../img/com-1.jpg);
+        url(../img/features-background.jpg);
     background-size: cover;
     background-position: center;
 
@@ -47,6 +47,6 @@
         width: $grid-width;
         margin: 0 auto;
 
-        transform: skewY(7deg);
+        transform: skewY(6deg);
     }
 }

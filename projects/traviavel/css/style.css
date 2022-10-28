@@ -20,6 +20,11 @@ html {
     font-size: 9px;
   }
 }
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 8px;
+  }
+}
 body {
   padding: 3rem;
 }
@@ -356,8 +361,8 @@ body {
 .section-features {
   margin: 10rem 0;
   padding: 15rem 0;
-  transform: skewY(-7deg);
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/com-1.jpg);
+  transform: skewY(-6deg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/features-background.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -367,7 +372,7 @@ body {
   column-gap: 6rem;
   width: 114rem;
   margin: 0 auto;
-  transform: skewY(7deg);
+  transform: skewY(6deg);
 }
 
 /*# sourceMappingURL=style.css.map */
