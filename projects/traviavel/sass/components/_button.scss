@@ -70,7 +70,36 @@
     }
 
     &--animated {
-        animation: moveInBottom 0.5s ease-out 0.75s;
+        animation: moveInBottom 0.5s ease-out 0.95s;
         animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: $color-1;
+        padding: 0.3rem 1rem;
+        border-bottom: 1px solid $color-1;
+
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        border-radius: 3px;
+        background-color: $color-1;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        border-radius: 3px;
+        box-shadow: 0 0.5rem 2rem rgba($color-black, 0.15);
+        transform: translateY(0);
     }
 }

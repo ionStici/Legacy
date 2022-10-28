@@ -15,7 +15,8 @@ body {
     line-height: 1.2;
 
     &--animated {
-        animation: moveInLeft 1s ease-in-out;
+        animation: moveInLeft 1s ease-in-out 0.2s;
+        animation-fill-mode: backwards;
     }
 
     backface-visibility: hidden;
@@ -29,8 +30,43 @@ body {
     line-height: 1.2;
 
     &--animated {
-        animation: moveInRight 1s ease-in-out;
+        animation: moveInRight 1s ease-in-out 0.2s;
+        animation-fill-mode: backwards;
     }
 
     backface-visibility: hidden;
+}
+
+.heading-2 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: all 0.2s;
+    cursor: default;
+
+    // Background as text color
+    background-image: linear-gradient(to right, $color-1-light, $color-1-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    &:hover {
+        text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.05);
+        transform: scale(1.01);
+    }
+}
+
+.heading-3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.6rem;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
 }
