@@ -1,3 +1,65 @@
 .card {
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    // CARD FUNCTIONALITY
+    height: 52rem;
+    position: relative;
+    perspective: 150rem;
+
+    &__side {
+        width: 100%;
+        height: 52rem;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        backface-visibility: hidden;
+        overflow: hidden;
+
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        border-radius: 3px;
+
+        transition: all 0.8s ease;
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-2-light,
+                    $color-2-dark
+                );
+            }
+
+            &-2 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-1-light,
+                    $color-1-dark
+                );
+            }
+
+            &-3 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-3-light,
+                    $color-3-dark
+                );
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    // CARD STYLING
 }
