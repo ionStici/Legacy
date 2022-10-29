@@ -417,6 +417,78 @@ body {
 .card:hover .card__side--back {
   transform: rotateY(0);
 }
+.card__picture {
+  height: 21rem;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.card__picture--1 {
+  background-image: url(../img/card-1.jpg);
+}
+.card__picture--2 {
+  background-image: url(../img/card-2.jpg);
+}
+.card__picture--3 {
+  background-image: url(../img/card-3.jpg);
+}
+.card__heading {
+  position: absolute;
+  top: 18.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+}
+.card__heading--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.card__heading--2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card__heading--3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.card__details {
+  padding: 3.5rem 3rem 3rem 3rem;
+  text-align: center;
+}
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card__details li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1.25rem;
+}
+.card__details li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  color: #fff;
+}
+.card__price {
+  margin-bottom: 8rem;
+  font-size: 6rem;
+  font-weight: 100;
+}
+.card__only {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
 
 .header {
   width: 100%;
