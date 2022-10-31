@@ -1,4 +1,79 @@
 .footer {
     background-color: #333;
-    height: 2rem;
+    padding: 10rem 0;
+
+    font-family: 'Lato';
+
+    &__logo-box {
+        width: 25rem;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+    }
+
+    &__logo {
+        width: 100%;
+
+        display: inline;
+    }
+
+    &__container {
+        width: $grid-width;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15rem;
+    }
+
+    &__links {
+        border-top: 1px solid #777;
+
+        ul {
+            margin: 0 auto;
+            width: fit-content;
+            padding: 0.5rem 1rem 0 1rem;
+            list-style: none;
+            display: flex;
+        }
+
+        li:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        a,
+        a:link,
+        a:visited {
+            font-size: 1.4rem;
+            color: #f7f7f7;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.33px;
+            display: inline-block;
+            padding: 0.5rem 0.5rem;
+
+            transition: all 0.3s;
+
+            &:hover,
+            &:active {
+                transform: scale(1.1) translateY(-1px);
+                color: $color-1;
+                box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &__box-right {
+        border-top: 1px solid #777;
+        text-align: center;
+    }
+
+    &__copyright {
+        padding-left: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        font-size: 1.5rem;
+        color: #f7f7f7;
+        letter-spacing: 0.33px;
+    }
 }
