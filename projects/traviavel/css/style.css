@@ -121,6 +121,10 @@ body {
   margin-bottom: 1.5rem !important;
 }
 
+.u-margin-bottom-mediu {
+  margin-bottom: 3rem !important;
+}
+
 .u-margin-bottom-8rem {
   margin-bottom: 8rem !important;
 }
@@ -176,9 +180,11 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
+  font-family: "Montserrat", sans-serif;
   display: inline-block;
   width: fit-content;
   margin: 0 auto;
+  border: none;
   border-radius: 10rem;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   padding: 1.5rem 4rem;
@@ -601,6 +607,11 @@ body {
   width: 100%;
 }
 
+.footer {
+  background-color: #333;
+  height: 2rem;
+}
+
 .section-about {
   width: 114rem;
   margin: 0 auto;
@@ -658,8 +669,23 @@ body {
 }
 
 .section-book {
-  height: 2rem;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  padding: 15rem 0;
+}
+.section-book__grid {
+  width: 114rem;
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/book-background.jpg);
+  background-size: cover;
+  background-position: right;
+  height: 50rem;
+}
+.section-book__content {
+  width: 50%;
+  height: 100%;
+  padding: 6rem;
 }
 
 /*# sourceMappingURL=style.css.map */

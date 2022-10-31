@@ -76,7 +76,36 @@
 }
 
 .section-book {
-    height: 2rem;
     // prettier-ignore
     background-image: linear-gradient(to right bottom, $color-1-light, $color-1-dark);
+    padding: 15rem 0;
+
+    &__grid {
+        width: $grid-width;
+        margin: 0 auto;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+        background-image: linear-gradient(
+                105deg,
+                rgba($color-white, 0.9) 0%,
+                rgba($color-white, 0.9) 50%,
+                transparent 50%
+            ),
+            url(../img/book-background.jpg);
+        background-size: cover;
+        background-position: right;
+
+        height: 50rem;
+    }
+
+    &__content {
+        width: 50%;
+        height: 100%;
+        padding: 6rem;
+    }
+}
+
+.book-form {
+    //
 }
