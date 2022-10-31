@@ -71,6 +71,12 @@
 }
 
 .section-stories {
-    background-color: #ddd;
+    padding: 15rem 0;
+    position: relative;
+}
+
+.section-book {
     height: 2rem;
+    // prettier-ignore
+    background-image: linear-gradient(to right bottom, $color-1-light, $color-1-dark);
 }
