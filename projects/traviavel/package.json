@@ -6,7 +6,9 @@
     "scripts": {
         "live": "live-server",
         "sass": "sass sass/main.scss css/style.css -w",
-        "start": "npm-run-all --parallel live sass"
+        "start": "npm-run-all --parallel live sass",
+        
+        "parcel": "parcel index.html"
     },
     "author": "",
     "license": "ISC"
