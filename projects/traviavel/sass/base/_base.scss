@@ -15,15 +15,29 @@ html {
         font-size: 12px;
     }
 
+    // // // // // // // // // // // // // // // // // // // // //
+
     @include width(1200) {
         font-size: 9px; // 56.25%
+    }
+
+    @include width(1050) {
+        //
     }
 
     @include width(900) {
         font-size: 8px; // 50%
     }
 
+    @include width(750) {
+        //
+    }
+
     @include width(600) {
+        //
+    }
+
+    @include width(450) {
         //
     }
 

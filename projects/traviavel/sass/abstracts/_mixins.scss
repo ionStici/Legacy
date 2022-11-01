@@ -1,9 +1,18 @@
 // MEDIA QUERY MANAGER
 // ORDER: Base + typography > general layout + grid > page layout > components
 
+// 1200 - 900 - 600 - 320
+// 1200 - 1050 - 900 - 750 - 600 - 450 - 320
+
 @mixin width($breakpoint) {
     @if $breakpoint == 1200 {
         @media only screen and (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 1050 {
+        @media only screen and (max-width: 65.625em) {
             @content;
         }
     }
@@ -14,8 +23,20 @@
         }
     }
 
+    @if $breakpoint == 750 {
+        @media only screen and (max-width: 46.875em) {
+            @content;
+        }
+    }
+
     @if $breakpoint == 600 {
         @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 450 {
+        @media only screen and (max-width: 28.125em) {
             @content;
         }
     }
@@ -25,6 +46,8 @@
             @content;
         }
     }
+
+    // // // // // // // // // // // // // // // // // // // // //
 
     @if $breakpoint == 1800 {
         @media only screen and (min-width: 112.5em) {
