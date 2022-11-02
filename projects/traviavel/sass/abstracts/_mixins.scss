@@ -5,6 +5,12 @@
 // 1200 - 1050 - 900 - 750 - 600 - 450 - 320
 
 @mixin width($breakpoint) {
+    @if $breakpoint == 1250 {
+        @media only screen and (max-width: 78em) {
+            @content;
+        }
+    }
+
     @if $breakpoint == 1200 {
         @media only screen and (max-width: 75em) {
             @content;

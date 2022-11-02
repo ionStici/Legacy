@@ -34,10 +34,29 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 15rem;
+
+        @include width(1200) {
+            width: 105rem;
+            column-gap: 5rem;
+        }
+
+        @include width(1050) {
+            width: 95rem;
+            column-gap: 5rem;
+
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__links {
         border-top: 1px solid #777;
+
+        @include width(1050) {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
         ul {
             margin: 0 auto;
@@ -45,6 +64,10 @@
             padding: 0.5rem 1rem 0 1rem;
             list-style: none;
             display: flex;
+
+            @include width(1050) {
+                margin-bottom: 5rem;
+            }
         }
 
         li:not(:last-child) {
@@ -77,6 +100,12 @@
     &__box-right {
         border-top: 1px solid #777;
         text-align: center;
+
+        @include width(1050) {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
     }
 
     &__copyright {

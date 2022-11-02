@@ -22,7 +22,7 @@ html {
     }
 
     @include width(1050) {
-        //
+        font-size: 8.5px; // 53%
     }
 
     @include width(900) {

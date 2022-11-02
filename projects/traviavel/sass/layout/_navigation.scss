@@ -109,6 +109,7 @@
         height: 1rem;
         z-index: -10;
         opacity: 0;
+        cursor: pointer;
         transition: opacity 0.5s;
     }
 
@@ -121,6 +122,7 @@
 
         background-color: rgba(0, 0, 0, 0.33);
         backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
         width: 100vw;
         height: 100vh;
         opacity: 1;
@@ -131,9 +133,11 @@
         height: 1rem;
         transition: all 0.4s;
         border-radius: 10px;
+
         position: absolute;
-        top: -0.25rem;
-        right: -0.33rem;
+        top: 2rem;
+        right: 2rem;
+        z-index: -10;
 
         // // // // // // // // // // // // //
 
@@ -176,7 +180,7 @@
                 border-radius: 3px;
                 background-position: 100%;
                 color: $color-white;
-                transform: translateX(1rem);
+                transform: translateX(0.5rem);
                 border-bottom: 1px solid transparent;
             }
         }
@@ -203,6 +207,8 @@
         border-radius: 10px;
         background-color: $color-white;
         box-shadow: 0 1rem 4rem 2px rgba(0, 0, 0, 0.2);
+        top: -0.25rem;
+        right: -0.33rem;
         z-index: 25;
     }
 

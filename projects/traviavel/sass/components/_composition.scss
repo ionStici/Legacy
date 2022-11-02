@@ -33,11 +33,21 @@
             right: 0;
             top: 2rem;
             z-index: 2;
+
+            @include width(1050) {
+                top: 4rem;
+                right: -5rem;
+            }
         }
         &--3 {
             left: 20%;
             top: 10rem;
             z-index: 3;
+
+            @include width(1050) {
+                top: 12rem;
+                left: 15%;
+            }
         }
     }
 

@@ -2,6 +2,19 @@
     width: $grid-width;
     margin: 0 auto;
     padding-bottom: 3rem;
+
+    @include width(1250) {
+        width: 110rem;
+    }
+
+    @include width(1200) {
+        width: 105rem;
+        // padding: 0 5rem 3rem 5rem;
+    }
+
+    @include width(1050) {
+        width: 90rem;
+    }
 }
 
 .about {
@@ -20,6 +33,14 @@
 
     &__box-right {
         width: 47.5%;
+
+        @include width(1200) {
+            transform: translateY(2rem);
+        }
+
+        @include width(1050) {
+            transform: translateY(5rem);
+        }
     }
 }
 
@@ -48,6 +69,20 @@
         margin: 0 auto;
 
         transform: skewY(6deg);
+
+        @include width(1250) {
+            width: 110rem;
+        }
+
+        @include width(1200) {
+            width: 105rem;
+            column-gap: 4rem;
+        }
+
+        @include width(1050) {
+            column-gap: 2rem;
+            width: 90rem;
+        }
     }
 }
 
@@ -67,13 +102,31 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 6rem;
+
+        @include width(1250) {
+            width: 110rem;
+        }
+
+        @include width(1200) {
+            column-gap: 5rem;
+            width: 108rem;
+        }
+
+        @include width(1050) {
+            column-gap: 3rem;
+            width: 100rem;
+        }
     }
 }
+
+//
 
 .section-stories {
     padding: 15rem 0;
     position: relative;
 }
+
+//
 
 .section-book {
     // prettier-ignore
@@ -97,11 +150,41 @@
         background-position: right;
 
         height: 50rem;
+
+        @include width(1250) {
+            width: 110rem;
+        }
+
+        @include width(1200) {
+            width: 107rem;
+        }
+
+        @include width(1050) {
+            width: 90rem;
+        }
     }
 
     &__content {
         width: 50%;
         height: 100%;
         padding: 6rem;
+
+        @include width(1250) {
+            width: 52%;
+        }
+
+        @include width(1200) {
+            width: 54%;
+        }
+
+        @include width(1050) {
+            width: 60%;
+        }
+
+        .heading-2 {
+            @include width(1050) {
+                font-size: 3rem;
+            }
+        }
     }
 }

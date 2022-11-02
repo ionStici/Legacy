@@ -2,6 +2,10 @@
     &-grid {
         width: $grid-width;
         margin: 0 auto;
+
+        @include width(1050) {
+            width: 100rem;
+        }
     }
 
     &:not(:last-child) {
@@ -79,5 +83,9 @@
         margin-left: 4rem;
         width: 55rem;
         font-size: 1.4rem;
+
+        @include width(1050) {
+            width: 46rem;
+        }
     }
 }

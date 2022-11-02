@@ -34,6 +34,10 @@
         &:focus:invalid {
             border-bottom: 3px solid $color-2-dark;
         }
+
+        @include width(1050) {
+            width: 82%;
+        }
     }
 
     &__label {
@@ -59,6 +63,11 @@
         div {
             margin-left: 1rem;
             width: 45%;
+
+            @include width(1050) {
+                margin-left: 0.2rem;
+                width: 40%;
+            }
         }
     }
 
@@ -71,6 +80,10 @@
         cursor: pointer;
         padding-left: 3.5rem;
         position: relative;
+
+        @include width(1050) {
+            font-size: 1.5rem;
+        }
     }
 
     &__radio-button {
