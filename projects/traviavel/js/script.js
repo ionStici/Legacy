@@ -1,17 +1,17 @@
+// // // // // // // NAVIGATION FUNCTIONALITY // // // // // // //
+
 const navCheckbox = document.querySelector('.nav__checkbox');
 
 const checking = function () {
     if (navCheckbox.checked === true) {
         document.querySelector('.nav__ul').style.display = 'none';
-
-        document.querySelector('.nav__background').style.display = 'none';
-        setTimeout(() => {
-            document.querySelector('.nav__background').style.display = 'block';
-        }, 1);
+        document.querySelector('.nav__ul').style.opacity = '0';
     }
 
     if (navCheckbox.checked === false) {
         document.querySelector('.nav__ul').style.display = 'block';
+        // prettier-ignore
+        setTimeout(() => document.querySelector('.nav__ul').style.opacity = '1', 400);
     }
 };
 
@@ -21,7 +21,10 @@ const btn = document.querySelector('.nav__label').addEventListener('click', func
 });
 
 // prettier-ignore
-// document.querySelector('.nav__background').addEventListener('click', function() {
-//     navCheckbox.checked = false;
-//     checking();
-// })
+document.querySelector('.nav__background').addEventListener('click', function () {
+    navCheckbox.checked = false;
+    document.querySelector('.nav__ul').style.display = 'none';
+    document.querySelector('.nav__ul').style.opacity = '0';
+});
+
+// // // // // // // // // // // // // // // // // // // // // // //
