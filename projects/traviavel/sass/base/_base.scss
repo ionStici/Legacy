@@ -11,8 +11,7 @@ html {
     box-sizing: border-box;
 
     @include width(1800) {
-        // font-size: 75%; // 1rem = 12px;  12/16 = 75%
-        font-size: 12px;
+        font-size: 12px; // 75%
     }
 
     // // // // // // // // // // // // // // // // // // // // //
@@ -29,12 +28,16 @@ html {
         font-size: 8px; // 50%
     }
 
+    @include width(825) {
+        font-size: 7.7px; // 48%
+    }
+
     @include width(750) {
-        //
+        font-size: 7px; // 44%
     }
 
     @include width(600) {
-        //
+        font-size: 6px;
     }
 
     @include width(450) {
@@ -49,7 +52,7 @@ html {
 body {
     padding: 3rem;
 
-    @include width(600) {
+    @include width(900) {
         padding: 0;
     }
 }
@@ -61,8 +64,3 @@ body {
 }
 
 // ::selection {}
-
-// TEMPORARY
-// .main {
-//     padding-bottom: 50rem;
-// }

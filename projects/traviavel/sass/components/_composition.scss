@@ -27,6 +27,11 @@
             left: 0;
             top: -2rem;
             z-index: 1;
+
+            @include width(750) {
+                top: -0rem;
+                left: -1rem;
+            }
         }
 
         &--2 {
@@ -38,6 +43,16 @@
                 top: 4rem;
                 right: -5rem;
             }
+
+            @include width(900) {
+                top: 7rem;
+                right: -7rem;
+            }
+
+            @include width(750) {
+                right: -4rem;
+                top: 9rem;
+            }
         }
         &--3 {
             left: 20%;
@@ -47,6 +62,15 @@
             @include width(1050) {
                 top: 12rem;
                 left: 15%;
+            }
+
+            @include width(900) {
+                top: 13rem;
+            }
+
+            @include width(750) {
+                left: 12%;
+                top: 15rem;
             }
         }
     }

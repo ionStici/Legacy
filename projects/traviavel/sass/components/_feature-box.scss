@@ -7,6 +7,28 @@
     font-size: 1.5rem;
     transition: transform 0.3s;
 
+    @include width(1250) {
+        .heading-3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @include width(1050) {
+        padding: 2rem 1.4rem 2rem 1.4rem;
+
+        .heading-3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @include width(750) {
+        .heading-3 {
+            font-size: 1.45rem;
+        }
+
+        padding: 2rem 1rem 2rem 1rem;
+    }
+
     &__icon {
         font-size: 6rem;
         margin-bottom: 0.5rem;
