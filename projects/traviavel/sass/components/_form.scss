@@ -16,7 +16,7 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         border: none;
         border-bottom: 3px solid transparent;
-        background-color: rgba($color-white, 0.5);
+        background-color: rgba($color-white, 0.75);
 
         transition: all 0.3s;
 
@@ -37,6 +37,10 @@
 
         @include width(1050) {
             width: 82%;
+        }
+
+        @include width(420) {
+            width: 100%;
         }
     }
 
@@ -67,6 +71,11 @@
             @include width(1050) {
                 margin-left: 0.2rem;
                 width: 40%;
+            }
+
+            @include width(420) {
+                margin-left: 1rem;
+                width: 50%;
             }
         }
     }

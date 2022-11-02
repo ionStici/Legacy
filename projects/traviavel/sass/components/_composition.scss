@@ -69,6 +69,11 @@
                 right: 30%;
                 z-index: 4;
             }
+
+            @include width(420) {
+                top: -1rem;
+                right: 25%;
+            }
         }
 
         &--3 {

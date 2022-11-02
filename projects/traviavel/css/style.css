@@ -46,6 +46,17 @@ html {
     font-size: 6px;
   }
 }
+@media only screen and (max-width: 26.25em) {
+  html {
+    font-size: 5.6px;
+  }
+}
+@media only screen and (max-width: 20em) {
+  html {
+    font-size: 5.3px;
+  }
+}
+
 body {
   padding: 3rem;
 }
@@ -87,6 +98,11 @@ body {
     font-size: 5rem;
   }
 }
+@media only screen and (max-width: 26.25em) {
+  .heading-1 {
+    font-size: 4.3rem;
+  }
+}
 
 .header__text {
   color: #fff;
@@ -103,6 +119,11 @@ body {
 @media only screen and (max-width: 32.5em) {
   .header__text {
     font-size: 2.4rem;
+  }
+}
+@media only screen and (max-width: 26.25em) {
+  .header__text {
+    font-size: 2rem;
   }
 }
 
@@ -364,6 +385,12 @@ body {
     top: 0rem;
     right: 30%;
     z-index: 4;
+  }
+}
+@media only screen and (max-width: 26.25em) {
+  .composition__photo-box--2 {
+    top: -1rem;
+    right: 25%;
   }
 }
 .composition__photo-box--3 {
@@ -672,6 +699,11 @@ body {
     width: 60rem;
   }
 }
+@media only screen and (max-width: 26.25em) {
+  .story-grid {
+    width: 50rem;
+  }
+}
 .story:not(:last-child) {
   margin-bottom: 8rem;
 }
@@ -690,14 +722,29 @@ body {
     padding: 4rem 5rem 4rem 4rem;
   }
 }
+@media only screen and (max-width: 26.25em) {
+  .story {
+    padding: 4rem 3rem;
+  }
+}
 @media only screen and (max-width: 37.5em) {
   .story {
     flex-direction: column;
     gap: 3.5rem;
   }
 }
+@media only screen and (max-width: 26.25em) {
+  .story {
+    transform: skewX(0deg);
+  }
+}
 .story > * {
   transform: skewX(12deg);
+}
+@media only screen and (max-width: 26.25em) {
+  .story > * {
+    transform: skewX(0deg);
+  }
 }
 .story__shape {
   width: 15rem;
@@ -777,6 +824,11 @@ body {
     font-size: 1.6rem;
   }
 }
+@media only screen and (max-width: 26.25em) {
+  .story__text {
+    margin: 0 auto;
+  }
+}
 
 .form__box {
   margin-bottom: 2rem;
@@ -793,7 +845,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border: none;
   border-bottom: 3px solid transparent;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   transition: all 0.3s;
 }
 .form__input::-webkit-input-placeholder {
@@ -811,6 +863,11 @@ body {
 @media only screen and (max-width: 65.625em) {
   .form__input {
     width: 82%;
+  }
+}
+@media only screen and (max-width: 26.25em) {
+  .form__input {
+    width: 100%;
   }
 }
 .form__label {
@@ -839,6 +896,12 @@ body {
   .form__radio-box div {
     margin-left: 0.2rem;
     width: 40%;
+  }
+}
+@media only screen and (max-width: 26.25em) {
+  .form__radio-box div {
+    margin-left: 1rem;
+    width: 50%;
   }
 }
 .form__radio {
@@ -901,6 +964,12 @@ body {
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 56.25em) {
+  .header__logo {
+    top: 3.5rem;
+    left: 3.5rem;
+  }
 }
 .header__box {
   position: absolute;
@@ -970,6 +1039,11 @@ body {
     padding: 0 2rem;
   }
 }
+@media only screen and (max-width: 20em) {
+  .footer__links {
+    padding: 0 1rem;
+  }
+}
 .footer__links ul {
   margin: 0 auto;
   width: fit-content;
@@ -1016,6 +1090,11 @@ body {
     width: fit-content;
     margin: 0 auto;
     padding: 0 3rem;
+  }
+}
+@media only screen and (max-width: 20em) {
+  .footer__box-right {
+    padding: 0 2rem;
   }
 }
 .footer__copyright {
@@ -1352,8 +1431,8 @@ body {
     display: flex;
     flex-direction: column;
     column-gap: revert;
-    gap: 4rem;
-    width: 50rem;
+    gap: 5rem;
+    width: 43rem;
   }
 }
 
@@ -1399,7 +1478,7 @@ body {
     display: flex;
     flex-direction: column;
     column-gap: revert;
-    gap: 5rem;
+    gap: 8.5rem;
   }
 }
 
@@ -1454,6 +1533,12 @@ body {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 70%, transparent 30%), url(../img/book-background.jpg);
   }
 }
+@media only screen and (max-width: 26.25em) {
+  .section-book__grid {
+    width: 50rem;
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%, transparent 0%), url(../img/book-background.jpg);
+  }
+}
 .section-book__content {
   width: 50%;
   height: 100%;
@@ -1485,6 +1570,15 @@ body {
 @media only screen and (max-width: 32.5em) {
   .section-book__content {
     width: 85%;
+  }
+}
+@media only screen and (max-width: 26.25em) {
+  .section-book__content {
+    width: 100%;
+    padding: 6rem 4rem;
+  }
+  .section-book__content .heading-2 {
+    font-size: 3rem;
   }
 }
 

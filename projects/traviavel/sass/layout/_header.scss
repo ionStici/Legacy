@@ -19,6 +19,11 @@
         padding: 1rem;
         background-color: rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+
+        @include width(900) {
+            top: 3.5rem;
+            left: 3.5rem;
+        }
     }
 
     &__box {

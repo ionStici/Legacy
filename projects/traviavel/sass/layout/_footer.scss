@@ -62,6 +62,10 @@
             padding: 0 2rem;
         }
 
+        @include width(320) {
+            padding: 0 1rem;
+        }
+
         ul {
             margin: 0 auto;
             width: fit-content;
@@ -109,6 +113,10 @@
             width: fit-content;
             margin: 0 auto;
             padding: 0 3rem;
+        }
+
+        @include width(320) {
+            padding: 0 2rem;
         }
     }
 

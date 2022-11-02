@@ -45,11 +45,11 @@ html {
     }
 
     @include width(420) {
-        //
+        font-size: 5.6px; // 35%
     }
 
     @include width(320) {
-        //
+        font-size: 5.3px;
     }
 }
 
