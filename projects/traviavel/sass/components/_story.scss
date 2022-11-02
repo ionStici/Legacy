@@ -14,6 +14,10 @@
         @include width(750) {
             width: 78rem;
         }
+
+        @include width(520) {
+            width: 60rem;
+        }
     }
 
     &:not(:last-child) {
@@ -31,6 +35,10 @@
         padding: 4rem 2rem 4rem 4rem;
     }
 
+    @include width(600) {
+        padding: 4rem 5rem 4rem 4rem;
+    }
+
     margin: 0 auto;
     background-color: rgba($color-white, 0.6);
 
@@ -43,6 +51,11 @@
     // padding-left: 9rem;
 
     transform: skewX(-12deg);
+
+    @include width(600) {
+        flex-direction: column;
+        gap: 3.5rem;
+    }
 
     & > * {
         transform: skewX(12deg);
@@ -119,6 +132,16 @@
 
             .heading-3 {
                 font-size: 1.4rem;
+            }
+        }
+
+        @include width(600) {
+            width: 100%;
+            text-align: center;
+            font-size: 1.37rem;
+
+            .heading-3 {
+                font-size: 1.6rem;
             }
         }
     }

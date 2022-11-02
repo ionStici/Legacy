@@ -22,6 +22,10 @@ body {
     }
 
     backface-visibility: hidden;
+
+    @include width(520) {
+        font-size: 5rem;
+    }
 }
 
 .header__text {
@@ -37,6 +41,10 @@ body {
     }
 
     backface-visibility: hidden;
+
+    @include width(520) {
+        font-size: 2.4rem;
+    }
 }
 
 .heading-2 {

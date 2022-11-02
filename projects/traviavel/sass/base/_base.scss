@@ -37,10 +37,14 @@ html {
     }
 
     @include width(600) {
-        font-size: 6px;
+        font-size: 6px; // 37.5%
     }
 
-    @include width(450) {
+    @include width(520) {
+        //
+    }
+
+    @include width(420) {
         //
     }
 

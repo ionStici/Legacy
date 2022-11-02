@@ -1,6 +1,6 @@
 .composition {
     position: relative;
-    // height: 100%;
+    margin: 0 auto;
 
     &__photo-box {
         width: 30rem;
@@ -23,6 +23,11 @@
             transform: scale(0.9);
         }
 
+        @include width(520) {
+            width: 27rem;
+            height: 17rem;
+        }
+
         &--1 {
             left: 0;
             top: -2rem;
@@ -31,6 +36,11 @@
             @include width(750) {
                 top: -0rem;
                 left: -1rem;
+            }
+
+            @include width(520) {
+                top: 3rem;
+                left: 0;
             }
         }
 
@@ -53,7 +63,14 @@
                 right: -4rem;
                 top: 9rem;
             }
+
+            @include width(520) {
+                top: 0rem;
+                right: 30%;
+                z-index: 4;
+            }
         }
+
         &--3 {
             left: 20%;
             top: 10rem;
@@ -71,6 +88,12 @@
             @include width(750) {
                 left: 12%;
                 top: 15rem;
+            }
+
+            @include width(520) {
+                top: 5rem;
+                right: 0;
+                left: revert;
             }
         }
     }
