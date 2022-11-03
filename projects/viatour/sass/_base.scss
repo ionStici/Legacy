@@ -5,10 +5,10 @@
     --color-1l: #ff3366;
     --color-1d: #ba265d;
 
-    --color-gl-1: #faf9f9;
-    --color-gl-2: #f4f2f2;
-    --color-gl-3: #f0eeee;
-    --color-gl-4: #ccc;
+    --color-gl1: #faf9f9;
+    --color-gl2: #f4f2f2;
+    --color-gl3: #f0eeee;
+    --color-gl4: #ccc;
 
     // #333 #777 #999
     // --color-grey-dark-1: #333;
@@ -54,10 +54,7 @@ body {
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.6;
-    background-color: #333;
-}
 
-.background {
     // prettier-ignore
     background-image: linear-gradient(to right bottom, var(--color-1l), var(--color-1d));
     background-size: cover;
