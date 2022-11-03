@@ -1,20 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+:root {
+    --color-1: #eb2f64;
+    --color-1l: #ff3366;
+    --color-1d: #ba265d;
+
+    --color-gl-1: #faf9f9;
+    --color-gl-2: #f4f2f2;
+    --color-gl-3: #f0eeee;
+    --color-gl-4: #ccc;
+
+    // #333 #777 #999
+    // --color-grey-dark-1: #333;
+    // --color-grey-dark-2: #777;
+    // --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
+    --border: 1px solid var(--color-grey-light-2);
+}
+
+$width-1200: 75em;
+$width-1100: 68.75em;
+$width-900: 56.25em;
+$width-750: 46.875em;
+$width-600: 37.5em;
+$width-500: 31.25em;
+$width-320: 20em;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
     box-sizing: inherit;
 }
 
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and (max-width: $width-1100) {
+        font-size: 8px;
+    }
 }
 
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
+    line-height: 1.6;
+    background-color: #333;
+}
+
+.background {
+    // prettier-ignore
+    background-image: linear-gradient(to right bottom, var(--color-1l), var(--color-1d));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
