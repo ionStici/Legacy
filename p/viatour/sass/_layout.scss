@@ -14,5 +14,17 @@
     font-size: 1.4rem;
     background-color: #fff;
     height: 7rem;
-    border-bottom: 1px solid var(--color-gl2);
+    border-bottom: 1px solid var(--color-gl3);
+}
+
+.content {
+    display: flex;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #333;
 }
