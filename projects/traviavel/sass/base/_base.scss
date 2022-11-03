@@ -59,6 +59,8 @@ body {
     @include width(900) {
         padding: 0;
     }
+
+    background-color: #f7f7f7;
 }
 
 .main {

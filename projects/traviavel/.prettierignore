@@ -1,3 +1,4 @@
 package.json
 index.html
 _utilities.scss
+_mixins.scss

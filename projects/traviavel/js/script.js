@@ -2,6 +2,13 @@
 
 const navCheckbox = document.querySelector('.nav__checkbox');
 
+const openNav = function () {
+    navCheckbox.checked = true;
+    document.querySelector('.nav__ul').style.display = 'block';
+    document.querySelector('.nav__ul').style.opacity = '1';
+};
+// openNav();
+
 // prettier-ignore
 const checking = function () {
     if (navCheckbox.checked === true) {

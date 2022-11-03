@@ -59,6 +59,7 @@ html {
 
 body {
   padding: 3rem;
+  background-color: #f7f7f7;
 }
 @media only screen and (max-width: 56.25em) {
   body {
@@ -1137,72 +1138,114 @@ body {
 }
 .nav__label {
   display: block;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
   transition: all 0.2s;
 }
+@media only screen and (max-width: 51.56em) {
+  .nav__label {
+    width: 7rem;
+    height: 7rem;
+    top: -1rem;
+  }
+}
 .nav__icon {
   display: block;
-  width: 2.7rem;
-  height: 0.2rem;
+  width: 3rem;
+  height: 0.25rem;
   background-color: #555;
   border-radius: 3px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.2s;
+  transition: transform 0.75s;
 }
 .nav__icon::selection {
   background-color: transparent;
 }
+@media only screen and (max-width: 51.56em) {
+  .nav__icon {
+    width: 3.7rem;
+    height: 0.35rem;
+  }
+}
 .nav__icon::after, .nav__icon::before {
   content: "";
   display: block;
-  width: 2.7rem;
-  height: 0.2rem;
+  width: 3rem;
+  height: 0.25rem;
   background-color: #555;
   border-radius: 3px;
   position: absolute;
   transition: all 0.2s;
 }
+@media only screen and (max-width: 51.56em) {
+  .nav__icon::after, .nav__icon::before {
+    width: 3.7rem;
+    height: 0.35rem;
+  }
+}
 .nav__icon::before {
   top: -0.8rem;
+}
+@media only screen and (max-width: 51.56em) {
+  .nav__icon::before {
+    top: -1rem;
+  }
 }
 .nav__icon::after {
   top: 0.8rem;
 }
+@media only screen and (max-width: 51.56em) {
+  .nav__icon::after {
+    top: 1rem;
+    height: 0.39rem;
+  }
+}
+@media only screen and (max-width: 46.875em) {
+  .nav__icon::after {
+    top: 1rem;
+    height: 0.35rem;
+  }
+}
 .nav__checkbox:checked ~ .nav__label {
   z-index: 30;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.3);
+  background-color: rgba(17, 17, 17, 0.1);
 }
 .nav__checkbox:checked ~ .nav__label .nav__icon {
   background-color: transparent;
   z-index: 30;
 }
 .nav__checkbox:checked ~ .nav__label .nav__icon::after, .nav__checkbox:checked ~ .nav__label .nav__icon::before {
-  width: 1.5rem;
+  background-color: #111;
+  width: 2rem;
   height: 0.2rem;
   top: 0.1rem;
-  left: 0.55rem;
+  left: 0.45rem;
+}
+@media only screen and (max-width: 51.56em) {
+  .nav__checkbox:checked ~ .nav__label .nav__icon::after, .nav__checkbox:checked ~ .nav__label .nav__icon::before {
+    top: 0.2rem;
+    left: 0.8rem;
+  }
 }
 .nav__checkbox:checked ~ .nav__label .nav__icon::before {
-  transform: rotate(230deg);
   transform: rotate(134deg);
   top: 0;
   z-index: 30;
 }
 .nav__checkbox:checked ~ .nav__label .nav__icon::after {
-  transform: rotate(-230deg);
   transform: rotate(-135deg);
   top: 0;
   z-index: 30;
@@ -1290,15 +1333,33 @@ body {
   transform: translateX(-50%);
 }
 .nav__checkbox:checked ~ .nav__nav {
-  width: 30rem;
-  height: 37rem;
+  width: 35rem;
+  height: 38rem;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 1rem 4rem 2px rgba(0, 0, 0, 0.2);
-  top: -0.25rem;
-  right: -0.33rem;
+  top: -0.45rem;
+  right: -0.53rem;
   z-index: 25;
 }
+@media only screen and (max-width: 65.625em) {
+  .nav__checkbox:checked ~ .nav__nav {
+    top: -0.55rem;
+  }
+}
+@media only screen and (max-width: 51.56em) {
+  .nav__checkbox:checked ~ .nav__nav {
+    top: -1.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .nav__checkbox:checked ~ .nav__nav {
+    top: -2rem;
+    right: -1rem;
+    width: 45rem;
+  }
+}
+
 .section-about {
   width: 114rem;
   margin: 0 auto;
