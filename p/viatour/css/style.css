@@ -66,6 +66,14 @@ body {
   display: flex;
 }
 
+.nav {
+  width: 18%;
+}
+
+.main {
+  width: 82%;
+}
+
 .logo,
 .logo:link,
 .logo:visited {
@@ -209,7 +217,7 @@ body {
   background-color: var(--color-gl2);
 }
 .user-nav__user:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .user-nav__img-box {
   width: 4.5rem;
@@ -229,7 +237,6 @@ body {
 }
 
 .nav {
-  width: 22rem;
   min-height: 43rem;
   display: flex;
   flex-direction: column;
@@ -247,26 +254,44 @@ body {
 .nav__item:not(:last-child) {
   margin-bottom: 0.5rem;
 }
-.nav__item:first-child {
+.nav__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
   background-color: var(--color-1);
+  transform: scaleY(0);
+  transition: transform 0.2s, width 0.5s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+  cursor: pointer;
+}
+.nav__item:hover::before, .nav__item--active::before {
+  transform: scaleY(1);
+  width: 100%;
+}
+.nav__item:active::before {
+  background-color: var(--color-1l);
 }
 .nav__link, .nav__link:link, .nav__link:visited {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: var(--color-gl1);
   text-decoration: none;
   text-transform: uppercase;
+  position: relative;
+  z-index: 10;
   padding: 1.5rem 3rem;
 }
 .nav__icon {
-  fill: #fff;
-  width: 2rem;
-  height: 2rem;
+  fill: var(--color-gl1);
+  width: 1.8rem;
+  height: 1.8rem;
   margin-right: 2rem;
 }
 
 .cr {
-  color: #fff;
+  color: var(--color-gl4);
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.33px;

@@ -179,7 +179,7 @@
         }
 
         &:active {
-            transform: scale(0.9);
+            transform: scale(0.95);
         }
     }
 
@@ -212,7 +212,7 @@
 // // // /// // // // // // // // // // // // // // //
 
 .nav {
-    width: 22rem;
+    // width: 22rem;
     min-height: 43rem;
 
     display: flex;
@@ -232,11 +232,45 @@
         &:not(:last-child) {
             margin-bottom: 0.5rem;
         }
-
-        &:first-child {
-            background-color: var(--color-1);
-        }
     }
+
+    &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-1);
+        transform: scaleY(0);
+
+        // prettier-ignore
+        transition: transform 0.2s, 
+                    width 0.5s cubic-bezier(1, 0, 0, 1) 0.2s,
+                    background-color 0.1s;
+        cursor: pointer;
+    }
+
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: var(--color-1l);
+    }
+
+    // &__item:hover::before,
+    // &__item--active::before {
+    //     transform: scaleY(1);
+    //     width: 100%;
+
+    // }
+
+    // &__item:active::before {
+    //     background-color: var(--color-primary-light);
+    // }
 
     &__link,
     &__link:link,
@@ -244,23 +278,26 @@
         display: flex;
         align-items: center;
 
-        color: #fff;
+        color: var(--color-gl1);
         text-decoration: none;
         text-transform: uppercase;
+
+        position: relative;
+        z-index: 10;
 
         padding: 1.5rem 3rem;
     }
 
     &__icon {
-        fill: #fff;
-        width: 2rem;
-        height: 2rem;
+        fill: var(--color-gl1);
+        width: 1.8rem;
+        height: 1.8rem;
         margin-right: 2rem;
     }
 }
 
 .cr {
-    color: #fff;
+    color: var(--color-gl4);
     font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.33px;
@@ -272,3 +309,5 @@
     border-top: 1px solid #777;
     padding-top: 1.2rem;
 }
+
+// // // /// // // // // // // // // // // // // // //
