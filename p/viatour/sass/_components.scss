@@ -399,8 +399,17 @@
     cursor: pointer;
     transition: all 0.1s;
 
+    & span {
+        margin-left: 3px;
+        transition: margin-left 0.2s;
+    }
+
     &:hover {
         color: var(--color-1d);
+
+        span {
+            margin-left: 8px;
+        }
     }
 
     &:focus {
@@ -432,7 +441,11 @@
 // // // /// // // // // // // // // // // // // // //
 
 .detail {
-    height: 10rem;
+    display: flex;
+}
+
+.list {
+    list-style: none;
 }
 
 // // // /// // // // // // // // // // // // // // //
