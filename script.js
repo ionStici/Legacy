@@ -2,6 +2,7 @@
 
 const form = document.querySelector(".form");
 const input = document.querySelector(".input");
+const btn = document.querySelector(".btn");
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -38,10 +39,15 @@ form.addEventListener("submit", function (e) {
   if (pin === +inputPin) {
     input.placeholder = "Correct";
     document.documentElement.style.setProperty("--placeholder-color", "green");
-    setTimeout(() => {
-      form.remove();
-      insertMarkup();
-    }, 500);
+
+    setTimeout(insertMarkup, 500);
+    input.setAttribute("readonly", "readonly");
+
+    btn.style.color = "#bbb";
+    btn.style.border = "1px solid #ddd";
+
+    // prettier-ignore
+    btn.addEventListener("click", function (e) { e.preventDefault(); });
   }
 
   input.value = "";
