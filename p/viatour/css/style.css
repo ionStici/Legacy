@@ -9,7 +9,7 @@
   --color-gl4: #ccc;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
-  --border: 1px solid var(--color-grey-light-2);
+  --border: 1px solid var(--color-gl2);
 }
 
 * {
@@ -47,7 +47,6 @@ body {
 .container {
   width: 120rem;
   margin: 8rem auto;
-  background-color: var(--color-gl1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
@@ -72,6 +71,7 @@ body {
 
 .main {
   width: 82%;
+  background-color: #fff;
 }
 
 .logo,
@@ -315,7 +315,6 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--color-gl3);
-  background-color: #fff;
 }
 .overview__heading {
   font-size: 2.25rem;
@@ -406,14 +405,84 @@ body {
 }
 .detail {
   display: flex;
+  background-color: var(--color-gl1);
+  padding: 4.5rem;
+  font-size: 1.4rem;
+}
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-right: 4rem;
+  flex: 0 0 60%;
+  color: #777;
+}
+
+.user-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
 }
 
 .list {
   list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  display: flex;
+  flex-wrap: wrap;
+}
+.list__item {
+  flex: 0 0 50%;
+  margin-bottom: 0.7rem;
+}
+.list__item::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.7rem;
+  background-image: url(../img/svg/chevron-thin-right.svg);
+  background-size: cover;
+}
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
+  .list__item::before {
+    background-color: var(--color-1);
+    -webkit-mask-image: url(../img/svg/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/svg/chevron-thin-right.svg);
+    mask-size: cover;
+    background-image: none;
+  }
 }
 
+.recommend {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #999;
+}
+.recommend__count {
+  margin-right: auto;
+}
+.recommend__friends {
+  display: flex;
+}
+.recommend__photo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-left: -2rem;
+}
 .cta {
-  background-color: #fff;
   border-top: 1px solid var(--color-gl3);
   padding: 3.5rem 0;
   text-align: center;
