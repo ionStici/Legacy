@@ -28,6 +28,10 @@
     height: 7rem;
     border-bottom: 1px solid var(--color-gl3);
 
+    @media only screen and (max-width: $width-848) {
+        height: 7.5rem;
+    }
+
     @media only screen and (max-width: $width-600) {
         height: 8.5rem;
     }

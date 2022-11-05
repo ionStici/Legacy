@@ -52,7 +52,7 @@ html {
     font-size: 6.4px;
   }
 }
-@media only screen and (max-width: 20em) {
+@media only screen and (max-width: 20.3em) {
   html {
     font-size: 6px;
   }
@@ -70,7 +70,7 @@ body {
 }
 @media only screen and (max-width: 53em) {
   body {
-    background-color: var(--color-1);
+    background-color: #fff;
   }
 }
 
@@ -105,6 +105,11 @@ body {
   background-color: #fff;
   height: 7rem;
   border-bottom: 1px solid var(--color-gl3);
+}
+@media only screen and (max-width: 53em) {
+  .header {
+    height: 7.5rem;
+  }
 }
 @media only screen and (max-width: 37.5em) {
   .header {
@@ -153,6 +158,21 @@ body {
   text-decoration: none;
   height: 5rem;
 }
+@media only screen and (max-width: 28.125em) {
+  .logo,
+.logo:link,
+.logo:visited {
+    margin-left: 3rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .logo,
+.logo:link,
+.logo:visited {
+    margin-left: 2rem;
+  }
+}
+
 .logo {
   color: var(--color-1l);
 }
@@ -162,6 +182,16 @@ body {
   font-weight: 700;
 }
 @media only screen and (max-width: 31.25em) {
+  .logo-1 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .logo-1 {
+    font-size: 2.8rem;
+  }
+}
+@media only screen and (max-width: 20.3em) {
   .logo-1 {
     font-size: 3rem;
   }
@@ -176,6 +206,16 @@ body {
   transform: translateY(0.1rem);
 }
 @media only screen and (max-width: 31.25em) {
+  .logo-2 {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .logo-2 {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 20.3em) {
   .logo-2 {
     font-size: 1.8rem;
   }
@@ -317,6 +357,11 @@ body {
   height: 3.5rem;
   fill: #999;
 }
+@media only screen and (max-width: 25em) {
+  .user-nav__icon {
+    width: 6rem;
+  }
+}
 .user-nav__notif {
   display: block;
   position: absolute;
@@ -327,6 +372,22 @@ body {
   background-color: var(--color-1);
   border-radius: 50%;
   padding: 0.1rem 0.6rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .user-nav__notif {
+    top: 1.5rem;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .user-nav__notif {
+    top: 0.5rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .user-nav__notif {
+    top: 0.2rem;
+    right: 1rem;
+  }
 }
 .user-nav__user {
   display: flex;
@@ -350,6 +411,16 @@ body {
     border: 1px solid var(--color-gl3);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+  }
+}
+@media only screen and (max-width: 28.125em) {
+  .user-nav__user {
+    margin-right: 3rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .user-nav__user {
+    margin-right: 2rem;
   }
 }
 .user-nav__img-box {
@@ -409,6 +480,9 @@ body {
   .nav__item {
     flex: 1;
   }
+  .nav__item:not(:last-child) {
+    border-right: 1px solid #555;
+  }
 }
 .nav__item::before {
   content: "";
@@ -441,9 +515,24 @@ body {
 }
 @media only screen and (max-width: 56.25em) {
   .nav__link, .nav__link:link, .nav__link:visited {
-    padding: 1.5rem 4rem;
+    padding: 2rem 4rem;
     display: flex;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .nav__link, .nav__link:link, .nav__link:visited {
+    padding: 2rem 3rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .nav__link, .nav__link:link, .nav__link:visited {
+    padding: 2rem 0rem;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .nav__link, .nav__link:link, .nav__link:visited {
+    padding: 2.5rem 0rem;
   }
 }
 .nav__icon {
@@ -451,6 +540,16 @@ body {
   width: 1.8rem;
   height: 1.8rem;
   margin-right: 2rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .nav__icon {
+    margin-right: 1rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .nav__icon {
+    margin-right: 0.75rem;
+  }
 }
 
 .cr {
@@ -572,6 +671,11 @@ body {
   padding: 4.5rem;
   font-size: 1.4rem;
 }
+@media only screen and (max-width: 46.875em) {
+  .detail {
+    flex-direction: column;
+  }
+}
 
 .description {
   background-color: #fff;
@@ -581,12 +685,28 @@ body {
   flex: 0 0 60%;
   color: #777;
 }
+@media only screen and (max-width: 46.875em) {
+  .description {
+    width: 100%;
+    margin-bottom: 4rem;
+    flex: revert;
+  }
+}
 
 .user-reviews {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
+}
+@media only screen and (max-width: 46.875em) {
+  .user-reviews {
+    align-items: revert;
+  }
+  .user-reviews .btn-inline {
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 
 .paragraph:not(:last-of-type) {

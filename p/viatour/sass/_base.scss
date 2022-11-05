@@ -32,8 +32,9 @@ $width-750: 46.875em;
 $width-700: 43.75em;
 $width-600: 37.5em;
 $width-500: 31.25em;
+$width-450: 28.125em;
 $width-400: 25em;
-$width-320: 20em;
+$width-325: 20.3em;
 
 * {
     margin: 0;
@@ -70,8 +71,8 @@ html {
         font-size: 6.4px; // 40%
     }
 
-    @media only screen and (max-width: $width-320) {
-        font-size: 6px; // 40%
+    @media only screen and (max-width: $width-325) {
+        font-size: 6px; // 37.5%
     }
 }
 
@@ -88,6 +89,6 @@ body {
     min-height: 100vh;
 
     @media only screen and (max-width: $width-848) {
-        background-color: var(--color-1);
+        background-color: #fff;
     }
 }
