@@ -29,8 +29,10 @@ $width-900: 56.25em;
 $width-848: 53em;
 $width-800: 50em;
 $width-750: 46.875em;
+$width-700: 43.75em;
 $width-600: 37.5em;
 $width-500: 31.25em;
+$width-400: 25em;
 $width-320: 20em;
 
 * {
@@ -62,6 +64,14 @@ html {
 
     @media only screen and (max-width: $width-600) {
         font-size: 7.2px; // 45%
+    }
+
+    @media only screen and (max-width: $width-400) {
+        font-size: 6.4px; // 40%
+    }
+
+    @media only screen and (max-width: $width-320) {
+        font-size: 6px; // 40%
     }
 }
 
