@@ -21,9 +21,13 @@
     --border: 1px solid var(--color-gl2);
 }
 
+$width-1250: 78.125em;
 $width-1200: 75em;
 $width-1100: 68.75em;
+$width-1000: 62.5em;
 $width-900: 56.25em;
+$width-848: 53em;
+$width-800: 50em;
 $width-750: 46.875em;
 $width-600: 37.5em;
 $width-500: 31.25em;
@@ -44,8 +48,20 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
 
+    @media only screen and (max-width: $width-1250) {
+        font-size: 9.6px; // 60%
+    }
+
+    @media only screen and (max-width: $width-1200) {
+        font-size: 8.8px; // 55%
+    }
+
     @media only screen and (max-width: $width-1100) {
-        font-size: 8px;
+        font-size: 8px; // 50%
+    }
+
+    @media only screen and (max-width: $width-600) {
+        font-size: 7.2px; // 45%
     }
 }
 
@@ -60,4 +76,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+
+    @media only screen and (max-width: $width-848) {
+        background-color: var(--color-1);
+    }
 }

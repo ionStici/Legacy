@@ -1,6 +1,22 @@
 :root {
   --placeholder-color: #777;
+  --color-background: rgba(0, 0, 0, 0.05);
+  --box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+  --color-box: #fff;
+  --color-text: #555;
+  --color-text-hover: #111;
+  --input-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
+
+/* :root {
+  --placeholder-color: #777;
+  --color-background: #333;
+  --box-shadow: 0 0 5px 1px rgba(255, 255, 255, 1);
+  --color-box: #777;
+  --color-text: #fff;
+  --color-text-hover: #ddd;
+  --input-box-shadow: 0 0 1px 1px rgba(255, 255, 255, 1);
+} */
 
 *,
 *::after,
@@ -19,7 +35,7 @@ body {
   font-family: monospace;
   font-size: 1.6rem;
   font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--color-background);
 }
 
 .main {
@@ -29,17 +45,17 @@ body {
 .links {
   width: 28rem;
   margin: 3rem auto;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow);
   border-radius: 0.5rem;
   padding: 2rem 2rem 2.5rem 2rem;
-  background-color: #fff;
+  background-color: var(--color-box);
 }
 
 .link,
 .link:link,
 .link:visited {
   text-decoration: none;
-  color: #555;
+  color: var(--color-text);
   font-size: 2rem;
   padding: 0.25rem 0;
 
@@ -52,13 +68,8 @@ body {
 
 .link:hover,
 .link:active {
-  color: #111;
+  color: var(--color-text-hover);
   border-bottom: 0.15rem solid #bbb;
-
-  /* transition: box-shadow 0.2s; */
-  /* box-shadow: 0 0 5px #aaa; */
-  /* border-bottom: 0.15rem solid transparent; */
-  /* border-radius: 0.3rem; */
 }
 
 .link:not(:last-child) {
@@ -73,7 +84,9 @@ body {
 .form div {
   width: fit-content;
   margin: 0 auto;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+
+  box-shadow: var(--input-box-shadow);
+
   border-radius: 3px;
   padding: 0.5rem;
 }

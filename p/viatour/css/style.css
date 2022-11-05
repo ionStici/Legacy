@@ -27,9 +27,24 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media only screen and (max-width: 78.125em) {
+  html {
+    font-size: 9.6px;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 8.8px;
+  }
+}
 @media only screen and (max-width: 68.75em) {
   html {
     font-size: 8px;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 7.2px;
   }
 }
 
@@ -43,12 +58,33 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+@media only screen and (max-width: 53em) {
+  body {
+    background-color: var(--color-1);
+  }
+}
 
 .container {
   width: 120rem;
   margin: 8rem auto;
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+}
+@media only screen and (max-width: 62.5em) {
+  .container {
+    width: 107.5rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .container {
+    width: 100rem;
+  }
+}
+@media only screen and (max-width: 53em) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .header {
@@ -64,6 +100,14 @@ body {
 .content {
   display: flex;
 }
+@media only screen and (max-width: 56.25em) {
+  .content {
+    flex-direction: column;
+  }
+  .content .cr {
+    display: none;
+  }
+}
 
 .nav {
   width: 18%;
@@ -72,6 +116,11 @@ body {
 .main {
   width: 82%;
   background-color: #fff;
+}
+@media only screen and (max-width: 56.25em) {
+  .main {
+    width: revert;
+  }
 }
 
 .logo,
@@ -243,16 +292,39 @@ body {
   justify-content: space-between;
   background-color: #333;
 }
+@media only screen and (max-width: 56.25em) {
+  .nav {
+    width: revert;
+    min-height: revert;
+  }
+}
 .nav__items {
   list-style: none;
   margin-top: 3rem;
   font-size: 1.4rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .nav__items {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
 }
 .nav__item {
   position: relative;
 }
 .nav__item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .nav__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .nav__item {
+    flex: 1;
+  }
 }
 .nav__item::before {
   content: "";
@@ -282,6 +354,13 @@ body {
   position: relative;
   z-index: 10;
   padding: 1.5rem 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .nav__link, .nav__link:link, .nav__link:visited {
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: center;
+  }
 }
 .nav__icon {
   fill: var(--color-gl1);

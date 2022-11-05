@@ -65,6 +65,9 @@
         }
     }
 
+    @media only screen and (max-width: $width-848) {
+    }
+
     &__label {
         position: absolute;
         top: 2.9rem;
@@ -220,10 +223,21 @@
     justify-content: space-between;
     background-color: #333;
 
+    @media only screen and (max-width: $width-900) {
+        width: revert;
+        min-height: revert;
+    }
+
     &__items {
         list-style: none;
         margin-top: 3rem;
         font-size: 1.4rem;
+
+        @media only screen and (max-width: $width-900) {
+            margin-top: 0;
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__item {
@@ -231,6 +245,14 @@
 
         &:not(:last-child) {
             margin-bottom: 0.5rem;
+
+            @media only screen and (max-width: $width-900) {
+                margin-bottom: 0;
+            }
+        }
+
+        @media only screen and (max-width: $width-900) {
+            flex: 1;
         }
     }
 
@@ -286,6 +308,13 @@
         z-index: 10;
 
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $width-900) {
+            padding: 1.5rem 4rem;
+
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__icon {

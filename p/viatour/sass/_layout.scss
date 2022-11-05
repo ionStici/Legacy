@@ -3,6 +3,19 @@
     margin: 8rem auto;
     box-shadow: var(--shadow-dark);
     min-height: 50rem;
+
+    @media only screen and (max-width: $width-1000) {
+        width: 107.5rem;
+    }
+
+    @media only screen and (max-width: $width-900) {
+        width: 100rem;
+    }
+
+    @media only screen and (max-width: $width-848) {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .header {
@@ -20,6 +33,14 @@
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $width-900) {
+        flex-direction: column;
+
+        .cr {
+            display: none;
+        }
+    }
 }
 
 .nav {
@@ -29,6 +50,10 @@
 .main {
     width: 82%;
     background-color: #fff;
+
+    @media only screen and (max-width: $width-900) {
+        width: revert;
+    }
 }
 
 // // // /// // // // // // // // // // // // // // //
