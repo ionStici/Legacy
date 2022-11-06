@@ -118,7 +118,8 @@ body {
 }
 @media only screen and (max-width: 31.25em) {
   .header {
-    height: 15rem;
+    height: 16rem;
+    padding-top: 1rem;
     flex-wrap: wrap;
   }
 }
