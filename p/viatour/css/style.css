@@ -677,6 +677,11 @@ body {
     flex-direction: column;
   }
 }
+@media only screen and (max-width: 28.125em) {
+  .detail {
+    padding: 3rem;
+  }
+}
 
 .description {
   background-color: #fff;
@@ -691,6 +696,11 @@ body {
     width: 100%;
     margin-bottom: 4rem;
     flex: revert;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .description {
+    padding: 2rem;
   }
 }
 
@@ -766,6 +776,17 @@ body {
   border: 3px solid #fff;
   margin-left: -2rem;
 }
+@media only screen and (max-width: 25em) {
+  .recommend__photo {
+    margin-left: -2.5rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .recommend__photo {
+    margin-left: -2.2rem;
+  }
+}
+
 .user-review {
   display: flex;
   flex-direction: column;
@@ -778,6 +799,11 @@ body {
   box-shadow: var(--shadow-light);
   padding: 3rem;
   margin-bottom: 3.5rem;
+}
+@media only screen and (max-width: 25em) {
+  .review {
+    padding: 2rem;
+  }
 }
 .review__text {
   margin-bottom: 2rem;
@@ -821,6 +847,21 @@ body {
   font-size: 2rem;
   margin-bottom: 2.5rem;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 31.25em) {
+  .cta__heading-2 {
+    font-size: 1.9rem;
+  }
+}
+@media only screen and (max-width: 28.125em) {
+  .cta__heading-2 {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .cta__heading-2 {
+    font-size: 1.55rem;
+  }
 }
 
 .btn {
