@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color-active: #ff6b6b;
+  --color-disable: #ffe3e3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  margin: 5rem 0;
+  background-color: #eee;
+}
+
+.container {
+  width: 34rem;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 1rem;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.circle-container {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.circle-container::before {
+  content: "";
+  width: 99%;
+  height: 0.5rem;
+  background-color: var(--color-disable);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.progress {
+  position: absolute;
+  width: 1%;
+  top: 50%;
+  left: 1px;
+  transform: translateY(-50%);
+  height: 0.5rem;
+  background-color: var(--color-active);
+  z-index: 2;
+  transition: width 0.4s ease;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 0.3rem solid var(--color-disable);
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: #333;
+  z-index: 3;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.active {
+  transition: border 0.4s ease 0.2s;
+  border: 0.3rem solid var(--color-active);
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+
+  padding: 0.5rem 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ff8787;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  background-color: var(--color-disable);
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover,
+.btn:disabled:active {
+  transform: translateY(0) scale(1);
+  box-shadow: none;
+}
+
+.btn:not(:last-child) {
+  margin-right: 2rem;
+}
+
+@media only screen and (max-width: 24em) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 22em) {
+  html {
+    font-size: 8px;
+  }
+}
