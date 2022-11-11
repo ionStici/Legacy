@@ -1,0 +1,200 @@
+.nav {
+  width: 20rem;
+  //   height: ;
+  background-color: #f9fbfd;
+  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2) inset;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  @include s1200 {
+    width: 6.5rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: #666;
+
+    @include s1200 {
+      display: none;
+    }
+
+    &::selection {
+      background-color: transparent;
+    }
+
+    &--small {
+      display: none;
+
+      @include s1200 {
+        display: block;
+      }
+    }
+  }
+
+  &__lists {
+    list-style: none;
+    padding: 2.4rem 1.6rem;
+
+    color: #888;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    @include s1200 {
+      padding: 2.4rem 1.25rem 1rem 1.25rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    ::selection {
+      background-color: transparent;
+    }
+
+    @include s1200 {
+      width: fit-content;
+      padding: 0.6rem 0.8rem;
+    }
+
+    &__icon {
+      margin: 0 0.8rem;
+      color: #888;
+      width: 2.4rem;
+      height: 2.4rem;
+
+      @include s1200 {
+        margin: 0;
+      }
+    }
+
+    &__text {
+      @include s1200 {
+        display: none;
+      }
+    }
+
+    &--active {
+      color: #555;
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+    }
+
+    &:hover {
+      color: #555;
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+    }
+  }
+
+  &__note__responsive {
+    display: none;
+    margin-top: auto;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    span {
+      display: block;
+      background-color: rgba(255, 255, 255, 1);
+      width: fit-content;
+
+      color: #555;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+      border-radius: 3px;
+      padding: 0.4rem 1rem;
+      margin: 1rem auto;
+
+      text-align: center;
+      font-size: 2.2rem;
+
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      &:active {
+        background-color: #fff;
+      }
+
+      &::selection {
+        background-color: transparent;
+      }
+    }
+
+    @include s1200 {
+      display: block;
+    }
+  }
+
+  &__note {
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999;
+
+    @include s1200 {
+      position: absolute;
+      background-color: #fff;
+      left: 0.5rem;
+
+      bottom: 6.5rem;
+      width: 20rem;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+      display: none;
+      opacity: 0;
+    }
+
+    margin-top: auto;
+    padding: 1rem;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+
+    opacity: 1;
+    display: block;
+
+    transition: opacity 0.2s;
+
+    &__current {
+      margin-bottom: 0.4rem;
+    }
+
+    &__previous-version {
+      margin-bottom: 0.4rem;
+
+      &--link,
+      &--link:link,
+      &--link:visited {
+        color: #1864ab;
+        text-decoration: none;
+        border-bottom: 1px solid #1864ab;
+      }
+    }
+  }
+}
+
+// Font sizes (px)
+// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+// Spacing system (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128

@@ -1,0 +1,253 @@
+// 1216+ = font-size: 62.5%
+
+// 1216px
+@media (max-width: 76em) {
+  html {
+    font-size: 9.6px; // 60%
+  }
+}
+
+// 1024
+@media (max-width: 64em) {
+  .main {
+    width: 95%;
+    // border-radius: 0;
+  }
+
+  .clicker {
+    &__form-box {
+      width: 32.9rem;
+    }
+
+    &__map__box {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__map {
+      margin: 0 auto;
+      width: 92.5%;
+
+      &__panel {
+        left: 2.5rem;
+      }
+    }
+  }
+}
+
+// 900px
+@media (max-width: 56.25em) {
+  html {
+    font-size: 9px; // 56.5%
+  }
+}
+
+// 848px
+@media (max-width: 53em) {
+  html {
+    font-size: 8.48px; // 53%
+  }
+
+  //   .game__container {
+  //     display: none;
+  //   }
+
+  .content__home {
+    &__info {
+      width: 61%;
+    }
+
+    .country-wrapper {
+      width: 39%;
+    }
+
+    &__text {
+      &:nth-child(3) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .clicker {
+    &__map {
+      margin: 0 auto;
+      width: 92%;
+
+      &__panel {
+        left: 3.2rem;
+      }
+    }
+  }
+}
+
+// 736px
+@media (max-width: 46em) {
+  html {
+    font-size: 8.2px; // 51.3%
+  }
+
+  .content {
+    height: auto;
+  }
+
+  .main {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .locations {
+    height: auto;
+  }
+}
+
+// 680px
+@media (max-width: 42.5em) {
+  .main {
+    border-radius: 7.5px;
+    width: 50rem;
+    border-right: 1rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .content__home {
+    flex-direction: column;
+    // height: 50rem;
+
+    .sub-heading {
+      text-align: center;
+      line-height: 1;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__info {
+      width: 100%;
+      height: auto;
+      border: none;
+      //   margin-bottom: auto;
+    }
+
+    .country-wrapper {
+      width: auto;
+      margin-top: 2rem;
+      margin-bottom: 7.5rem;
+    }
+
+    .heading-1 {
+      text-align: center;
+    }
+  }
+
+  .clicker {
+    align-items: inherit;
+    flex-direction: column;
+    align-items: center;
+
+    .heaidng-2 {
+      font-size: 4rem;
+    }
+
+    .sub-heading--smaller {
+      font-size: 1.8rem;
+    }
+
+    &__about {
+      width: 38rem;
+      border: none;
+      //   height: 46rem;
+
+      .heaidng-2,
+      .sub-heading {
+        text-align: center;
+      }
+    }
+
+    &__form-box {
+      margin: 0 auto;
+    }
+
+    &__pins {
+      width: 32rem;
+      margin-top: 2rem;
+    }
+
+    &__pin {
+      width: 30rem;
+    }
+
+    &__map {
+      margin: 0 auto;
+      width: 100%;
+      height: 25rem;
+
+      &__panel {
+        left: 4.2rem;
+        bottom: 1.8rem;
+      }
+    }
+
+    &__map__box {
+      padding: 0 1rem 1rem 1rem;
+      width: 34rem;
+      margin: 0;
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// 576px
+// @media (max-width: 36em) {
+//   .clicker {
+//     &__map__box {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// 464px
+@media (max-width: 29em) {
+  .main {
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .heading-1 {
+    font-size: 3.4rem;
+  }
+}
+
+// 400px
+@media (max-width: 25em) {
+  html {
+    font-size: 7.52px; // 0,47*16=7,52px
+  }
+
+  .heading-1 {
+    font-size: 3.2rem;
+  }
+}
+
+// 352px
+@media (max-width: 22em) {
+  html {
+    font-size: 7.2px; // 45%
+  }
+
+  .main {
+    border-right: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .heading-1 {
+    font-size: 3rem;
+  }
+}
+
+// 320px
+@media (max-width: 20em) {
+  html {
+    font-size: 6.4px; // 40%
+  }
+}

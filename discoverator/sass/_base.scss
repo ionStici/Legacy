@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+
+  background-color: #d0d4de;
+}
+
+.main {
+  width: 120rem;
+  height: 50rem;
+  margin: 5rem auto;
+
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 7.5px;
+  overflow: hidden;
+
+  @include s1200 {
+    width: 106rem;
+  }
+}
+
+.container {
+  display: flex;
+}
