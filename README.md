@@ -1,3 +1,3 @@
 # Legacy
 
-Hello
+Repository for practice and course projects, frontend related.
