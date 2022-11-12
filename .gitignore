@@ -1,7 +1,8 @@
 .DS_Store
+thumbs.db
 node_modules
 package-lock.json
-.prettierignore
 style.css.map
+.prettierignore
 .parcel-cache
 dist
