@@ -15,30 +15,38 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #333;
   line-height: 1;
 }
 
-main {
-  width: 30rem;
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
   margin: 5rem auto;
 }
 
-a,
-a:link,
-a:visited {
-  display: block;
-  width: fit-content;
-  margin: 1rem;
-
-  text-decoration: none;
+.link,
+.link:link,
+.link:visited {
   color: #333;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+
+  display: inline-block;
+  margin: 0.7rem 0;
+  padding: 0.5rem;
+  background-color: #eee;
+  border-radius: 3px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-a:hover,
-a:active {
-  text-decoration: underline;
+.link:hover {
+  color: #111;
+  background-color: #ddd;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
 }
