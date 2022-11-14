@@ -113,6 +113,8 @@ body {
   padding: 1rem 1.5rem;
   overflow-x: scroll;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   width: 100%;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -121,6 +123,11 @@ body {
   margin-bottom: 1rem;
   background-color: #fff;
 }
+
+.country-header::-webkit-scrollbar {
+  display: none;
+}
+
 .country-header-flag {
   width: 3rem;
   height: 2rem;

@@ -496,9 +496,14 @@ body {
 .clicker__pin__popup, .clicker__pin__note {
   overflow: scroll;
   white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .clicker__pin__popup::selection, .clicker__pin__note::selection {
   background-color: transparent;
+}
+.clicker__pin__popup::-webkit-scrollbar, .clicker__pin__note::-webkit-scrollbar {
+  display: none;
 }
 .clicker__pin__note {
   font-size: 1.2rem;
@@ -600,6 +605,9 @@ body {
   height: 44.7rem;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
+.loc__ex::-webkit-scrollbar {
+  display: none;
+}
 .loc__ex {
   width: 50rem;
   padding: 0 1rem 1rem 1rem;
@@ -611,6 +619,8 @@ body {
   border-top: 1rem solid rgba(0, 0, 0, 0.01);
   border-bottom: 1rem solid rgba(0, 0, 0, 0.01);
   transition: height 0.25s;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .loc__ex__country-name {
   width: 100%;
@@ -1083,7 +1093,7 @@ body {
     border: none;
   }
   .clicker__about .heaidng-2,
-.clicker__about .sub-heading {
+  .clicker__about .sub-heading {
     text-align: center;
   }
   .clicker__form-box {

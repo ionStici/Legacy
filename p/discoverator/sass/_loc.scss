@@ -150,6 +150,10 @@
 
   // // // // // // // // // // // //
 
+  &__ex::-webkit-scrollbar {
+    display: none;
+  }
+
   &__ex {
     width: 50rem;
     padding: 0 1rem 1rem 1rem;
@@ -166,6 +170,9 @@
     border-bottom: 1rem solid rgba(0, 0, 0, 0.01);
 
     transition: height 0.25s;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     &__box {
     }
