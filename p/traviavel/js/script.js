@@ -40,6 +40,26 @@ document.querySelector('.nav__background').addEventListener('click', function ()
 // // // // // // // // // // // // // // // // // // // // // // //
 // Intro Popup
 
+// // // // // // // // // // // // // // // // // // // // // // //
+
+let i = 0;
+
+if (JSON.parse(localStorage.getItem('messageCount'))) {
+    i = JSON.parse(localStorage.getItem('messageCount'));
+}
+
+if (i === 4) {
+    i = 1;
+} else {
+    i++;
+}
+
+localStorage.setItem('messageCount', JSON.stringify(i));
+
+console.log(i);
+
+// // // // // // // // // // // // // // // // // // // // // // //
+
 const body = document.querySelector('body');
 const popupBtn = document.querySelector('.intro-popup__button');
 const popupBackground = document.querySelector('.intro-popup__background');
@@ -71,13 +91,15 @@ const displayIntroPopup = function () {
     setTimeout(revertOpacity, 1);
 };
 
-setTimeout(displayIntroPopup, 2000);
-// displayIntroPopup();
-
 popupBtn.addEventListener('click', function (e) {
     body.style.overflow = 'revert';
     setOpacity();
     setTimeout(closePopup, 300);
 });
+
+if (i === 1) {
+    // displayIntroPopup();
+    setTimeout(displayIntroPopup, 2000);
+}
 
 // // // // // // // // // // // // // // // // // // // // // // //
