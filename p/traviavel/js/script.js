@@ -38,3 +38,10 @@ document.querySelector('.nav__background').addEventListener('click', function ()
 });
 
 // // // // // // // // // // // // // // // // // // // // // // //
+
+const popupBtn = document.querySelector('.intro-popup__button');
+const popupBackground = document.querySelector('.intro-popup__background');
+
+popupBtn.addEventListener('click', function () {
+    document.querySelector('body').style.overflow = 'revert';
+});
