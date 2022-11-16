@@ -948,10 +948,6 @@ body {
   opacity: 1;
 }
 
-body {
-  overflow: hidden;
-}
-
 .intro-popup {
   position: fixed;
   left: 50%;
@@ -984,13 +980,14 @@ body {
 .intro-popup__title:active {
   filter: brightness(0.9);
 }
-.intro-popup .intro-popup__text {
+.intro-popup__text {
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 1rem;
   color: #333;
+  font-size: 1.5rem;
 }
-.intro-popup .intro-popup__text--title {
+.intro-popup__text--title {
   font-weight: 600;
 }
 .intro-popup a,
@@ -1008,7 +1005,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 2rem;
   cursor: pointer;
   transition: transform 0.2s;
@@ -1032,6 +1029,14 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: none;
+}
+.intro-popup {
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: none;
 }
 
 .header {

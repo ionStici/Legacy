@@ -38,10 +38,46 @@ document.querySelector('.nav__background').addEventListener('click', function ()
 });
 
 // // // // // // // // // // // // // // // // // // // // // // //
+// Intro Popup
 
+const body = document.querySelector('body');
 const popupBtn = document.querySelector('.intro-popup__button');
 const popupBackground = document.querySelector('.intro-popup__background');
+const introPopupBox = document.querySelector('.intro-popup');
 
-popupBtn.addEventListener('click', function () {
-    document.querySelector('body').style.overflow = 'revert';
+const showPopup = function () {
+    popupBackground.style.display = 'block';
+    introPopupBox.style.display = 'block';
+};
+
+const closePopup = function () {
+    popupBackground.style.display = 'none';
+    introPopupBox.style.display = 'none';
+};
+
+const revertOpacity = function () {
+    popupBackground.style.opacity = '1';
+    introPopupBox.style.opacity = '1';
+};
+
+const setOpacity = function () {
+    popupBackground.style.opacity = '0';
+    introPopupBox.style.opacity = '0';
+};
+
+const displayIntroPopup = function () {
+    body.style.overflow = 'hidden';
+    showPopup();
+    setTimeout(revertOpacity, 1);
+};
+
+setTimeout(displayIntroPopup, 2000);
+// displayIntroPopup();
+
+popupBtn.addEventListener('click', function (e) {
+    body.style.overflow = 'revert';
+    setOpacity();
+    setTimeout(closePopup, 300);
 });
+
+// // // // // // // // // // // // // // // // // // // // // // //
