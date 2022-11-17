@@ -161,15 +161,15 @@ body {
 }
 @media only screen and (max-width: 28.125em) {
   .logo,
-.logo:link,
-.logo:visited {
+  .logo:link,
+  .logo:visited {
     margin-left: 3rem;
   }
 }
 @media only screen and (max-width: 25em) {
   .logo,
-.logo:link,
-.logo:visited {
+  .logo:link,
+  .logo:visited {
     margin-left: 2rem;
   }
 }
@@ -904,6 +904,88 @@ body {
 .btn:focus {
   outline: none;
   animation: pulsate 1s infinite;
+}
+
+.intro-popup {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1200;
+  width: 50rem;
+  background-color: #fff;
+  border-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+.intro-popup__title {
+  width: 100%;
+  height: 4rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-1);
+  color: #fff;
+  text-indent: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+.intro-popup__text {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+.intro-popup__text--title {
+  font-weight: 600;
+}
+.intro-popup a,
+.intro-popup a:link,
+.intro-popup a:visited {
+  color: var(--color-1);
+  text-decoration: none;
+}
+.intro-popup a:hover {
+  border-bottom: 1px solid var(--color-1);
+}
+.intro-popup__button {
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  padding: 0.4rem 2rem;
+  border: none;
+  background-color: var(--color-1l);
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin-left: 40rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.intro-popup__button:active {
+  transform: scale(0.9);
+}
+.intro-popup__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.intro-popup {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */

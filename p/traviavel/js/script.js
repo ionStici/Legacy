@@ -53,10 +53,8 @@ if (i === 4) {
 } else {
     i++;
 }
-
+// i = 1;
 localStorage.setItem('messageCount', JSON.stringify(i));
-
-console.log(i);
 
 // // // // // // // // // // // // // // // // // // // // // // //
 
