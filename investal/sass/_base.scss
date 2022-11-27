@@ -1,25 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+// Color Variables
+$color-1: #c69963;
+$color-1-dark: #b28451;
+
+$color-2: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+// Font Variables
+$font-1: "Nunito", sans-serif;
+$font-2: "Josefin Sans", sans-serif;
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+    box-sizing: border-box;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #333;
-  line-height: 1;
+    font-family: $font-1;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+    //   font-size: 1.6rem;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
+    grid-template-columns:
+        [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+        [center-start] repeat(
+            8,
+            [col-start] minmax(min-content, 14rem) [col-end]
+        )
+        [center-end] minmax(6rem, 1fr)
+        [full-end];
 }
