@@ -28,4 +28,23 @@ body {
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
 
+.sidebar {
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1;
+  background-color: #c69963;
+  position: relative;
+}
+
+.header {
+  grid-column: full-start/col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.9), rgba(16, 29, 44, 0.9)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.realtors {
+  grid-column: col-start 7/full-end;
+  background-color: #101d2c;
+}
+
 /*# sourceMappingURL=style.css.map */

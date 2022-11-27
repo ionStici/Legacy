@@ -1,0 +1,8 @@
+.header {
+    grid-column: full-start / col-end 6;
+
+    background-image: linear-gradient(rgba($color-2, 0.9), rgba($color-2, 0.9)),
+        url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+}
