@@ -3,4 +3,37 @@
     grid-row: 1 / -1;
     background-color: $color-1;
     position: relative;
+
+    &__nav-btn {
+        position: fixed;
+        top: 3rem;
+        left: 1.7rem;
+
+        border: none;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.09);
+
+        cursor: pointer;
+        transition: transform 0.1s, box-shadow 0.1s;
+
+        &--1,
+        &--2,
+        &--3 {
+            display: block;
+            background-color: #fff;
+            border-radius: 1rem;
+            width: 4.5rem;
+            height: 0.4rem;
+            margin-bottom: 0.9rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        }
+    }
 }
