@@ -5,4 +5,34 @@
         url(../img/hero.jpeg);
     background-size: cover;
     background-position: center;
+
+    padding: 8rem;
+    padding-top: 4rem;
+
+    display: grid;
+    // prettier-ignore
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr repeat(2, min-content);
+    grid-template-columns: min-content, max-content;
+    grid-row-gap: 1.5rem;
+    justify-content: center;
+
+    &__logo {
+        margin: 0 auto;
+        color: $color-1;
+        font-weight: 300;
+
+        span:first-child {
+            font-size: 3.5rem;
+            font-family: $font-2;
+            letter-spacing: 2px;
+            margin-right: 0.5rem;
+        }
+
+        span:last-child {
+            font-size: 2.8rem;
+            border: 0.2rem solid rgba($color-1, 0.9);
+            border-radius: 0.5rem;
+            padding: 0 0.4rem;
+        }
+    }
 }
